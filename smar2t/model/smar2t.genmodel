@@ -89,16 +89,45 @@
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Data_schema" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//td/data_schema">
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="smar2t.ecore#//td/data_schema/NewEnum1"/>
         <genClasses ecoreClass="smar2t.ecore#//td/data_schema/DataSchema">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/DataSchema/semanticType"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/DataSchema/title"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/DataSchema/description"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/DataSchema/type"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/DataSchema/unit"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/DataSchema/enum"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference smar2t.ecore#//td/data_schema/DataSchema/oneOf"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference smar2t.ecore#//td/data_schema/DataSchema/titles"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference smar2t.ecore#//td/data_schema/DataSchema/descriptions"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/DataSchema/semanticType"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/DataSchema/type"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/DataSchema/const"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/DataSchema/readOnly"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/DataSchema/writeOnly"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/DataSchema/format"/>
         </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//td/data_schema/ArraySchema">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/ArraySchema/minItems"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/ArraySchema/maxItems"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smar2t.ecore#//td/data_schema/ArraySchema/items"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//td/data_schema/ObjectSchema">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/ObjectSchema/required"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smar2t.ecore#//td/data_schema/ObjectSchema/properties"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//td/data_schema/StringSchema"/>
+        <genClasses ecoreClass="smar2t.ecore#//td/data_schema/BooleanSchema"/>
+        <genClasses ecoreClass="smar2t.ecore#//td/data_schema/NumberSchema">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/NumberSchema/minimum"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/NumberSchema/maximum"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//td/data_schema/IntegerSchema">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/IntegerSchema/minimum"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/IntegerSchema/maximum"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//td/data_schema/NullSchema"/>
       </nestedGenPackages>
     </nestedGenPackages>
     <nestedGenPackages prefix="Thing_ui" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//thing_ui"/>
