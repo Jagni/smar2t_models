@@ -5,44 +5,20 @@
     editorDirectory="/smar2t.editor/src-gen" modelPluginID="smar2t" modelName="Smar2t"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="#//smar2t/td #//smar2t/mozillaTD" operationReflection="true"
-    importOrganizing="true">
+    usedGenPackages="#//smar2t/td" operationReflection="true" importOrganizing="true">
   <foreignModel>smar2t.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Smar2t" disposableProviderFactory="true" ecorePackage="smar2t.ecore#/">
-    <nestedGenPackages prefix="MozillaTD" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//mozillaTD"/>
+    <nestedGenPackages prefix="Mozilla_td" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//mozilla_td"/>
     <nestedGenPackages prefix="ThingDescription" disposableProviderFactory="true"
         ecorePackage="smar2t.ecore#//td">
-      <nestedGenPackages prefix="HypermediaControls" disposableProviderFactory="true"
-          ecorePackage="smar2t.ecore#//td/hypermediaControls">
-        <genClasses ecoreClass="smar2t.ecore#//td/hypermediaControls/Link">
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermediaControls/Link/href"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermediaControls/Link/type"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermediaControls/Link/rel"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermediaControls/Link/anchor"/>
-        </genClasses>
-        <genClasses ecoreClass="smar2t.ecore#//td/hypermediaControls/Form">
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermediaControls/Form/op"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermediaControls/Form/href"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermediaControls/Form/contentType"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermediaControls/Form/contentCoding"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermediaControls/Form/subprotocol"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermediaControls/Form/security"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermediaControls/Form/scopes"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference smar2t.ecore#//td/hypermediaControls/Form/response"/>
-        </genClasses>
-        <genClasses image="false" ecoreClass="smar2t.ecore#//td/hypermediaControls/ExpectedResponse">
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermediaControls/ExpectedResponse/contentType"/>
-        </genClasses>
-      </nestedGenPackages>
       <nestedGenPackages prefix="Core" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//td/core">
         <genClasses ecoreClass="smar2t.ecore#//td/core/Thing">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/Thing/id"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/Thing/title"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/Thing/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/Thing/context"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/Thing/type"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/Thing/semanticContext"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/Thing/semanticType"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/Thing/created"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/Thing/modified"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/Thing/support"/>
@@ -58,11 +34,19 @@
               ecoreFeature="ecore:EReference smar2t.ecore#//td/core/Thing/titles"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference smar2t.ecore#//td/core/Thing/descriptions"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//td/core/Thing/events"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//td/core/Thing/actions"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//td/core/Thing/properties"/>
         </genClasses>
         <genClasses ecoreClass="smar2t.ecore#//td/core/VersionInfo">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/VersionInfo/instance"/>
         </genClasses>
-        <genClasses ecoreClass="smar2t.ecore#//td/core/PropertyAffordance"/>
+        <genClasses ecoreClass="smar2t.ecore#//td/core/PropertyAffordance">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/PropertyAffordance/observable"/>
+        </genClasses>
         <genClasses ecoreClass="smar2t.ecore#//td/core/InteractionAffordance">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference smar2t.ecore#//td/core/InteractionAffordance/forms"/>
@@ -70,12 +54,53 @@
               ecoreFeature="ecore:EReference smar2t.ecore#//td/core/InteractionAffordance/titles"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference smar2t.ecore#//td/core/InteractionAffordance/descriptions"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/InteractionAffordance/type"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/InteractionAffordance/title"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/InteractionAffordance/description"/>
         </genClasses>
         <genClasses ecoreClass="smar2t.ecore#//td/core/EventAffordance"/>
-        <genClasses ecoreClass="smar2t.ecore#//td/core/ActionAffordance"/>
+        <genClasses ecoreClass="smar2t.ecore#//td/core/ActionAffordance">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/ActionAffordance/safe"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/core/ActionAffordance/idempotent"/>
+        </genClasses>
         <genClasses ecoreClass="smar2t.ecore#//td/core/MultiLanguage"/>
       </nestedGenPackages>
+      <nestedGenPackages prefix="Hypermedia_controls" disposableProviderFactory="true"
+          ecorePackage="smar2t.ecore#//td/hypermedia_controls">
+        <genClasses ecoreClass="smar2t.ecore#//td/hypermedia_controls/Link">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermedia_controls/Link/href"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermedia_controls/Link/type"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermedia_controls/Link/rel"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermedia_controls/Link/anchor"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//td/hypermedia_controls/Form">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermedia_controls/Form/op"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermedia_controls/Form/href"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermedia_controls/Form/contentType"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermedia_controls/Form/contentCoding"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermedia_controls/Form/subprotocol"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermedia_controls/Form/security"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermedia_controls/Form/scopes"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//td/hypermedia_controls/Form/response"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="smar2t.ecore#//td/hypermedia_controls/ExpectedResponse">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/hypermedia_controls/ExpectedResponse/contentType"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Data_schema" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//td/data_schema">
+        <genClasses ecoreClass="smar2t.ecore#//td/data_schema/DataSchema">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//td/data_schema/DataSchema/oneOf"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//td/data_schema/DataSchema/titles"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//td/data_schema/DataSchema/descriptions"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/DataSchema/semanticType"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//td/data_schema/DataSchema/type"/>
+        </genClasses>
+      </nestedGenPackages>
     </nestedGenPackages>
-    <nestedGenPackages prefix="ThingUI" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//thingUI"/>
+    <nestedGenPackages prefix="Thing_ui" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//thing_ui"/>
   </genPackages>
 </genmodel:GenModel>
