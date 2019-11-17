@@ -44,7 +44,7 @@
       <eClassifiers xsi:type="ecore:EClass" name="PropertyAffordance" eSuperTypes="#//td/core/InteractionAffordance">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="observable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="InteractionAffordance">
+      <eClassifiers xsi:type="ecore:EClass" name="InteractionAffordance" abstract="true">
         <eStructuralFeatures xsi:type="ecore:EReference" name="forms" lowerBound="1"
             upperBound="-1" eType="#//td/hypermedia_controls/Form"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="titles" eType="#//td/core/MultiLanguage"/>
@@ -88,12 +88,12 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="scopes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="response" eType="#//td/hypermedia_controls/ExpectedResponse"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ExpectedResponse" abstract="true">
+      <eClassifiers xsi:type="ecore:EClass" name="ExpectedResponse">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="data_schema" nsURI="td.data_schema" nsPrefix="td">
-      <eClassifiers xsi:type="ecore:EClass" name="DataSchema">
+      <eClassifiers xsi:type="ecore:EClass" name="DataSchema" abstract="true">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" upperBound="-1"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -140,6 +140,73 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="NullSchema" eSuperTypes="#//td/data_schema/DataSchema"/>
+    </eSubpackages>
+    <eSubpackages name="security" nsURI="td.security" nsPrefix="td">
+      <eClassifiers xsi:type="ecore:EClass" name="SecurityScheme" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" upperBound="-1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheme" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" eType="#//td/core/MultiLanguage"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="NoSecurityScheme" eSuperTypes="#//td/security/SecurityScheme"/>
+      <eClassifiers xsi:type="ecore:EClass" name="BasicSecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="in" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="DigestSecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="qop" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="in" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="APIKeySecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="in" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="BearerSecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="authorization" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="alg" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="in" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="CertSecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="identity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PSKSecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="identity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PublicSecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="identity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PoPSecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="authorization" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="alg" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="in" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="OAuth2SecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="authorization" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="token" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="refresh" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="scopes" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="flow" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
     </eSubpackages>
   </eSubpackages>
   <eSubpackages name="thing_ui" nsURI="thing_ui" nsPrefix="thing_ui"/>
