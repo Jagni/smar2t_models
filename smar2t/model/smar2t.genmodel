@@ -9,7 +9,81 @@
   <foreignModel>smar2t.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Smar2t" disposableProviderFactory="true" ecorePackage="smar2t.ecore#/">
-    <nestedGenPackages prefix="Mozilla_td" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//mozilla_td"/>
+    <nestedGenPackages prefix="Mozilla_td" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//mozilla_td">
+      <nestedGenPackages prefix="Core" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//mozilla_td/core">
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="smar2t.ecore#//mozilla_td/core/PrimitiveType">
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/PrimitiveType/null"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/PrimitiveType/string"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/PrimitiveType/boolean"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/PrimitiveType/object"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/PrimitiveType/array"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/PrimitiveType/number"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/PrimitiveType/integer"/>
+        </genEnums>
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="smar2t.ecore#//mozilla_td/core/MediaType">
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/MediaType/properties"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/MediaType/actions"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/MediaType/events"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/MediaType/alternate"/>
+        </genEnums>
+        <genClasses ecoreClass="smar2t.ecore#//mozilla_td/core/Thing">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Thing/context"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Thing/semanticType"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Thing/id"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Thing/title"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Thing/description"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Thing/properties"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Thing/actions"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Thing/links"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Thing/event"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//mozilla_td/core/Attribute">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Attribute/unit"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Attribute/enum"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Attribute/minimum"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Attribute/maximum"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Attribute/multipleOf"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Attribute/type"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Attribute/properties"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Attribute/id"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//mozilla_td/core/Link">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Link/href"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Link/rel"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Link/mediaType"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//mozilla_td/core/Action">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Action/title"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Action/description"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Action/input"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Action/links"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//mozilla_td/core/Input">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Input/semanticType"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//mozilla_td/core/Property">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Property/links"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Property/semanticType"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Property/readOnly"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Property/description"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Property/title"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//mozilla_td/core/Event">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Event/semanticType"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Event/description"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Event/links"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
     <nestedGenPackages prefix="ThingDescription" disposableProviderFactory="true"
         ecorePackage="smar2t.ecore#//td">
       <nestedGenPackages prefix="Core" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//td/core">
