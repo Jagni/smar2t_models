@@ -20,11 +20,11 @@
           <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/PrimitiveType/number"/>
           <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/PrimitiveType/integer"/>
         </genEnums>
-        <genEnums typeSafeEnumCompatible="false" ecoreEnum="smar2t.ecore#//mozilla_td/core/MediaType">
-          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/MediaType/properties"/>
-          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/MediaType/actions"/>
-          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/MediaType/events"/>
-          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/MediaType/alternate"/>
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="smar2t.ecore#//mozilla_td/core/Relationship">
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/Relationship/properties"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/Relationship/actions"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/Relationship/events"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//mozilla_td/core/Relationship/alternate"/>
         </genEnums>
         <genClasses ecoreClass="smar2t.ecore#//mozilla_td/core/Thing">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Thing/context"/>
@@ -36,8 +36,6 @@
               ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Thing/properties"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Thing/actions"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Thing/links"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Thing/event"/>
         </genClasses>
@@ -62,15 +60,11 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Action/description"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Action/input"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Action/links"/>
         </genClasses>
         <genClasses ecoreClass="smar2t.ecore#//mozilla_td/core/Input">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Input/semanticType"/>
         </genClasses>
         <genClasses ecoreClass="smar2t.ecore#//mozilla_td/core/Property">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Property/links"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Property/semanticType"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Property/readOnly"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Property/description"/>
@@ -79,8 +73,10 @@
         <genClasses ecoreClass="smar2t.ecore#//mozilla_td/core/Event">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Event/semanticType"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//mozilla_td/core/Event/description"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="smar2t.ecore#//mozilla_td/core/Linkable">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Event/links"/>
+              ecoreFeature="ecore:EReference smar2t.ecore#//mozilla_td/core/Linkable/links"/>
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>
@@ -258,6 +254,97 @@
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Thing_ui" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//thing_ui"/>
+    <nestedGenPackages prefix="Thing_ui" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//thing_ui">
+      <nestedGenPackages prefix="Actuation" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//thing_ui/actuation">
+        <genClasses image="false" ecoreClass="smar2t.ecore#//thing_ui/actuation/Actuator">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/actuation/Actuator/href"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//thing_ui/actuation/HttpActuator"/>
+        <genClasses ecoreClass="smar2t.ecore#//thing_ui/actuation/MqttActuator"/>
+        <genClasses ecoreClass="smar2t.ecore#//thing_ui/actuation/CoapActuator"/>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Interaction" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//thing_ui/interaction">
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="smar2t.ecore#//thing_ui/interaction/InputType">
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/InputType/text"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/InputType/number"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/InputType/bool"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/InputType/object"/>
+        </genEnums>
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="smar2t.ecore#//thing_ui/interaction/TextInputType">
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/TextInputType/plain"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/TextInputType/email"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/TextInputType/multiline"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/TextInputType/phone"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/TextInputType/datetime"/>
+        </genEnums>
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="smar2t.ecore#//thing_ui/interaction/NumberInputType">
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/NumberInputType/dial"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/NumberInputType/slider"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/NumberInputType/keyboard"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/NumberInputType/stepper"/>
+        </genEnums>
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="smar2t.ecore#//thing_ui/interaction/BoolInputType">
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/BoolInputType/switch"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/BoolInputType/checkbox"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/interaction/BoolInputType/button"/>
+        </genEnums>
+        <genClasses ecoreClass="smar2t.ecore#//thing_ui/interaction/Form">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/Form/readOnly"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/Form/showsSubmitButton"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//thing_ui/interaction/Form/inputs"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//thing_ui/interaction/Form/actuator"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="smar2t.ecore#//thing_ui/interaction/Input">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/Input/label"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/Input/id"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/Input/initialValue"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/Input/type"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//thing_ui/interaction/TextInput">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/TextInput/inputType"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//thing_ui/interaction/NumberInput">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/NumberInput/minimum"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/NumberInput/minimumLabel"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/NumberInput/maximum"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/NumberInput/maximumLabel"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/NumberInput/inputType"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//thing_ui/interaction/ObjectInput">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//thing_ui/interaction/ObjectInput/form"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//thing_ui/interaction/boolInput"/>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Core" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//thing_ui/core">
+        <genClasses ecoreClass="smar2t.ecore#//thing_ui/core/Thing">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//thing_ui/core/Thing/location"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//thing_ui/core/Thing/properties"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//thing_ui/core/Thing/actions"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//thing_ui/core/Thing/events"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/core/Thing/name"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/core/Thing/description"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/core/Thing/icon"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//thing_ui/core/Location">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/core/Location/latitude"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/core/Location/longitude"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/core/Location/altitude"/>
+        </genClasses>
+        <genClasses ecoreClass="smar2t.ecore#//thing_ui/core/Resource">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/core/Resource/name"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/core/Resource/description"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/core/Resource/icon"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference smar2t.ecore#//thing_ui/core/Resource/form"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

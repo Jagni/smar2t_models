@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="smar2t" nsURI="http://www.example.org/smar2t" nsPrefix="smar2t">
   <eSubpackages name="mozilla_td" nsURI="mozilla_td" nsPrefix="mozilla_td">
     <eSubpackages name="core" nsURI="mozilla_td.core" nsPrefix="mozilla_td">
-      <eClassifiers xsi:type="ecore:EClass" name="Thing">
+      <eClassifiers xsi:type="ecore:EClass" name="Thing" eSuperTypes="#//mozilla_td/core/Linkable">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" upperBound="-1"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -14,8 +14,6 @@
             eType="#//mozilla_td/core/Property"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
             eType="#//mozilla_td/core/Action"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-            eType="#//mozilla_td/core/Link"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//mozilla_td/core/Event"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Attribute">
@@ -44,40 +42,39 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" lowerBound="1"
             eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="rel" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            eType="#//mozilla_td/core/Relationship"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediaType" lowerBound="1"
-            eType="#//mozilla_td/core/MediaType" defaultValueLiteral="alternate"/>
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            defaultValueLiteral=""/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Action">
+      <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//mozilla_td/core/Linkable">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="input" eType="#//mozilla_td/core/Input"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="links" lowerBound="1"
-            upperBound="-1" eType="#//mozilla_td/core/Link"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Input" eSuperTypes="#//mozilla_td/core/Attribute">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//mozilla_td/core/Attribute">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="links" lowerBound="1"
-            upperBound="-1" eType="#//mozilla_td/core/Link"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//mozilla_td/core/Attribute #//mozilla_td/core/Linkable">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" lowerBound="1"
             eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//mozilla_td/core/Attribute">
+      <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//mozilla_td/core/Attribute #//mozilla_td/core/Linkable">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="links" lowerBound="1"
-            upperBound="-1" eType="#//mozilla_td/core/Link"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="MediaType">
+      <eClassifiers xsi:type="ecore:EEnum" name="Relationship">
         <eLiterals name="properties"/>
         <eLiterals name="actions" value="1"/>
         <eLiterals name="events" value="2"/>
         <eLiterals name="alternate" value="3"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Linkable" abstract="true" interface="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="links" lowerBound="1"
+            upperBound="-1" eType="#//mozilla_td/core/Link"/>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
@@ -288,5 +285,101 @@
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
-  <eSubpackages name="thing_ui" nsURI="thing_ui" nsPrefix="thing_ui"/>
+  <eSubpackages name="thing_ui" nsURI="thing_ui" nsPrefix="thing_ui">
+    <eSubpackages name="actuation" nsURI="thing_ui.actuation" nsPrefix="thing_ui">
+      <eClassifiers xsi:type="ecore:EClass" name="Actuator" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="HttpActuator" eSuperTypes="#//thing_ui/actuation/Actuator"/>
+      <eClassifiers xsi:type="ecore:EClass" name="MqttActuator" eSuperTypes="#//thing_ui/actuation/Actuator"/>
+      <eClassifiers xsi:type="ecore:EClass" name="CoapActuator" eSuperTypes="#//thing_ui/actuation/Actuator"/>
+    </eSubpackages>
+    <eSubpackages name="interaction" nsURI="thing_ui.interaction" nsPrefix="thing_ui">
+      <eClassifiers xsi:type="ecore:EClass" name="Form">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="showsSubmitButton"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+            defaultValueLiteral="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" lowerBound="1"
+            upperBound="-1" eType="#//thing_ui/interaction/Input"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="actuator" lowerBound="1"
+            eType="#//thing_ui/actuation/Actuator"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Input" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialValue" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnySimpleType"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//thing_ui/interaction/InputType"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="InputType">
+        <eLiterals name="text"/>
+        <eLiterals name="number" value="1"/>
+        <eLiterals name="bool" value="2"/>
+        <eLiterals name="object" value="3"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TextInput" eSuperTypes="#//thing_ui/interaction/Input">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputType" lowerBound="1"
+            eType="#//thing_ui/interaction/TextInputType"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="NumberInput" eSuperTypes="#//thing_ui/interaction/Input">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumLabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            defaultValueLiteral="min"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumLabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            defaultValueLiteral="max"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputType" lowerBound="1"
+            eType="#//thing_ui/interaction/NumberInputType" defaultValueLiteral="keyboard"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="TextInputType">
+        <eLiterals name="plain"/>
+        <eLiterals name="email" value="1"/>
+        <eLiterals name="multiline" value="2"/>
+        <eLiterals name="phone" value="3"/>
+        <eLiterals name="datetime" value="4"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ObjectInput" eSuperTypes="#//thing_ui/interaction/Input">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="form" lowerBound="1"
+            eType="#//thing_ui/interaction/Form"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="NumberInputType">
+        <eLiterals name="dial"/>
+        <eLiterals name="slider" value="1"/>
+        <eLiterals name="keyboard" value="2"/>
+        <eLiterals name="stepper" value="3"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="boolInput" eSuperTypes="#//thing_ui/interaction/Input"/>
+      <eClassifiers xsi:type="ecore:EEnum" name="BoolInputType">
+        <eLiterals name="switch"/>
+        <eLiterals name="checkbox" value="1"/>
+        <eLiterals name="button" value="2"/>
+      </eClassifiers>
+    </eSubpackages>
+    <eSubpackages name="core" nsURI="thing_ui.core" nsPrefix="thing_ui">
+      <eClassifiers xsi:type="ecore:EClass" name="Thing">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//thing_ui/core/Location"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+            eType="#//thing_ui/core/Resource"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+            eType="#//thing_ui/core/Resource"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+            eType="#//thing_ui/core/Resource"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Location">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="latitude" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="longitude" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="altitude" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Resource">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="form" lowerBound="1"
+            eType="#//thing_ui/interaction/Form"/>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
 </ecore:EPackage>
