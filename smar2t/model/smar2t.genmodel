@@ -256,12 +256,20 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Thing_ui" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//thing_ui">
       <nestedGenPackages prefix="Actuation" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//thing_ui/actuation">
-        <genClasses image="false" ecoreClass="smar2t.ecore#//thing_ui/actuation/Actuator">
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="smar2t.ecore#//thing_ui/actuation/CommunicationProtocol">
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/actuation/CommunicationProtocol/http"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/actuation/CommunicationProtocol/mqtt"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/actuation/CommunicationProtocol/coap"/>
+        </genEnums>
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="smar2t.ecore#//thing_ui/actuation/SecurityScheme">
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/actuation/SecurityScheme/none"/>
+          <genEnumLiterals ecoreEnumLiteral="smar2t.ecore#//thing_ui/actuation/SecurityScheme/oauth2"/>
+        </genEnums>
+        <genClasses ecoreClass="smar2t.ecore#//thing_ui/actuation/Actuator">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/actuation/Actuator/href"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/actuation/Actuator/communicationProtocol"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/actuation/Actuator/securityScheme"/>
         </genClasses>
-        <genClasses ecoreClass="smar2t.ecore#//thing_ui/actuation/HttpActuator"/>
-        <genClasses ecoreClass="smar2t.ecore#//thing_ui/actuation/MqttActuator"/>
-        <genClasses ecoreClass="smar2t.ecore#//thing_ui/actuation/CoapActuator"/>
       </nestedGenPackages>
       <nestedGenPackages prefix="Interaction" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//thing_ui/interaction">
         <genEnums typeSafeEnumCompatible="false" ecoreEnum="smar2t.ecore#//thing_ui/interaction/InputType">
@@ -299,8 +307,10 @@
         <genClasses image="false" ecoreClass="smar2t.ecore#//thing_ui/interaction/Input">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/Input/label"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/Input/id"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/Input/initialValue"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/Input/editingValue"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/Input/thingValue"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/Input/type"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/Input/interactionEnabled"/>
         </genClasses>
         <genClasses ecoreClass="smar2t.ecore#//thing_ui/interaction/TextInput">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/TextInput/inputType"/>
@@ -316,7 +326,9 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference smar2t.ecore#//thing_ui/interaction/ObjectInput/form"/>
         </genClasses>
-        <genClasses ecoreClass="smar2t.ecore#//thing_ui/interaction/boolInput"/>
+        <genClasses ecoreClass="smar2t.ecore#//thing_ui/interaction/boolInput">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smar2t.ecore#//thing_ui/interaction/boolInput/inputType"/>
+        </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Core" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//thing_ui/core">
         <genClasses ecoreClass="smar2t.ecore#//thing_ui/core/Thing">
@@ -345,6 +357,7 @@
               ecoreFeature="ecore:EReference smar2t.ecore#//thing_ui/core/Resource/form"/>
         </genClasses>
       </nestedGenPackages>
+      <nestedGenPackages prefix="Security" disposableProviderFactory="true" ecorePackage="smar2t.ecore#//thing_ui/security"/>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
