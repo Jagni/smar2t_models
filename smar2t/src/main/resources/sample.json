@@ -1,0 +1,19 @@
+{
+    "eClass" : "smar2t.td.W3C.core#//Thing",
+     "id": "urn:dev:ops:32473-WoTLamp-1234",
+     "title": "MyLampThing",
+     "description" : "MyLampThing uses JSON serialization",
+     "securityDefinitions": {"psk_sc":{"scheme": "psk"}},
+     "security": ["psk_sc"],
+     "events": {
+         "overheating": {
+             "description" : "Lamp reaches a critical temperature (overheating)",
+             "data": {"type": "string"},
+             "forms": [{
+                 "href": "coaps://mylamp.example.com/oh",
+                 "cov:methodName" : "GET",
+                 "subprotocol" : "cov:observe" 
+             }]
+         }
+     }
+ }

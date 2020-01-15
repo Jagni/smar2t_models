@@ -1,0 +1,7 @@
+{
+  "eClass" : "smar2t.td.W3C.core#//Thing",
+  "title" : "Lamp",
+  "links" : [ {
+    "href" : "teste.com"
+  } ]
+}
