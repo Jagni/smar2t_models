@@ -211,7 +211,7 @@ public interface CorePackage extends EPackage {
 	int THING__EVENTS = 15;
 
 	/**
-	 * The feature id for the '<em><b>Actions</b></em>' reference list.
+	 * The feature id for the '<em><b>Actions</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -220,7 +220,7 @@ public interface CorePackage extends EPackage {
 	int THING__ACTIONS = 16;
 
 	/**
-	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Properties</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -321,7 +321,7 @@ public interface CorePackage extends EPackage {
 	int INTERACTION_AFFORDANCE__DESCRIPTIONS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute list.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -403,7 +403,7 @@ public interface CorePackage extends EPackage {
 	int PROPERTY_AFFORDANCE__DESCRIPTIONS = INTERACTION_AFFORDANCE__DESCRIPTIONS;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute list.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -494,7 +494,7 @@ public interface CorePackage extends EPackage {
 	int EVENT_AFFORDANCE__DESCRIPTIONS = INTERACTION_AFFORDANCE__DESCRIPTIONS;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute list.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -576,7 +576,7 @@ public interface CorePackage extends EPackage {
 	int ACTION_AFFORDANCE__DESCRIPTIONS = INTERACTION_AFFORDANCE__DESCRIPTIONS;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute list.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -712,6 +712,99 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int STRING_TO_EVENT_MAP_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link smar2t.td.w3c.core.impl.StringToActionMapImpl <em>String To Action Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smar2t.td.w3c.core.impl.StringToActionMapImpl
+	 * @see smar2t.td.w3c.core.impl.CorePackageImpl#getStringToActionMap()
+	 * @generated
+	 */
+	int STRING_TO_ACTION_MAP = 8;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_ACTION_MAP__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_ACTION_MAP__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>String To Action Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_ACTION_MAP_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>String To Action Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_ACTION_MAP_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link smar2t.td.w3c.core.impl.StringToPropertyMapImpl <em>String To Property Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smar2t.td.w3c.core.impl.StringToPropertyMapImpl
+	 * @see smar2t.td.w3c.core.impl.CorePackageImpl#getStringToPropertyMap()
+	 * @generated
+	 */
+	int STRING_TO_PROPERTY_MAP = 9;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_PROPERTY_MAP__VALUE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_PROPERTY_MAP__KEY = 1;
+
+	/**
+	 * The number of structural features of the '<em>String To Property Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_PROPERTY_MAP_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>String To Property Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_PROPERTY_MAP_OPERATION_COUNT = 0;
 
 
 	/**
@@ -901,10 +994,10 @@ public interface CorePackage extends EPackage {
 	EReference getThing_Events();
 
 	/**
-	 * Returns the meta object for the reference list '{@link smar2t.td.w3c.core.Thing#getActions <em>Actions</em>}'.
+	 * Returns the meta object for the map '{@link smar2t.td.w3c.core.Thing#getActions <em>Actions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Actions</em>'.
+	 * @return the meta object for the map '<em>Actions</em>'.
 	 * @see smar2t.td.w3c.core.Thing#getActions()
 	 * @see #getThing()
 	 * @generated
@@ -912,10 +1005,10 @@ public interface CorePackage extends EPackage {
 	EReference getThing_Actions();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link smar2t.td.w3c.core.Thing#getProperties <em>Properties</em>}'.
+	 * Returns the meta object for the map '{@link smar2t.td.w3c.core.Thing#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Properties</em>'.
+	 * @return the meta object for the map '<em>Properties</em>'.
 	 * @see smar2t.td.w3c.core.Thing#getProperties()
 	 * @see #getThing()
 	 * @generated
@@ -1008,10 +1101,10 @@ public interface CorePackage extends EPackage {
 	EReference getInteractionAffordance_Descriptions();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link smar2t.td.w3c.core.InteractionAffordance#getType <em>Type</em>}'.
+	 * Returns the meta object for the attribute '{@link smar2t.td.w3c.core.InteractionAffordance#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Type</em>'.
+	 * @return the meta object for the attribute '<em>Type</em>'.
 	 * @see smar2t.td.w3c.core.InteractionAffordance#getType()
 	 * @see #getInteractionAffordance()
 	 * @generated
@@ -1125,6 +1218,75 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getStringToEventMap_Value();
+
+	/**
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>String To Action Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String To Action Map</em>'.
+	 * @see java.util.Map.Entry
+	 * @model keyDataType="org.eclipse.emf.ecore.EString"
+	 *        valueType="smar2t.td.w3c.core.ActionAffordance" valueRequired="true"
+	 * @generated
+	 */
+	EClass getStringToActionMap();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToActionMap()
+	 * @generated
+	 */
+	EAttribute getStringToActionMap_Key();
+
+	/**
+	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToActionMap()
+	 * @generated
+	 */
+	EReference getStringToActionMap_Value();
+
+	/**
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>String To Property Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String To Property Map</em>'.
+	 * @see java.util.Map.Entry
+	 * @model features="value key" 
+	 *        valueType="smar2t.td.w3c.core.PropertyAffordance" valueRequired="true"
+	 *        keyDataType="org.eclipse.emf.ecore.EString"
+	 * @generated
+	 */
+	EClass getStringToPropertyMap();
+
+	/**
+	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToPropertyMap()
+	 * @generated
+	 */
+	EReference getStringToPropertyMap_Value();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToPropertyMap()
+	 * @generated
+	 */
+	EAttribute getStringToPropertyMap_Key();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1288,7 +1450,7 @@ public interface CorePackage extends EPackage {
 		EReference THING__EVENTS = eINSTANCE.getThing_Events();
 
 		/**
-		 * The meta object literal for the '<em><b>Actions</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Actions</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1296,7 +1458,7 @@ public interface CorePackage extends EPackage {
 		EReference THING__ACTIONS = eINSTANCE.getThing_Actions();
 
 		/**
-		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Properties</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1374,7 +1536,7 @@ public interface CorePackage extends EPackage {
 		EReference INTERACTION_AFFORDANCE__DESCRIPTIONS = eINSTANCE.getInteractionAffordance_Descriptions();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1468,6 +1630,58 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference STRING_TO_EVENT_MAP__VALUE = eINSTANCE.getStringToEventMap_Value();
+
+		/**
+		 * The meta object literal for the '{@link smar2t.td.w3c.core.impl.StringToActionMapImpl <em>String To Action Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see smar2t.td.w3c.core.impl.StringToActionMapImpl
+		 * @see smar2t.td.w3c.core.impl.CorePackageImpl#getStringToActionMap()
+		 * @generated
+		 */
+		EClass STRING_TO_ACTION_MAP = eINSTANCE.getStringToActionMap();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_TO_ACTION_MAP__KEY = eINSTANCE.getStringToActionMap_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRING_TO_ACTION_MAP__VALUE = eINSTANCE.getStringToActionMap_Value();
+
+		/**
+		 * The meta object literal for the '{@link smar2t.td.w3c.core.impl.StringToPropertyMapImpl <em>String To Property Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see smar2t.td.w3c.core.impl.StringToPropertyMapImpl
+		 * @see smar2t.td.w3c.core.impl.CorePackageImpl#getStringToPropertyMap()
+		 * @generated
+		 */
+		EClass STRING_TO_PROPERTY_MAP = eINSTANCE.getStringToPropertyMap();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRING_TO_PROPERTY_MAP__VALUE = eINSTANCE.getStringToPropertyMap_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_TO_PROPERTY_MAP__KEY = eINSTANCE.getStringToPropertyMap_Key();
 
 	}
 

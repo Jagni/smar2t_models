@@ -118,6 +118,18 @@ public class CoreSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CorePackage.STRING_TO_ACTION_MAP: {
+				@SuppressWarnings("unchecked") Map.Entry<String, ActionAffordance> stringToActionMap = (Map.Entry<String, ActionAffordance>)theEObject;
+				T result = caseStringToActionMap(stringToActionMap);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.STRING_TO_PROPERTY_MAP: {
+				@SuppressWarnings("unchecked") Map.Entry<String, PropertyAffordance> stringToPropertyMap = (Map.Entry<String, PropertyAffordance>)theEObject;
+				T result = caseStringToPropertyMap(stringToPropertyMap);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -239,6 +251,36 @@ public class CoreSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStringToEventMap(Map.Entry<String, EventAffordance> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String To Action Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String To Action Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringToActionMap(Map.Entry<String, ActionAffordance> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String To Property Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String To Property Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringToPropertyMap(Map.Entry<String, PropertyAffordance> object) {
 		return null;
 	}
 

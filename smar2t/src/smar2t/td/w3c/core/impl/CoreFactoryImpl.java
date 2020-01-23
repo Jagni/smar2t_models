@@ -64,6 +64,8 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 			case CorePackage.ACTION_AFFORDANCE: return createActionAffordance();
 			case CorePackage.MULTI_LANGUAGE: return createMultiLanguage();
 			case CorePackage.STRING_TO_EVENT_MAP: return (EObject)createStringToEventMap();
+			case CorePackage.STRING_TO_ACTION_MAP: return (EObject)createStringToActionMap();
+			case CorePackage.STRING_TO_PROPERTY_MAP: return (EObject)createStringToPropertyMap();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -137,6 +139,26 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public Map.Entry<String, EventAffordance> createStringToEventMap() {
 		StringToEventMapImpl stringToEventMap = new StringToEventMapImpl();
 		return stringToEventMap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map.Entry<String, ActionAffordance> createStringToActionMap() {
+		StringToActionMapImpl stringToActionMap = new StringToActionMapImpl();
+		return stringToActionMap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map.Entry<String, PropertyAffordance> createStringToPropertyMap() {
+		StringToPropertyMapImpl stringToPropertyMap = new StringToPropertyMapImpl();
+		return stringToPropertyMap;
 	}
 
 	/**

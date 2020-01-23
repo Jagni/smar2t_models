@@ -320,27 +320,29 @@ public interface Thing extends EObject {
 	EMap<String, EventAffordance> getEvents();
 
 	/**
-	 * Returns the value of the '<em><b>Actions</b></em>' reference list.
-	 * The list contents are of type {@link smar2t.td.w3c.core.ActionAffordance}.
+	 * Returns the value of the '<em><b>Actions</b></em>' map.
+	 * The key is of type {@link java.lang.String},
+	 * and the value is of type {@link smar2t.td.w3c.core.ActionAffordance},
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Actions</em>' reference list.
+	 * @return the value of the '<em>Actions</em>' map.
 	 * @see smar2t.td.w3c.core.CorePackage#getThing_Actions()
-	 * @model
+	 * @model mapType="smar2t.td.w3c.core.StringToActionMap&lt;org.eclipse.emf.ecore.EString, smar2t.td.w3c.core.ActionAffordance&gt;"
 	 * @generated
 	 */
-	EList<ActionAffordance> getActions();
+	EMap<String, ActionAffordance> getActions();
 
 	/**
-	 * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
-	 * The list contents are of type {@link smar2t.td.w3c.core.PropertyAffordance}.
+	 * Returns the value of the '<em><b>Properties</b></em>' map.
+	 * The key is of type {@link java.lang.String},
+	 * and the value is of type {@link smar2t.td.w3c.core.PropertyAffordance},
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Properties</em>' containment reference list.
+	 * @return the value of the '<em>Properties</em>' map.
 	 * @see smar2t.td.w3c.core.CorePackage#getThing_Properties()
-	 * @model containment="true"
+	 * @model mapType="smar2t.td.w3c.core.StringToPropertyMap&lt;org.eclipse.emf.ecore.EString, smar2t.td.w3c.core.PropertyAffordance&gt;"
 	 * @generated
 	 */
-	EList<PropertyAffordance> getProperties();
+	EMap<String, PropertyAffordance> getProperties();
 
 } // Thing

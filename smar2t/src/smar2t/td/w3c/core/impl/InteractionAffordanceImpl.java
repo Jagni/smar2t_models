@@ -3,19 +3,15 @@
 package smar2t.td.w3c.core.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import smar2t.td.w3c.core.CorePackage;
@@ -74,14 +70,24 @@ public abstract class InteractionAffordanceImpl extends MinimalEObjectImpl.Conta
 	protected MultiLanguage descriptions;
 
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute list.
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> type;
+	protected static final String TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String type = TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -235,11 +241,20 @@ public abstract class InteractionAffordanceImpl extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<String> getType() {
-		if (type == null) {
-			type = new EDataTypeUniqueEList<String>(String.class, this, CorePackage.INTERACTION_AFFORDANCE__TYPE);
-		}
+	public String getType() {
 		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(String newType) {
+		String oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.INTERACTION_AFFORDANCE__TYPE, oldType, type));
 	}
 
 	/**
@@ -344,8 +359,7 @@ public abstract class InteractionAffordanceImpl extends MinimalEObjectImpl.Conta
 				setDescriptions((MultiLanguage)newValue);
 				return;
 			case CorePackage.INTERACTION_AFFORDANCE__TYPE:
-				getType().clear();
-				getType().addAll((Collection<? extends String>)newValue);
+				setType((String)newValue);
 				return;
 			case CorePackage.INTERACTION_AFFORDANCE__TITLE:
 				setTitle((String)newValue);
@@ -375,7 +389,7 @@ public abstract class InteractionAffordanceImpl extends MinimalEObjectImpl.Conta
 				setDescriptions((MultiLanguage)null);
 				return;
 			case CorePackage.INTERACTION_AFFORDANCE__TYPE:
-				getType().clear();
+				setType(TYPE_EDEFAULT);
 				return;
 			case CorePackage.INTERACTION_AFFORDANCE__TITLE:
 				setTitle(TITLE_EDEFAULT);
@@ -402,7 +416,7 @@ public abstract class InteractionAffordanceImpl extends MinimalEObjectImpl.Conta
 			case CorePackage.INTERACTION_AFFORDANCE__DESCRIPTIONS:
 				return descriptions != null;
 			case CorePackage.INTERACTION_AFFORDANCE__TYPE:
-				return type != null && !type.isEmpty();
+				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case CorePackage.INTERACTION_AFFORDANCE__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case CorePackage.INTERACTION_AFFORDANCE__DESCRIPTION:

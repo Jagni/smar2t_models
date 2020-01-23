@@ -230,9 +230,9 @@
           <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
               eType="#//td/w3c/core/StringToEventMap" containment="true"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
-              eType="#//td/w3c/core/ActionAffordance"/>
+              eType="#//td/w3c/core/StringToActionMap" containment="true"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-              eType="#//td/w3c/core/PropertyAffordance" containment="true"/>
+              eType="#//td/w3c/core/StringToPropertyMap" containment="true"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="VersionInfo">
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="instance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -245,8 +245,7 @@
               upperBound="-1" eType="#//td/w3c/hypermediacontrols/Form" containment="true"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="titles" eType="#//td/w3c/core/MultiLanguage"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" eType="#//td/w3c/core/MultiLanguage"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" upperBound="-1"
-              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         </eClassifiers>
@@ -264,6 +263,16 @@
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
               eType="#//td/w3c/core/EventAffordance"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="StringToActionMap" instanceClassName="java.util.Map$Entry">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+              eType="#//td/w3c/core/ActionAffordance"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="StringToPropertyMap" instanceClassName="java.util.Map$Entry">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+              eType="#//td/w3c/core/PropertyAffordance"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         </eClassifiers>
       </eSubpackages>
       <eSubpackages name="hypermediacontrols" nsURI="smar2t.td.W3C.hypermediacontrols"

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import smar2t.td.w3c.core.*;
 import smar2t.td.w3c.hypermediacontrols.*;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -28,9 +29,8 @@ class ModelToJSON {
 		ObjectMapper mapper = new ObjectMapper();
 		EMFModule module = new EMFModule();
 		mapper.registerModule(module);
-		Resource resource = resourceSet.createResource(URI.createFileURI("src/main/resources/data.json"));
-		Resource sampleResource = resourceSet.createResource(URI.createFileURI("src/main/resources/data.json"));
-
+		mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
+		Resource w3cThingResource = resourceSet.createResource(URI.createFileURI("src/main/resources/data.json"));
 		
 		Thing thing = CoreFactory.eINSTANCE.createThing();
 		thing.setTitle("Lamp");
@@ -40,15 +40,15 @@ class ModelToJSON {
 		
 		thing.getLinks().add(link);
 
-		resource.getContents().add(thing);
+		w3cThingResource.getContents().add(thing);
 		try {
-			resource.save(null);
+			w3cThingResource.save(null);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 		var thing1 = mapper.reader()
-		.withAttribute(EMFContext.Attributes.RESOURCE, resource)
+		.withAttribute(EMFContext.Attributes.RESOURCE, w3cThingResource)
 		.forType(Thing.class)
 		.readValue(new File("src/main/resources/sample.json"));
 		

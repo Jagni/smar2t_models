@@ -3,7 +3,6 @@
 package smar2t.td.w3c.core;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 import smar2t.td.w3c.hypermediacontrols.Form;
@@ -87,16 +86,26 @@ public interface InteractionAffordance extends EObject {
 	void setDescriptions(MultiLanguage value);
 
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' attribute list.
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see #setType(String)
 	 * @see smar2t.td.w3c.core.CorePackage#getInteractionAffordance_Type()
 	 * @model
 	 * @generated
 	 */
-	EList<String> getType();
+	String getType();
+
+	/**
+	 * Sets the value of the '{@link smar2t.td.w3c.core.InteractionAffordance#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.

@@ -24,6 +24,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import smar2t.td.w3c.core.ActionAffordance;
 import smar2t.td.w3c.core.CorePackage;
 import smar2t.td.w3c.core.EventAffordance;
@@ -134,6 +137,7 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	 * @generated
 	 * @ordered
 	 */
+	@JsonProperty( value = "@context" )
 	protected EList<String> semanticContext;
 
 	/**
@@ -144,6 +148,7 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	 * @generated
 	 * @ordered
 	 */
+	@JsonProperty( value = "@type" )
 	protected EList<String> semanticType;
 
 	/**
@@ -297,24 +302,24 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	protected EMap<String, EventAffordance> events;
 
 	/**
-	 * The cached value of the '{@link #getActions() <em>Actions</em>}' reference list.
+	 * The cached value of the '{@link #getActions() <em>Actions</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getActions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ActionAffordance> actions;
+	protected EMap<String, ActionAffordance> actions;
 
 	/**
-	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
+	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProperties()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PropertyAffordance> properties;
+	protected EMap<String, PropertyAffordance> properties;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -621,9 +626,9 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ActionAffordance> getActions() {
+	public EMap<String, ActionAffordance> getActions() {
 		if (actions == null) {
-			actions = new EObjectResolvingEList<ActionAffordance>(ActionAffordance.class, this, CorePackage.THING__ACTIONS);
+			actions = new EcoreEMap<String,ActionAffordance>(CorePackage.Literals.STRING_TO_ACTION_MAP, StringToActionMapImpl.class, this, CorePackage.THING__ACTIONS);
 		}
 		return actions;
 	}
@@ -633,9 +638,9 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PropertyAffordance> getProperties() {
+	public EMap<String, PropertyAffordance> getProperties() {
 		if (properties == null) {
-			properties = new EObjectContainmentEList<PropertyAffordance>(PropertyAffordance.class, this, CorePackage.THING__PROPERTIES);
+			properties = new EcoreEMap<String,PropertyAffordance>(CorePackage.Literals.STRING_TO_PROPERTY_MAP, StringToPropertyMapImpl.class, this, CorePackage.THING__PROPERTIES);
 		}
 		return properties;
 	}
@@ -654,6 +659,8 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 				return ((InternalEList<?>)getDescriptions()).basicRemove(otherEnd, msgs);
 			case CorePackage.THING__EVENTS:
 				return ((InternalEList<?>)getEvents()).basicRemove(otherEnd, msgs);
+			case CorePackage.THING__ACTIONS:
+				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
 			case CorePackage.THING__PROPERTIES:
 				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
 		}
@@ -703,9 +710,11 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 				if (coreType) return getEvents();
 				else return getEvents().map();
 			case CorePackage.THING__ACTIONS:
-				return getActions();
+				if (coreType) return getActions();
+				else return getActions().map();
 			case CorePackage.THING__PROPERTIES:
-				return getProperties();
+				if (coreType) return getProperties();
+				else return getProperties().map();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -775,12 +784,10 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 				((EStructuralFeature.Setting)getEvents()).set(newValue);
 				return;
 			case CorePackage.THING__ACTIONS:
-				getActions().clear();
-				getActions().addAll((Collection<? extends ActionAffordance>)newValue);
+				((EStructuralFeature.Setting)getActions()).set(newValue);
 				return;
 			case CorePackage.THING__PROPERTIES:
-				getProperties().clear();
-				getProperties().addAll((Collection<? extends PropertyAffordance>)newValue);
+				((EStructuralFeature.Setting)getProperties()).set(newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
