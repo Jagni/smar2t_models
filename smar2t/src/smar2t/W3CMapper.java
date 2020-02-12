@@ -16,10 +16,10 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import smar2t.td.w3c.core.CoreFactory;
-import smar2t.td.w3c.core.Thing;
-import smar2t.td.w3c.hypermediacontrols.HypermediacontrolsFactory;
-import smar2t.td.w3c.hypermediacontrols.Link;
+import w3c_td.core.CoreFactory;
+import w3c_td.core.Thing;
+import w3c_td.hypermediacontrols.HypermediacontrolsFactory;
+import w3c_td.hypermediacontrols.Link;
 
 public class W3CMapper {
 	ObjectMapper mapper;

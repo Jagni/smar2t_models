@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="thing_ui" nsURI="com.smar2t.thing_ui" nsPrefix="ThingUI">
+  <eSubpackages name="actuation" nsURI="com.smar2t.thing_ui.actuation" nsPrefix="UIActuation">
+    <eClassifiers xsi:type="ecore:EClass" name="Actuator">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationProtocol"
+          lowerBound="1" eType="#//actuation/CommunicationProtocol"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityScheme" lowerBound="1"
+          eType="#//actuation/SecurityScheme"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="CommunicationProtocol">
+      <eLiterals name="http"/>
+      <eLiterals name="mqtt" value="1"/>
+      <eLiterals name="coap" value="2"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="SecurityScheme">
+      <eLiterals name="none"/>
+      <eLiterals name="oauth2" value="1"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="interaction" nsURI="com.smar2t.thing_ui.interaction" nsPrefix="UIInteraction">
+    <eClassifiers xsi:type="ecore:EClass" name="Form">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="showsSubmitButton" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+          defaultValueLiteral="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" lowerBound="1"
+          upperBound="-1" eType="#//interaction/Input"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="actuator" lowerBound="1"
+          eType="#//actuation/Actuator"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Input" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="editingValue" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnySimpleType"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="thingValue" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnySimpleType"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
+          eType="#//interaction/InputType"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interactionEnabled" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+          defaultValueLiteral="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="InputType">
+      <eLiterals name="text"/>
+      <eLiterals name="number" value="1"/>
+      <eLiterals name="bool" value="2"/>
+      <eLiterals name="object" value="3"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TextInput" eSuperTypes="#//interaction/Input">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputType" lowerBound="1"
+          eType="#//interaction/TextInputType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NumberInput" eSuperTypes="#//interaction/Input">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumLabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="min"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumLabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="max"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputType" lowerBound="1"
+          eType="#//interaction/NumberInputType" defaultValueLiteral="keyboard"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="TextInputType">
+      <eLiterals name="plain"/>
+      <eLiterals name="email" value="1"/>
+      <eLiterals name="multiline" value="2"/>
+      <eLiterals name="phone" value="3"/>
+      <eLiterals name="datetime" value="4"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectInput" eSuperTypes="#//interaction/Input">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="form" lowerBound="1"
+          eType="#//interaction/Form"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="NumberInputType">
+      <eLiterals name="dial"/>
+      <eLiterals name="slider" value="1"/>
+      <eLiterals name="keyboard" value="2"/>
+      <eLiterals name="stepper" value="3"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="boolInput" eSuperTypes="#//interaction/Input">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputType" lowerBound="1"
+          eType="#//interaction/BoolInputType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="BoolInputType">
+      <eLiterals name="switch"/>
+      <eLiterals name="checkbox" value="1"/>
+      <eLiterals name="button" value="2"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="core" nsURI="com.smar2t.thing_ui.core" nsPrefix="UICore">
+    <eClassifiers xsi:type="ecore:EClass" name="Thing">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//core/Location"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+          eType="#//core/Resource"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+          eType="#//core/Resource"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+          eType="#//core/Resource"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Location">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="latitude" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="longitude" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="altitude" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Resource">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="form" lowerBound="1"
+          eType="#//interaction/Form"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="security" nsURI="com.smar2t.thing_ui.security" nsPrefix="UISecurity"/>
+</ecore:EPackage>

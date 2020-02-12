@@ -5,69 +5,66 @@
 -->
 
 <plugin>
-
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated smar2t -->
+      <!-- @generated MozillaTD -->
       <package
-            uri="com.smar2t.ui.actuation"
-            class="smar2t.ui.actuation.ActuationPackage"
-            genModel="model/smar2t.genmodel"/>
+            uri="com.smar2t.mozilla_td"
+            class="mozilla_td.Mozilla_tdPackage"
+            genModel="model/MozillaTD/MozillaTD.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated smar2t -->
+      <!-- @generated ThingUI -->
       <package
-            uri="com.smar2t.ui.interaction"
-            class="smar2t.ui.interaction.InteractionPackage"
-            genModel="model/smar2t.genmodel"/>
+            uri="com.smar2t.thing_ui.actuation"
+            class="thing_ui.actuation.ActuationPackage"
+            genModel="model/ThingUI/ThingUI.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated smar2t -->
+      <!-- @generated ThingUI -->
       <package
-            uri="com.smar2t.ui.core"
-            class="smar2t.ui.core.CorePackage"
-            genModel="model/smar2t.genmodel"/>
+            uri="com.smar2t.thing_ui.interaction"
+            class="thing_ui.interaction.InteractionPackage"
+            genModel="model/ThingUI/ThingUI.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated smar2t -->
+      <!-- @generated ThingUI -->
       <package
-            uri="com.smar2t.td.mozilla.core"
-            class="smar2t.td.mozilla.core.CorePackage"
-            genModel="model/smar2t.genmodel"/>
+            uri="com.smar2t.thing_ui.core"
+            class="thing_ui.core.CorePackage"
+            genModel="model/ThingUI/ThingUI.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated W3CTD -->
+      <package
+            uri="com.smar2t.w3c_td.core"
+            class="w3c_td.core.CorePackage"
+            genModel="model/W3CTD/W3CTD.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated smar2t -->
+      <!-- @generated W3CTD -->
       <package
-            uri="smar2t.td.W3C.core"
-            class="smar2t.td.w3c.core.CorePackage"
-            genModel="model/smar2t.genmodel"/>
+            uri="com.smar2t.w3c_td.hypermediacontrols"
+            class="w3c_td.hypermediacontrols.HypermediacontrolsPackage"
+            genModel="model/W3CTD/W3CTD.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated smar2t -->
+      <!-- @generated W3CTD -->
       <package
-            uri="smar2t.td.W3C.hypermediacontrols"
-            class="smar2t.td.w3c.hypermediacontrols.HypermediacontrolsPackage"
-            genModel="model/smar2t.genmodel"/>
+            uri="com.smar2t.w3c_td.dataschema"
+            class="w3c_td.dataschema.DataschemaPackage"
+            genModel="model/W3CTD/W3CTD.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated smar2t -->
+      <!-- @generated W3CTD -->
       <package
-            uri="smar2t.td.W3C.dataschema"
-            class="smar2t.td.w3c.dataschema.DataschemaPackage"
-            genModel="model/smar2t.genmodel"/>
+            uri="com.smar2t.w3c_td.security"
+            class="w3c_td.security.SecurityPackage"
+            genModel="model/W3CTD/W3CTD.genmodel"/>
    </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated smar2t -->
-      <package
-            uri="smar2t.td.W3C.security"
-            class="smar2t.td.w3c.security.SecurityPackage"
-            genModel="model/smar2t.genmodel"/>
-   </extension>
-
 </plugin>
