@@ -10,13 +10,12 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.emfjson.jackson.databind.EMFContext;
 import org.emfjson.jackson.module.EMFModule;
 import org.emfjson.jackson.resource.JsonResourceFactory;
-
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import smar2t.td.mozilla.core.CoreFactory;
-import smar2t.td.mozilla.core.Thing;
-import smar2t.td.mozilla.core.Link;
+import mozilla_td.Mozilla_tdFactory;
+import mozilla_td.Thing;
+import mozilla_td.Link;
 
 
 public class MozillaMapper {
@@ -30,10 +29,10 @@ public class MozillaMapper {
 		setupMapper();
 		setupResource();
 		
-		Thing thing = CoreFactory.eINSTANCE.createThing();
+		Thing thing = Mozilla_tdFactory.eINSTANCE.createThing();
 		thing.setTitle("Lamp");
 
-		Link link = CoreFactory.eINSTANCE.createLink();
+		Link link = Mozilla_tdFactory.eINSTANCE.createLink();
 		link.setHref("teste.com");
 		
 		thing.getLinks().add(link);
