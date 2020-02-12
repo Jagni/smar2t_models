@@ -1,0 +1,47 @@
+{
+    "eClass": "smar2t.td.W3C.core#//Thing",
+    "id": "urn:dev:ops:32473-WoTLamp-1234",
+    "title": "MyLampThing",
+    "description": "MyLampThing uses JSON serialization",
+    "security": [
+        "psk_sc"
+    ],
+    "events": {
+        "overheating": {
+            "eClass": "smar2t.td.W3C.core#//EventAffordance",
+            "forms": [
+                {
+                    "href": "coaps://mylamp.example.com/oh",
+                    "subprotocol": "cov:observe"
+                }
+            ],
+            "description": "Lamp reaches a critical temperature (overheating)"
+        }
+    },
+    "actions": {
+        "toggle": {
+            "eClass": "smar2t.td.W3C.core#//ActionAffordance",
+            "forms": [
+                {
+                    "href": "coaps://mylamp.example.com/toggle"
+                }
+            ],
+            "description": "Turn on or off the lamp"
+        }
+    },
+    "properties": {
+        "status": {
+            "eClass": "smar2t.td.W3C.core#//PropertyAffordance",
+            "forms": [
+                {
+                    "op": [
+                        "readproperty"
+                    ],
+                    "href": "coaps://mylamp.example.com/status"
+                }
+            ],
+            "type": "string",
+            "description": "Shows the current status of the lamp"
+        }
+    }
+}

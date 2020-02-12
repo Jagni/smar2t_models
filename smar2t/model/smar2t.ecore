@@ -1,298 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="smar2t" nsURI="http://www.example.org/smar2t" nsPrefix="smar2t">
-  <eSubpackages name="mozilla_td" nsURI="mozilla_td" nsPrefix="mozilla_td">
-    <eSubpackages name="core" nsURI="mozilla_td.core" nsPrefix="mozilla_td">
-      <eClassifiers xsi:type="ecore:EClass" name="Thing" eSuperTypes="#//mozilla_td/core/Linkable">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" upperBound="-1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-            eType="#//mozilla_td/core/Property"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
-            eType="#//mozilla_td/core/Action"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//mozilla_td/core/Event"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Attribute">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="enum" upperBound="-1"
-            eType="#//mozilla_td/core/PrimitiveType"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="multipleOf" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
-            eType="#//mozilla_td/core/PrimitiveType"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-            eType="#//mozilla_td/core/Attribute"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveType">
-        <eLiterals name="null"/>
-        <eLiterals name="string" value="1"/>
-        <eLiterals name="boolean" value="2"/>
-        <eLiterals name="object" value="3"/>
-        <eLiterals name="array" value="4"/>
-        <eLiterals name="number" value="5"/>
-        <eLiterals name="integer" value="6"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Link">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="rel" lowerBound="1"
-            eType="#//mozilla_td/core/Relationship"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediaType" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-            defaultValueLiteral=""/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//mozilla_td/core/Linkable">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="input" eType="#//mozilla_td/core/Input"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Input" eSuperTypes="#//mozilla_td/core/Attribute">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//mozilla_td/core/Attribute #//mozilla_td/core/Linkable">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//mozilla_td/core/Attribute #//mozilla_td/core/Linkable">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="Relationship">
-        <eLiterals name="properties"/>
-        <eLiterals name="actions" value="1"/>
-        <eLiterals name="events" value="2"/>
-        <eLiterals name="alternate" value="3"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Linkable" abstract="true" interface="true">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="links" lowerBound="1"
-            upperBound="-1" eType="#//mozilla_td/core/Link"/>
-      </eClassifiers>
-    </eSubpackages>
-  </eSubpackages>
-  <eSubpackages name="td" nsURI="td" nsPrefix="td">
-    <eSubpackages name="core" nsURI="td.core" nsPrefix="td">
-      <eClassifiers xsi:type="ecore:EClass" name="Thing">
-        <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
-          <details key="archetype" value="Role"/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticContext" upperBound="-1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" upperBound="-1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="created" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="modified" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="support" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="base" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="security" lowerBound="1"
-            upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-            eType="#//td/hypermedia_controls/Link"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="forms" upperBound="-1"
-            eType="#//td/hypermedia_controls/Form"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//td/core/VersionInfo"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="titles" upperBound="-1"
-            eType="#//td/core/MultiLanguage"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
-            eType="#//td/core/MultiLanguage"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
-            eType="#//td/core/EventAffordance"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
-            eType="#//td/core/ActionAffordance"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-            eType="#//td/core/PropertyAffordance"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="VersionInfo">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="instance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PropertyAffordance" eSuperTypes="#//td/core/InteractionAffordance">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="observable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="InteractionAffordance" abstract="true">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="forms" lowerBound="1"
-            upperBound="-1" eType="#//td/hypermedia_controls/Form"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="titles" eType="#//td/core/MultiLanguage"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" eType="#//td/core/MultiLanguage"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" upperBound="-1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="EventAffordance" eSuperTypes="#//td/core/InteractionAffordance"/>
-      <eClassifiers xsi:type="ecore:EClass" name="ActionAffordance" eSuperTypes="#//td/core/InteractionAffordance">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="safe" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-            defaultValueLiteral="false"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="idempotent" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-            defaultValueLiteral="false"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="MultiLanguage"/>
-    </eSubpackages>
-    <eSubpackages name="hypermedia_controls" nsURI="td.hypermedia_controls" nsPrefix="td">
-      <eClassifiers xsi:type="ecore:EClass" name="Link">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="rel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="anchor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Form">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" lowerBound="1"
-            upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-            defaultValueLiteral="[&quot;readProperty&quot;, &quot;writeProperty&quot;]"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentType" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-            defaultValueLiteral="application/json"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentCoding" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="subprotocol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="security" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="scopes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="response" eType="#//td/hypermedia_controls/ExpectedResponse"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ExpectedResponse">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-    </eSubpackages>
-    <eSubpackages name="data_schema" nsURI="td.data_schema" nsPrefix="td">
-      <eClassifiers xsi:type="ecore:EClass" name="DataSchema" abstract="true">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" upperBound="-1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="enum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="oneOf" upperBound="-1"
-            eType="#//td/data_schema/DataSchema"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="titles" upperBound="-1"
-            eType="#//td/core/MultiLanguage"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
-            eType="#//td/core/MultiLanguage"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="const" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnySimpleType"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-            defaultValueLiteral="false"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="writeOnly" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-            defaultValueLiteral="false"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ArraySchema" eSuperTypes="#//td/data_schema/DataSchema">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="minItems" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//UnsignedInt"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxItems" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//UnsignedInt"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
-            eType="#//td/data_schema/DataSchema" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ObjectSchema" eSuperTypes="#//td/data_schema/DataSchema">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-            eType="#//td/data_schema/DataSchema" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="StringSchema" eSuperTypes="#//td/data_schema/DataSchema"/>
-      <eClassifiers xsi:type="ecore:EEnum" name="NewEnum1"/>
-      <eClassifiers xsi:type="ecore:EClass" name="BooleanSchema" eSuperTypes="#//td/data_schema/DataSchema"/>
-      <eClassifiers xsi:type="ecore:EClass" name="NumberSchema" eSuperTypes="#//td/data_schema/DataSchema">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="IntegerSchema" eSuperTypes="#//td/data_schema/DataSchema">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="NullSchema" eSuperTypes="#//td/data_schema/DataSchema"/>
-    </eSubpackages>
-    <eSubpackages name="security" nsURI="td.security" nsPrefix="td">
-      <eClassifiers xsi:type="ecore:EClass" name="SecurityScheme" abstract="true">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" upperBound="-1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheme" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" eType="#//td/core/MultiLanguage"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="NoSecurityScheme" eSuperTypes="#//td/security/SecurityScheme"/>
-      <eClassifiers xsi:type="ecore:EClass" name="BasicSecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="in" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="DigestSecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="qop" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="in" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="APIKeySecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="in" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="BearerSecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="authorization" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="alg" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="in" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="CertSecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="identity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PSKSecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="identity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PublicSecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="identity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PoPSecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="authorization" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="alg" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="in" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="OAuth2SecurityScheme" eSuperTypes="#//td/security/SecurityScheme">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="authorization" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="token" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="refresh" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="scopes" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="flow" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-    </eSubpackages>
-  </eSubpackages>
-  <eSubpackages name="thing_ui" nsURI="thing_ui" nsPrefix="thing_ui">
-    <eSubpackages name="actuation" nsURI="thing_ui.actuation" nsPrefix="thing_ui">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="smar2t" nsURI="com.smar2t" nsPrefix="smar2t">
+  <eSubpackages name="ui" nsURI="com.smar2t.ui" nsPrefix="UserInterface">
+    <eSubpackages name="actuation" nsURI="com.smar2t.ui.actuation" nsPrefix="UIActuation">
       <eClassifiers xsi:type="ecore:EClass" name="Actuator">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationProtocol"
-            lowerBound="1" eType="#//thing_ui/actuation/CommunicationProtocol"/>
+            lowerBound="1" eType="#//ui/actuation/CommunicationProtocol"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityScheme" lowerBound="1"
-            eType="#//thing_ui/actuation/SecurityScheme"/>
+            eType="#//ui/actuation/SecurityScheme"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="CommunicationProtocol">
         <eLiterals name="http"/>
@@ -304,16 +20,16 @@
         <eLiterals name="oauth2" value="1"/>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="interaction" nsURI="thing_ui.interaction" nsPrefix="thing_ui">
+    <eSubpackages name="interaction" nsURI="com.smar2t.ui.interaction" nsPrefix="UIInteraction">
       <eClassifiers xsi:type="ecore:EClass" name="Form">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="showsSubmitButton"
             eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
             defaultValueLiteral="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" lowerBound="1"
-            upperBound="-1" eType="#//thing_ui/interaction/Input"/>
+            upperBound="-1" eType="#//ui/interaction/Input"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="actuator" lowerBound="1"
-            eType="#//thing_ui/actuation/Actuator"/>
+            eType="#//ui/actuation/Actuator"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Input" abstract="true">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1"
@@ -324,7 +40,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thingValue" lowerBound="1"
             eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnySimpleType"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
-            eType="#//thing_ui/interaction/InputType"/>
+            eType="#//ui/interaction/InputType"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="interactionEnabled"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
             defaultValueLiteral="true"/>
@@ -335,11 +51,11 @@
         <eLiterals name="bool" value="2"/>
         <eLiterals name="object" value="3"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="TextInput" eSuperTypes="#//thing_ui/interaction/Input">
+      <eClassifiers xsi:type="ecore:EClass" name="TextInput" eSuperTypes="#//ui/interaction/Input">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputType" lowerBound="1"
-            eType="#//thing_ui/interaction/TextInputType"/>
+            eType="#//ui/interaction/TextInputType"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="NumberInput" eSuperTypes="#//thing_ui/interaction/Input">
+      <eClassifiers xsi:type="ecore:EClass" name="NumberInput" eSuperTypes="#//ui/interaction/Input">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumLabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             defaultValueLiteral="min"/>
@@ -347,7 +63,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumLabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             defaultValueLiteral="max"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputType" lowerBound="1"
-            eType="#//thing_ui/interaction/NumberInputType" defaultValueLiteral="keyboard"/>
+            eType="#//ui/interaction/NumberInputType" defaultValueLiteral="keyboard"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="TextInputType">
         <eLiterals name="plain"/>
@@ -356,9 +72,9 @@
         <eLiterals name="phone" value="3"/>
         <eLiterals name="datetime" value="4"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ObjectInput" eSuperTypes="#//thing_ui/interaction/Input">
+      <eClassifiers xsi:type="ecore:EClass" name="ObjectInput" eSuperTypes="#//ui/interaction/Input">
         <eStructuralFeatures xsi:type="ecore:EReference" name="form" lowerBound="1"
-            eType="#//thing_ui/interaction/Form"/>
+            eType="#//ui/interaction/Form"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="NumberInputType">
         <eLiterals name="dial"/>
@@ -366,9 +82,9 @@
         <eLiterals name="keyboard" value="2"/>
         <eLiterals name="stepper" value="3"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="boolInput" eSuperTypes="#//thing_ui/interaction/Input">
+      <eClassifiers xsi:type="ecore:EClass" name="boolInput" eSuperTypes="#//ui/interaction/Input">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputType" lowerBound="1"
-            eType="#//thing_ui/interaction/BoolInputType"/>
+            eType="#//ui/interaction/BoolInputType"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="BoolInputType">
         <eLiterals name="switch"/>
@@ -376,15 +92,15 @@
         <eLiterals name="button" value="2"/>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="core" nsURI="thing_ui.core" nsPrefix="thing_ui">
+    <eSubpackages name="core" nsURI="com.smar2t.ui.core" nsPrefix="UICore">
       <eClassifiers xsi:type="ecore:EClass" name="Thing">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//thing_ui/core/Location"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//ui/core/Location"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-            eType="#//thing_ui/core/Resource"/>
+            eType="#//ui/core/Resource"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
-            eType="#//thing_ui/core/Resource"/>
+            eType="#//ui/core/Resource"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
-            eType="#//thing_ui/core/Resource"/>
+            eType="#//ui/core/Resource"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -399,9 +115,310 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="form" lowerBound="1"
-            eType="#//thing_ui/interaction/Form"/>
+            eType="#//ui/interaction/Form"/>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="security"/>
+    <eSubpackages name="security" nsURI="com.smar2t.ui.security" nsPrefix="UISecurity"/>
+  </eSubpackages>
+  <eSubpackages name="td" nsURI="com.smar2t.td" nsPrefix="ThingDescription">
+    <eSubpackages name="mozilla" nsURI="com.smar2t.td.mozilla" nsPrefix="MozillaThingDescription">
+      <eSubpackages name="core" nsURI="com.smar2t.td.mozilla.core" nsPrefix="MozillaTdCore">
+        <eClassifiers xsi:type="ecore:EClass" name="Thing" eSuperTypes="#//td/mozilla/core/Linkable">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" upperBound="-1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+              eType="#//td/mozilla/core/Property"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+              eType="#//td/mozilla/core/Action"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//td/mozilla/core/Event"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="enum" upperBound="-1"
+              eType="#//td/mozilla/core/PrimitiveType"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="multipleOf" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
+              eType="#//td/mozilla/core/PrimitiveType"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+              eType="#//td/mozilla/core/Attribute"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveType">
+          <eLiterals name="null"/>
+          <eLiterals name="string" value="1"/>
+          <eLiterals name="boolean" value="2"/>
+          <eLiterals name="object" value="3"/>
+          <eLiterals name="array" value="4"/>
+          <eLiterals name="number" value="5"/>
+          <eLiterals name="integer" value="6"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="Link">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="rel" lowerBound="1"
+              eType="#//td/mozilla/core/Relationship"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediaType" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+              defaultValueLiteral=""/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//td/mozilla/core/Linkable">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="input" eType="#//td/mozilla/core/Input"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="Input" eSuperTypes="#//td/mozilla/core/Attribute">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//td/mozilla/core/Attribute #//td/mozilla/core/Linkable">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//td/mozilla/core/Attribute #//td/mozilla/core/Linkable">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EEnum" name="Relationship">
+          <eLiterals name="properties"/>
+          <eLiterals name="actions" value="1"/>
+          <eLiterals name="events" value="2"/>
+          <eLiterals name="alternate" value="3"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="Linkable" abstract="true" interface="true">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="links" lowerBound="1"
+              upperBound="-1" eType="#//td/mozilla/core/Link"/>
+        </eClassifiers>
+      </eSubpackages>
+    </eSubpackages>
+    <eSubpackages name="w3c" nsURI="smar2t.td.W3C" nsPrefix="W3CThingDescription">
+      <eSubpackages name="core" nsURI="smar2t.td.W3C.core" nsPrefix="W3cTd">
+        <eClassifiers xsi:type="ecore:EClass" name="Thing">
+          <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+            <details key="archetype" value="Role"/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticContext"
+              upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" upperBound="-1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="created" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="modified" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="support" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="base" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="security" lowerBound="1"
+              upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
+              eType="#//td/w3c/hypermediacontrols/Link" containment="true"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="forms" upperBound="-1"
+              eType="#//td/w3c/hypermediacontrols/Form"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//td/w3c/core/VersionInfo"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="titles" upperBound="-1"
+              eType="#//td/w3c/core/MultiLanguage"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
+              eType="#//td/w3c/core/MultiLanguage" containment="true"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+              eType="#//td/w3c/core/StringToEventMap" containment="true"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+              eType="#//td/w3c/core/StringToActionMap" containment="true"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+              eType="#//td/w3c/core/StringToPropertyMap" containment="true"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="VersionInfo">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="instance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="PropertyAffordance" eSuperTypes="#//td/w3c/core/InteractionAffordance">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="observable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="InteractionAffordance" abstract="true">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="forms" lowerBound="1"
+              upperBound="-1" eType="#//td/w3c/hypermediacontrols/Form" containment="true"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="titles" eType="#//td/w3c/core/MultiLanguage"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" eType="#//td/w3c/core/MultiLanguage"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="EventAffordance" eSuperTypes="#//td/w3c/core/InteractionAffordance"/>
+        <eClassifiers xsi:type="ecore:EClass" name="ActionAffordance" eSuperTypes="#//td/w3c/core/InteractionAffordance">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="safe" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+              defaultValueLiteral="false"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="idempotent" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+              defaultValueLiteral="false"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="MultiLanguage"/>
+        <eClassifiers xsi:type="ecore:EClass" name="StringToEventMap" instanceClassName="java.util.Map$Entry">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+              eType="#//td/w3c/core/EventAffordance"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="StringToActionMap" instanceClassName="java.util.Map$Entry">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+              eType="#//td/w3c/core/ActionAffordance"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="StringToPropertyMap" instanceClassName="java.util.Map$Entry">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+              eType="#//td/w3c/core/PropertyAffordance"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+      </eSubpackages>
+      <eSubpackages name="hypermediacontrols" nsURI="smar2t.td.W3C.hypermediacontrols"
+          nsPrefix="W3cTd">
+        <eClassifiers xsi:type="ecore:EClass" name="Link">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="rel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="anchor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="Form">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" lowerBound="1"
+              upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+              defaultValueLiteral="[&quot;readProperty&quot;, &quot;writeProperty&quot;]"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentType" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+              defaultValueLiteral="application/json"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentCoding" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="subprotocol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="security" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="scopes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="response" eType="#//td/w3c/hypermediacontrols/ExpectedResponse"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="ExpectedResponse">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+      </eSubpackages>
+      <eSubpackages name="dataschema" nsURI="smar2t.td.W3C.dataschema" nsPrefix="W3cTd">
+        <eClassifiers xsi:type="ecore:EClass" name="DataSchema" abstract="true">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" upperBound="-1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="enum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="oneOf" upperBound="-1"
+              eType="#//td/w3c/dataschema/DataSchema"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="titles" upperBound="-1"
+              eType="#//td/w3c/core/MultiLanguage"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
+              eType="#//td/w3c/core/MultiLanguage"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="const" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnySimpleType"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+              defaultValueLiteral="false"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="writeOnly" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+              defaultValueLiteral="false"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="ArraySchema" eSuperTypes="#//td/w3c/dataschema/DataSchema">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="minItems" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//UnsignedInt"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxItems" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//UnsignedInt"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+              eType="#//td/w3c/dataschema/DataSchema" containment="true"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="ObjectSchema" eSuperTypes="#//td/w3c/dataschema/DataSchema">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+              eType="#//td/w3c/dataschema/DataSchema" containment="true"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="StringSchema" eSuperTypes="#//td/w3c/dataschema/DataSchema"/>
+        <eClassifiers xsi:type="ecore:EEnum" name="NewEnum1"/>
+        <eClassifiers xsi:type="ecore:EClass" name="BooleanSchema" eSuperTypes="#//td/w3c/dataschema/DataSchema"/>
+        <eClassifiers xsi:type="ecore:EClass" name="NumberSchema" eSuperTypes="#//td/w3c/dataschema/DataSchema">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="IntegerSchema" eSuperTypes="#//td/w3c/dataschema/DataSchema">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="NullSchema" eSuperTypes="#//td/w3c/dataschema/DataSchema"/>
+      </eSubpackages>
+      <eSubpackages name="security" nsURI="smar2t.td.W3C.security" nsPrefix="W3cTd">
+        <eClassifiers xsi:type="ecore:EClass" name="SecurityScheme" abstract="true">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" upperBound="-1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheme" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" eType="#//td/w3c/core/MultiLanguage"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="NoSecurityScheme" eSuperTypes="#//td/w3c/security/SecurityScheme"/>
+        <eClassifiers xsi:type="ecore:EClass" name="BasicSecurityScheme" eSuperTypes="#//td/w3c/security/SecurityScheme">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="in" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="DigestSecurityScheme" eSuperTypes="#//td/w3c/security/SecurityScheme">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="qop" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="in" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="APIKeySecurityScheme" eSuperTypes="#//td/w3c/security/SecurityScheme">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="in" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="BearerSecurityScheme" eSuperTypes="#//td/w3c/security/SecurityScheme">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="authorization" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="alg" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="in" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="CertSecurityScheme" eSuperTypes="#//td/w3c/security/SecurityScheme">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="identity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="PSKSecurityScheme" eSuperTypes="#//td/w3c/security/SecurityScheme">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="identity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="PublicSecurityScheme" eSuperTypes="#//td/w3c/security/SecurityScheme">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="identity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="PoPSecurityScheme" eSuperTypes="#//td/w3c/security/SecurityScheme">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="authorization" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="alg" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="in" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="OAuth2SecurityScheme" eSuperTypes="#//td/w3c/security/SecurityScheme">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="authorization" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="token" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="refresh" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="scopes" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="flow" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+      </eSubpackages>
+    </eSubpackages>
   </eSubpackages>
 </ecore:EPackage>
