@@ -1,0 +1,52 @@
+-- @path W3CTD=/smar2t/model/W3CTD/W3CTD.ecore
+-- @path ThingUI=/smar2t/model/ThingUI/ThingUI.ecore
+
+module W3CTD2ThingUI;
+create UI : ThingUI from Thing : W3CTD;
+
+rule ThingData {
+	from
+		td: W3CTD!Thing
+	to
+		t: ThingUI!Thing (
+			description <- td.description,
+			name <- td.title,
+			icon <- td.semanticType.first(),
+			properties <- W3CTD!PropertyAffordance.allInstances()->collect(p | thisModule.getProperty(p))
+		)
+}
+
+lazy rule getProperty {
+   from
+     p: W3CTD!PropertyAffordance
+   to 
+     res: ThingUI!Resource (
+     	name <- p.title,
+     	description <- p.description,
+		icon <- p.type,
+		form <- thisModule.getPropertyForm(p.forms.first())
+     )
+ }
+
+lazy rule getPropertyForm {
+   from
+     f: W3CTD!Form
+   to 
+     form: ThingUI!Form (
+     	readOnly <- f.readOnly(),
+		showsSubmitButton <- not f.readOnly()
+     )
+}
+
+lazy rule getActuatorFromForm {
+	from
+	  f: W3CTD!Form
+	to
+	  actuator: ThingUI!Actuator (
+		communicationProtocol <- f.subprotocol,
+		href <- f.href
+	)
+}
+
+helper context W3CTD!Form def: readOnly(): Boolean = self.op.includes('writeproperty');
+

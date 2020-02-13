@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<W3cTd:Thing xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:W3cTd="com.smar2t.w3c_td.core" id="urn:dev:ops:32473-WoTLamp-1234" title="MyLampThing" description="MyLampThing uses JSON serialization">
+  <security>psk_sc</security>
+  <events key="overheating">
+    <value description="Lamp reaches a critical temperature (overheating)">
+      <forms href="coaps://mylamp.example.com/oh" subprotocol="cov:observe"/>
+    </value>
+  </events>
+  <actions key="toggle">
+    <value description="Turn on or off the lamp">
+      <forms href="coaps://mylamp.example.com/toggle"/>
+    </value>
+  </actions>
+  <properties key="status">
+    <value type="string" description="Shows the current status of the lamp">
+      <forms href="coaps://mylamp.example.com/status">
+        <op>readproperty</op>
+      </forms>
+    </value>
+  </properties>
+</W3cTd:Thing>
