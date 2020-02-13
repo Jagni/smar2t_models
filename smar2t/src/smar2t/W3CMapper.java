@@ -1,7 +1,13 @@
 package smar2t;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.xml.crypto.Data;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -10,6 +16,9 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.emfjson.jackson.databind.EMFContext;
 import org.emfjson.jackson.module.EMFModule;
 import org.emfjson.jackson.resource.JsonResourceFactory;
+
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -23,7 +32,6 @@ import w3c_td.hypermediacontrols.Link;
 
 public class W3CMapper {
 	ObjectMapper mapper;
-	
 	ResourceSet resourceSet;
 	Resource resource;
 	
@@ -48,8 +56,11 @@ public class W3CMapper {
 		}
 	}
 	
-	public void convertToJSON(Thing thing, File file) {		
+	public void convertToJSON(Thing thing, String filepath) {		
 		try {
+			File file = new File(filepath);
+			file.delete();
+			file.createNewFile();
 			mapper.writer()
 			.withAttribute(EMFContext.Attributes.RESOURCE, resource)
 			.forType(Thing.class)
@@ -62,6 +73,17 @@ public class W3CMapper {
 			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void convertToXMI(Thing thing, String filepath) {
+		
+		try {
+			Resource res = resourceSet.createResource(URI.createFileURI(filepath));
+			res.getContents().add(thing);
+			res.save(Collections.EMPTY_MAP);
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
@@ -95,6 +117,7 @@ public class W3CMapper {
 	private void setupResourceSet() {
 		resourceSet = new ResourceSetImpl();
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("json", new JsonResourceFactory());
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 	}
 	
 	private void setupResource(){

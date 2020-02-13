@@ -64,16 +64,16 @@
     <eClassifiers xsi:type="ecore:EClass" name="StringToEventMap" instanceClassName="java.util.Map$Entry">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
-          eType="#//core/EventAffordance"/>
+          eType="#//core/EventAffordance" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StringToActionMap" instanceClassName="java.util.Map$Entry">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
-          eType="#//core/ActionAffordance"/>
+          eType="#//core/ActionAffordance" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StringToPropertyMap" instanceClassName="java.util.Map$Entry">
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
-          eType="#//core/PropertyAffordance"/>
+          eType="#//core/PropertyAffordance" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
   </eSubpackages>

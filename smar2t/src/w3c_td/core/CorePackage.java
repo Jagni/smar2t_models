@@ -686,7 +686,7 @@ public interface CorePackage extends EPackage {
 	int STRING_TO_EVENT_MAP__KEY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -732,7 +732,7 @@ public interface CorePackage extends EPackage {
 	int STRING_TO_ACTION_MAP__KEY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -769,7 +769,7 @@ public interface CorePackage extends EPackage {
 	int STRING_TO_PROPERTY_MAP = 9;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1190,7 +1190,7 @@ public interface CorePackage extends EPackage {
 	 * @return the meta object for class '<em>String To Event Map</em>'.
 	 * @see java.util.Map.Entry
 	 * @model keyDataType="org.eclipse.emf.ecore.EString"
-	 *        valueType="w3c_td.core.EventAffordance" valueRequired="true"
+	 *        valueType="w3c_td.core.EventAffordance" valueContainment="true" valueRequired="true"
 	 * @generated
 	 */
 	EClass getStringToEventMap();
@@ -1207,10 +1207,10 @@ public interface CorePackage extends EPackage {
 	EAttribute getStringToEventMap_Key();
 
 	/**
-	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getStringToEventMap()
 	 * @generated
@@ -1224,7 +1224,7 @@ public interface CorePackage extends EPackage {
 	 * @return the meta object for class '<em>String To Action Map</em>'.
 	 * @see java.util.Map.Entry
 	 * @model keyDataType="org.eclipse.emf.ecore.EString"
-	 *        valueType="w3c_td.core.ActionAffordance" valueRequired="true"
+	 *        valueType="w3c_td.core.ActionAffordance" valueContainment="true" valueRequired="true"
 	 * @generated
 	 */
 	EClass getStringToActionMap();
@@ -1241,10 +1241,10 @@ public interface CorePackage extends EPackage {
 	EAttribute getStringToActionMap_Key();
 
 	/**
-	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getStringToActionMap()
 	 * @generated
@@ -1258,17 +1258,17 @@ public interface CorePackage extends EPackage {
 	 * @return the meta object for class '<em>String To Property Map</em>'.
 	 * @see java.util.Map.Entry
 	 * @model features="value key" 
-	 *        valueType="w3c_td.core.PropertyAffordance" valueRequired="true"
+	 *        valueType="w3c_td.core.PropertyAffordance" valueContainment="true" valueRequired="true"
 	 *        keyDataType="org.eclipse.emf.ecore.EString"
 	 * @generated
 	 */
 	EClass getStringToPropertyMap();
 
 	/**
-	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getStringToPropertyMap()
 	 * @generated
@@ -1622,7 +1622,7 @@ public interface CorePackage extends EPackage {
 		EAttribute STRING_TO_EVENT_MAP__KEY = eINSTANCE.getStringToEventMap_Key();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1648,7 +1648,7 @@ public interface CorePackage extends EPackage {
 		EAttribute STRING_TO_ACTION_MAP__KEY = eINSTANCE.getStringToActionMap_Key();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1666,7 +1666,7 @@ public interface CorePackage extends EPackage {
 		EClass STRING_TO_PROPERTY_MAP = eINSTANCE.getStringToPropertyMap();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

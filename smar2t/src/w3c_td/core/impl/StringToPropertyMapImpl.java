@@ -4,6 +4,7 @@ package w3c_td.core.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EMap;
 
@@ -33,7 +34,7 @@ import w3c_td.core.PropertyAffordance;
  */
 public class StringToPropertyMapImpl extends MinimalEObjectImpl.Container implements BasicEMap.Entry<String,PropertyAffordance> {
 	/**
-	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' reference.
+	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTypedValue()
@@ -87,14 +88,6 @@ public class StringToPropertyMapImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	public PropertyAffordance getTypedValue() {
-		if (value != null && value.eIsProxy()) {
-			InternalEObject oldValue = (InternalEObject)value;
-			value = (PropertyAffordance)eResolveProxy(oldValue);
-			if (value != oldValue) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.STRING_TO_PROPERTY_MAP__VALUE, oldValue, value));
-			}
-		}
 		return value;
 	}
 
@@ -103,8 +96,14 @@ public class StringToPropertyMapImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyAffordance basicGetTypedValue() {
-		return value;
+	public NotificationChain basicSetTypedValue(PropertyAffordance newValue, NotificationChain msgs) {
+		PropertyAffordance oldValue = value;
+		value = newValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CorePackage.STRING_TO_PROPERTY_MAP__VALUE, oldValue, newValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -113,10 +112,17 @@ public class StringToPropertyMapImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	public void setTypedValue(PropertyAffordance newValue) {
-		PropertyAffordance oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.STRING_TO_PROPERTY_MAP__VALUE, oldValue, value));
+		if (newValue != value) {
+			NotificationChain msgs = null;
+			if (value != null)
+				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CorePackage.STRING_TO_PROPERTY_MAP__VALUE, null, msgs);
+			if (newValue != null)
+				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CorePackage.STRING_TO_PROPERTY_MAP__VALUE, null, msgs);
+			msgs = basicSetTypedValue(newValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.STRING_TO_PROPERTY_MAP__VALUE, newValue, newValue));
 	}
 
 	/**
@@ -146,11 +152,24 @@ public class StringToPropertyMapImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CorePackage.STRING_TO_PROPERTY_MAP__VALUE:
+				return basicSetTypedValue(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.STRING_TO_PROPERTY_MAP__VALUE:
-				if (resolve) return getTypedValue();
-				return basicGetTypedValue();
+				return getTypedValue();
 			case CorePackage.STRING_TO_PROPERTY_MAP__KEY:
 				return getTypedKey();
 		}

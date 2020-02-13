@@ -5,7 +5,8 @@
     complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>W3CTD.ecore</foreignModel>
   <genPackages prefix="W3c_td" disposableProviderFactory="true" ecorePackage="W3CTD.ecore#/">
-    <nestedGenPackages prefix="Core" disposableProviderFactory="true" ecorePackage="W3CTD.ecore#//core">
+    <nestedGenPackages prefix="Core" basePackage="w3c_td" disposableProviderFactory="true"
+        ecorePackage="W3CTD.ecore#//core">
       <genClasses ecoreClass="W3CTD.ecore#//core/Thing">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/Thing/id"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/Thing/title"/>
@@ -53,21 +54,21 @@
       <genClasses ecoreClass="W3CTD.ecore#//core/MultiLanguage"/>
       <genClasses ecoreClass="W3CTD.ecore#//core/StringToEventMap">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/StringToEventMap/key"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference W3CTD.ecore#//core/StringToEventMap/value"/>
       </genClasses>
       <genClasses ecoreClass="W3CTD.ecore#//core/StringToActionMap">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/StringToActionMap/key"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference W3CTD.ecore#//core/StringToActionMap/value"/>
       </genClasses>
       <genClasses ecoreClass="W3CTD.ecore#//core/StringToPropertyMap">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference W3CTD.ecore#//core/StringToPropertyMap/value"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/StringToPropertyMap/key"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Hypermediacontrols" disposableProviderFactory="true"
+    <nestedGenPackages prefix="Hypermediacontrols" basePackage="w3c_td" disposableProviderFactory="true"
         ecorePackage="W3CTD.ecore#//hypermediacontrols">
       <genClasses ecoreClass="W3CTD.ecore#//hypermediacontrols/Link">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//hypermediacontrols/Link/href"/>
@@ -90,7 +91,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//hypermediacontrols/ExpectedResponse/contentType"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Dataschema" disposableProviderFactory="true" ecorePackage="W3CTD.ecore#//dataschema">
+    <nestedGenPackages prefix="Dataschema" basePackage="w3c_td" disposableProviderFactory="true"
+        ecorePackage="W3CTD.ecore#//dataschema">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="W3CTD.ecore#//dataschema/NewEnum1"/>
       <genClasses image="false" ecoreClass="W3CTD.ecore#//dataschema/DataSchema">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/DataSchema/semanticType"/>
@@ -131,7 +133,8 @@
       </genClasses>
       <genClasses ecoreClass="W3CTD.ecore#//dataschema/NullSchema"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Security" disposableProviderFactory="true" ecorePackage="W3CTD.ecore#//security">
+    <nestedGenPackages prefix="Security" basePackage="w3c_td" disposableProviderFactory="true"
+        ecorePackage="W3CTD.ecore#//security">
       <genClasses image="false" ecoreClass="W3CTD.ecore#//security/SecurityScheme">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/SecurityScheme/semanticType"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/SecurityScheme/description"/>

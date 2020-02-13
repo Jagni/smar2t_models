@@ -4,6 +4,7 @@ package w3c_td.core.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EMap;
 
@@ -53,7 +54,7 @@ public class StringToActionMapImpl extends MinimalEObjectImpl.Container implemen
 	protected String key = KEY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' reference.
+	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTypedValue()
@@ -108,14 +109,6 @@ public class StringToActionMapImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public ActionAffordance getTypedValue() {
-		if (value != null && value.eIsProxy()) {
-			InternalEObject oldValue = (InternalEObject)value;
-			value = (ActionAffordance)eResolveProxy(oldValue);
-			if (value != oldValue) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.STRING_TO_ACTION_MAP__VALUE, oldValue, value));
-			}
-		}
 		return value;
 	}
 
@@ -124,8 +117,14 @@ public class StringToActionMapImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionAffordance basicGetTypedValue() {
-		return value;
+	public NotificationChain basicSetTypedValue(ActionAffordance newValue, NotificationChain msgs) {
+		ActionAffordance oldValue = value;
+		value = newValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CorePackage.STRING_TO_ACTION_MAP__VALUE, oldValue, newValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -134,10 +133,31 @@ public class StringToActionMapImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void setTypedValue(ActionAffordance newValue) {
-		ActionAffordance oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.STRING_TO_ACTION_MAP__VALUE, oldValue, value));
+		if (newValue != value) {
+			NotificationChain msgs = null;
+			if (value != null)
+				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CorePackage.STRING_TO_ACTION_MAP__VALUE, null, msgs);
+			if (newValue != null)
+				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CorePackage.STRING_TO_ACTION_MAP__VALUE, null, msgs);
+			msgs = basicSetTypedValue(newValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.STRING_TO_ACTION_MAP__VALUE, newValue, newValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CorePackage.STRING_TO_ACTION_MAP__VALUE:
+				return basicSetTypedValue(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -151,8 +171,7 @@ public class StringToActionMapImpl extends MinimalEObjectImpl.Container implemen
 			case CorePackage.STRING_TO_ACTION_MAP__KEY:
 				return getTypedKey();
 			case CorePackage.STRING_TO_ACTION_MAP__VALUE:
-				if (resolve) return getTypedValue();
-				return basicGetTypedValue();
+				return getTypedValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
