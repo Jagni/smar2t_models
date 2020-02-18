@@ -3,7 +3,7 @@
 -- @path ThingUI=/smar2t/model/ThingUI/ThingUI.ecore
 
 module W3CTD2ThingUI;
-create ThingUserInterface : ThingUI from Thing : W3CTD;
+create OUT : ThingUI from IN : W3CTD;
 
 rule ThingData {
 	from

@@ -39,7 +39,7 @@ public interface InteractionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "com.smar2t.thing_ui.interaction";
+	String eNS_URI = "http://smar2t.org/models/thing_ui/interaction";
 
 	/**
 	 * The package namespace name.

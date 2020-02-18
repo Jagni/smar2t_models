@@ -38,7 +38,7 @@ public interface CorePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "com.smar2t.w3c_td.core";
+	String eNS_URI = "http://smar2t.org/models/w3c_td/core";
 
 	/**
 	 * The package namespace name.

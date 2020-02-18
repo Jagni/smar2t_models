@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
 
-<!--
--->
-
 <plugin>
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated MozillaTD -->
       <package
-            uri="com.smar2t.mozilla_td"
+            uri="http://smar2t.org/models/mozilla_td"
             class="mozilla_td.Mozilla_tdPackage"
             genModel="model/MozillaTD/MozillaTD.genmodel"/>
    </extension>
@@ -16,7 +13,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated ThingUI -->
       <package
-            uri="com.smar2t.thing_ui.actuation"
+            uri="http://smar2t.org/models/thing_ui/actuation"
             class="thing_ui.actuation.ActuationPackage"
             genModel="model/ThingUI/ThingUI.genmodel"/>
    </extension>
@@ -24,7 +21,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated ThingUI -->
       <package
-            uri="com.smar2t.thing_ui.interaction"
+            uri="http://smar2t.org/models/thing_ui/interaction"
             class="thing_ui.interaction.InteractionPackage"
             genModel="model/ThingUI/ThingUI.genmodel"/>
    </extension>
@@ -32,14 +29,14 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated ThingUI -->
       <package
-            uri="com.smar2t.thing_ui.core"
+            uri="http://smar2t.org/models/thing_ui/core"
             class="thing_ui.core.CorePackage"
             genModel="model/ThingUI/ThingUI.genmodel"/>
    </extension>
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated W3CTD -->
       <package
-            uri="com.smar2t.w3c_td.core"
+            uri="http://smar2t.org/models/w3c_td/core"
             class="w3c_td.core.CorePackage"
             genModel="model/W3CTD/W3CTD.genmodel"/>
    </extension>
@@ -47,7 +44,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated W3CTD -->
       <package
-            uri="com.smar2t.w3c_td.hypermediacontrols"
+            uri="http://smar2t.org/models/w3c_td/hypermediacontrols"
             class="w3c_td.hypermediacontrols.HypermediacontrolsPackage"
             genModel="model/W3CTD/W3CTD.genmodel"/>
    </extension>
@@ -55,7 +52,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated W3CTD -->
       <package
-            uri="com.smar2t.w3c_td.dataschema"
+            uri="http://smar2t.org/models/w3c_td/dataschema"
             class="w3c_td.dataschema.DataschemaPackage"
             genModel="model/W3CTD/W3CTD.genmodel"/>
    </extension>
@@ -63,7 +60,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated W3CTD -->
       <package
-            uri="com.smar2t.w3c_td.security"
+            uri="http://smar2t.org/models/w3c_td/security"
             class="w3c_td.security.SecurityPackage"
             genModel="model/W3CTD/W3CTD.genmodel"/>
    </extension>

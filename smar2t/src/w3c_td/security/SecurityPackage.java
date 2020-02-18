@@ -38,7 +38,7 @@ public interface SecurityPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "com.smar2t.w3c_td.security";
+	String eNS_URI = "http://smar2t.org/models/w3c_td/security";
 
 	/**
 	 * The package namespace name.

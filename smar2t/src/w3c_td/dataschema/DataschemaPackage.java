@@ -39,7 +39,7 @@ public interface DataschemaPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "com.smar2t.w3c_td.dataschema";
+	String eNS_URI = "http://smar2t.org/models/w3c_td/dataschema";
 
 	/**
 	 * The package namespace name.

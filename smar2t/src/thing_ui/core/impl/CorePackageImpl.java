@@ -20,6 +20,7 @@ import thing_ui.core.CorePackage;
 import thing_ui.core.Location;
 import thing_ui.core.Resource;
 import thing_ui.core.ThingUserInterface;
+
 import thing_ui.interaction.InteractionPackage;
 
 import thing_ui.interaction.impl.InteractionPackageImpl;

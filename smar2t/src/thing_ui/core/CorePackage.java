@@ -38,7 +38,7 @@ public interface CorePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "com.smar2t.thing_ui.core";
+	String eNS_URI = "http://smar2t.org/models/thing_ui/core";
 
 	/**
 	 * The package namespace name.

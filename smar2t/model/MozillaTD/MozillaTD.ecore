@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mozilla_td" nsURI="com.smar2t.mozilla_td" nsPrefix="MozillaTD">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mozilla_td" nsURI="http://smar2t.org/models/mozilla_td" nsPrefix="MozillaTD">
   <eClassifiers xsi:type="ecore:EClass" name="Thing" eSuperTypes="#//Linkable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticType" upperBound="-1"

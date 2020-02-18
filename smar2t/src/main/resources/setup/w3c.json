@@ -1,5 +1,5 @@
 {
-  "eClass" : "com.smar2t.w3c_td.core#//Thing",
+  "eClass" : "http://smar2t.org/models/w3c_td/core#//Thing",
   "title" : "Lamp",
   "links" : [ {
     "href" : "teste.com"

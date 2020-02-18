@@ -39,7 +39,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "com.smar2t.mozilla_td";
+	String eNS_URI = "http://smar2t.org/models/mozilla_td";
 
 	/**
 	 * The package namespace name.

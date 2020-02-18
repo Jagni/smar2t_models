@@ -38,7 +38,7 @@ public interface ActuationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "com.smar2t.thing_ui.actuation";
+	String eNS_URI = "http://smar2t.org/models/thing_ui/actuation";
 
 	/**
 	 * The package namespace name.

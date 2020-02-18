@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="thing_ui" nsURI="com.smar2t.thing_ui" nsPrefix="ThingUI">
-  <eSubpackages name="actuation" nsURI="com.smar2t.thing_ui.actuation" nsPrefix="UIActuation">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="thing_ui" nsURI="http://smar2t.org/models/thing_ui" nsPrefix="ThingUI">
+  <eSubpackages name="actuation" nsURI="http://smar2t.org/models/thing_ui/actuation"
+      nsPrefix="UIActuation">
     <eClassifiers xsi:type="ecore:EClass" name="Actuator">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationProtocol"
@@ -19,7 +20,8 @@
       <eLiterals name="oauth2" value="1"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="interaction" nsURI="com.smar2t.thing_ui.interaction" nsPrefix="UIInteraction">
+  <eSubpackages name="interaction" nsURI="http://smar2t.org/models/thing_ui/interaction"
+      nsPrefix="UIInteraction">
     <eClassifiers xsi:type="ecore:EClass" name="Form">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="showsSubmitButton" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
@@ -89,7 +91,7 @@
       <eLiterals name="button" value="2"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="core" nsURI="com.smar2t.thing_ui.core" nsPrefix="UICore">
+  <eSubpackages name="core" nsURI="http://smar2t.org/models/thing_ui/core" nsPrefix="UICore">
     <eClassifiers xsi:type="ecore:EClass" name="ThingUserInterface">
       <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//core/Location"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
@@ -115,5 +117,6 @@
           eType="#//interaction/Form"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="security" nsURI="com.smar2t.thing_ui.security" nsPrefix="UISecurity"/>
+  <eSubpackages name="security" nsURI="http://smar2t.org/models/thing_ui/security"
+      nsPrefix="UISecurity"/>
 </ecore:EPackage>

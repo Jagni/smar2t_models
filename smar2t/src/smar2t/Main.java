@@ -29,12 +29,12 @@ class ModelToJSON {
 		String outputXMI = "src/main/resources/generated/xmis/w3c/coap-lamp.xmi";
 		w3cMapper.convertToXMI(thing1, outputXMI);
 
-//		ATLauncher atlauncher = new ATLauncher();
-//		atlauncher.registerInputMetamodel(IN_METAMODEL, IN_METAMODEL_NAME);
-//		atlauncher.registerOutputMetamodel(OUT_METAMODEL, OUT_METAMODEL_NAME);
-//		Model result = atlauncher.w3c2ui(outputXMI, TRANSFORMATION_DIR, TRANSFORMATION_MODULE);
+		ATLauncher atlauncher = new ATLauncher();
+		atlauncher.registerInputMetamodel(IN_METAMODEL, IN_METAMODEL_NAME);
+		atlauncher.registerOutputMetamodel(OUT_METAMODEL, OUT_METAMODEL_NAME);
+		Model result = atlauncher.w3c2ui(outputXMI, TRANSFORMATION_DIR, TRANSFORMATION_MODULE);
 		
-//		System.out.println(result);
+		System.out.println(result);
 	}
 	
 }
