@@ -19,28 +19,28 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import thing_ui.core.CorePackage;
 import thing_ui.core.Location;
 import thing_ui.core.Resource;
-import thing_ui.core.Thing;
+import thing_ui.core.ThingUserInterface;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Thing</b></em>'.
+ * An implementation of the model object '<em><b>Thing User Interface</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link thing_ui.core.impl.ThingImpl#getLocation <em>Location</em>}</li>
- *   <li>{@link thing_ui.core.impl.ThingImpl#getProperties <em>Properties</em>}</li>
- *   <li>{@link thing_ui.core.impl.ThingImpl#getActions <em>Actions</em>}</li>
- *   <li>{@link thing_ui.core.impl.ThingImpl#getEvents <em>Events</em>}</li>
- *   <li>{@link thing_ui.core.impl.ThingImpl#getName <em>Name</em>}</li>
- *   <li>{@link thing_ui.core.impl.ThingImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link thing_ui.core.impl.ThingImpl#getIcon <em>Icon</em>}</li>
+ *   <li>{@link thing_ui.core.impl.ThingUserInterfaceImpl#getLocation <em>Location</em>}</li>
+ *   <li>{@link thing_ui.core.impl.ThingUserInterfaceImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link thing_ui.core.impl.ThingUserInterfaceImpl#getActions <em>Actions</em>}</li>
+ *   <li>{@link thing_ui.core.impl.ThingUserInterfaceImpl#getEvents <em>Events</em>}</li>
+ *   <li>{@link thing_ui.core.impl.ThingUserInterfaceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link thing_ui.core.impl.ThingUserInterfaceImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link thing_ui.core.impl.ThingUserInterfaceImpl#getIcon <em>Icon</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
+public class ThingUserInterfaceImpl extends MinimalEObjectImpl.Container implements ThingUserInterface {
 	/**
 	 * The cached value of the '{@link #getLocation() <em>Location</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -146,7 +146,7 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ThingImpl() {
+	protected ThingUserInterfaceImpl() {
 		super();
 	}
 
@@ -157,7 +157,7 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CorePackage.Literals.THING;
+		return CorePackage.Literals.THING_USER_INTERFACE;
 	}
 
 	/**
@@ -171,7 +171,7 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 			location = (Location)eResolveProxy(oldLocation);
 			if (location != oldLocation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.THING__LOCATION, oldLocation, location));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.THING_USER_INTERFACE__LOCATION, oldLocation, location));
 			}
 		}
 		return location;
@@ -195,7 +195,7 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 		Location oldLocation = location;
 		location = newLocation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.THING__LOCATION, oldLocation, location));
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.THING_USER_INTERFACE__LOCATION, oldLocation, location));
 	}
 
 	/**
@@ -205,7 +205,7 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	 */
 	public EList<Resource> getProperties() {
 		if (properties == null) {
-			properties = new EObjectResolvingEList<Resource>(Resource.class, this, CorePackage.THING__PROPERTIES);
+			properties = new EObjectResolvingEList<Resource>(Resource.class, this, CorePackage.THING_USER_INTERFACE__PROPERTIES);
 		}
 		return properties;
 	}
@@ -217,7 +217,7 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	 */
 	public EList<Resource> getActions() {
 		if (actions == null) {
-			actions = new EObjectResolvingEList<Resource>(Resource.class, this, CorePackage.THING__ACTIONS);
+			actions = new EObjectResolvingEList<Resource>(Resource.class, this, CorePackage.THING_USER_INTERFACE__ACTIONS);
 		}
 		return actions;
 	}
@@ -229,7 +229,7 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	 */
 	public EList<Resource> getEvents() {
 		if (events == null) {
-			events = new EObjectResolvingEList<Resource>(Resource.class, this, CorePackage.THING__EVENTS);
+			events = new EObjectResolvingEList<Resource>(Resource.class, this, CorePackage.THING_USER_INTERFACE__EVENTS);
 		}
 		return events;
 	}
@@ -252,7 +252,7 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.THING__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.THING_USER_INTERFACE__NAME, oldName, name));
 	}
 
 	/**
@@ -273,7 +273,7 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.THING__DESCRIPTION, oldDescription, description));
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.THING_USER_INTERFACE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -294,7 +294,7 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 		String oldIcon = icon;
 		icon = newIcon;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.THING__ICON, oldIcon, icon));
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.THING_USER_INTERFACE__ICON, oldIcon, icon));
 	}
 
 	/**
@@ -305,20 +305,20 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CorePackage.THING__LOCATION:
+			case CorePackage.THING_USER_INTERFACE__LOCATION:
 				if (resolve) return getLocation();
 				return basicGetLocation();
-			case CorePackage.THING__PROPERTIES:
+			case CorePackage.THING_USER_INTERFACE__PROPERTIES:
 				return getProperties();
-			case CorePackage.THING__ACTIONS:
+			case CorePackage.THING_USER_INTERFACE__ACTIONS:
 				return getActions();
-			case CorePackage.THING__EVENTS:
+			case CorePackage.THING_USER_INTERFACE__EVENTS:
 				return getEvents();
-			case CorePackage.THING__NAME:
+			case CorePackage.THING_USER_INTERFACE__NAME:
 				return getName();
-			case CorePackage.THING__DESCRIPTION:
+			case CorePackage.THING_USER_INTERFACE__DESCRIPTION:
 				return getDescription();
-			case CorePackage.THING__ICON:
+			case CorePackage.THING_USER_INTERFACE__ICON:
 				return getIcon();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -333,28 +333,28 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CorePackage.THING__LOCATION:
+			case CorePackage.THING_USER_INTERFACE__LOCATION:
 				setLocation((Location)newValue);
 				return;
-			case CorePackage.THING__PROPERTIES:
+			case CorePackage.THING_USER_INTERFACE__PROPERTIES:
 				getProperties().clear();
 				getProperties().addAll((Collection<? extends Resource>)newValue);
 				return;
-			case CorePackage.THING__ACTIONS:
+			case CorePackage.THING_USER_INTERFACE__ACTIONS:
 				getActions().clear();
 				getActions().addAll((Collection<? extends Resource>)newValue);
 				return;
-			case CorePackage.THING__EVENTS:
+			case CorePackage.THING_USER_INTERFACE__EVENTS:
 				getEvents().clear();
 				getEvents().addAll((Collection<? extends Resource>)newValue);
 				return;
-			case CorePackage.THING__NAME:
+			case CorePackage.THING_USER_INTERFACE__NAME:
 				setName((String)newValue);
 				return;
-			case CorePackage.THING__DESCRIPTION:
+			case CorePackage.THING_USER_INTERFACE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case CorePackage.THING__ICON:
+			case CorePackage.THING_USER_INTERFACE__ICON:
 				setIcon((String)newValue);
 				return;
 		}
@@ -369,25 +369,25 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CorePackage.THING__LOCATION:
+			case CorePackage.THING_USER_INTERFACE__LOCATION:
 				setLocation((Location)null);
 				return;
-			case CorePackage.THING__PROPERTIES:
+			case CorePackage.THING_USER_INTERFACE__PROPERTIES:
 				getProperties().clear();
 				return;
-			case CorePackage.THING__ACTIONS:
+			case CorePackage.THING_USER_INTERFACE__ACTIONS:
 				getActions().clear();
 				return;
-			case CorePackage.THING__EVENTS:
+			case CorePackage.THING_USER_INTERFACE__EVENTS:
 				getEvents().clear();
 				return;
-			case CorePackage.THING__NAME:
+			case CorePackage.THING_USER_INTERFACE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CorePackage.THING__DESCRIPTION:
+			case CorePackage.THING_USER_INTERFACE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case CorePackage.THING__ICON:
+			case CorePackage.THING_USER_INTERFACE__ICON:
 				setIcon(ICON_EDEFAULT);
 				return;
 		}
@@ -402,19 +402,19 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CorePackage.THING__LOCATION:
+			case CorePackage.THING_USER_INTERFACE__LOCATION:
 				return location != null;
-			case CorePackage.THING__PROPERTIES:
+			case CorePackage.THING_USER_INTERFACE__PROPERTIES:
 				return properties != null && !properties.isEmpty();
-			case CorePackage.THING__ACTIONS:
+			case CorePackage.THING_USER_INTERFACE__ACTIONS:
 				return actions != null && !actions.isEmpty();
-			case CorePackage.THING__EVENTS:
+			case CorePackage.THING_USER_INTERFACE__EVENTS:
 				return events != null && !events.isEmpty();
-			case CorePackage.THING__NAME:
+			case CorePackage.THING_USER_INTERFACE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CorePackage.THING__DESCRIPTION:
+			case CorePackage.THING_USER_INTERFACE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case CorePackage.THING__ICON:
+			case CorePackage.THING_USER_INTERFACE__ICON:
 				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
 		}
 		return super.eIsSet(featureID);
@@ -440,4 +440,4 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 		return result.toString();
 	}
 
-} //ThingImpl
+} //ThingUserInterfaceImpl

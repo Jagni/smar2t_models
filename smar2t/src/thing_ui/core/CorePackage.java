@@ -57,14 +57,14 @@ public interface CorePackage extends EPackage {
 	CorePackage eINSTANCE = thing_ui.core.impl.CorePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link thing_ui.core.impl.ThingImpl <em>Thing</em>}' class.
+	 * The meta object id for the '{@link thing_ui.core.impl.ThingUserInterfaceImpl <em>Thing User Interface</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see thing_ui.core.impl.ThingImpl
-	 * @see thing_ui.core.impl.CorePackageImpl#getThing()
+	 * @see thing_ui.core.impl.ThingUserInterfaceImpl
+	 * @see thing_ui.core.impl.CorePackageImpl#getThingUserInterface()
 	 * @generated
 	 */
-	int THING = 0;
+	int THING_USER_INTERFACE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' reference.
@@ -73,7 +73,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THING__LOCATION = 0;
+	int THING_USER_INTERFACE__LOCATION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' reference list.
@@ -82,7 +82,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THING__PROPERTIES = 1;
+	int THING_USER_INTERFACE__PROPERTIES = 1;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' reference list.
@@ -91,7 +91,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THING__ACTIONS = 2;
+	int THING_USER_INTERFACE__ACTIONS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Events</b></em>' reference list.
@@ -100,7 +100,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THING__EVENTS = 3;
+	int THING_USER_INTERFACE__EVENTS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -109,7 +109,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THING__NAME = 4;
+	int THING_USER_INTERFACE__NAME = 4;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -118,7 +118,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THING__DESCRIPTION = 5;
+	int THING_USER_INTERFACE__DESCRIPTION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -127,25 +127,25 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THING__ICON = 6;
+	int THING_USER_INTERFACE__ICON = 6;
 
 	/**
-	 * The number of structural features of the '<em>Thing</em>' class.
+	 * The number of structural features of the '<em>Thing User Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THING_FEATURE_COUNT = 7;
+	int THING_USER_INTERFACE_FEATURE_COUNT = 7;
 
 	/**
-	 * The number of operations of the '<em>Thing</em>' class.
+	 * The number of operations of the '<em>Thing User Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THING_OPERATION_COUNT = 0;
+	int THING_USER_INTERFACE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link thing_ui.core.impl.LocationImpl <em>Location</em>}' class.
@@ -268,91 +268,91 @@ public interface CorePackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link thing_ui.core.Thing <em>Thing</em>}'.
+	 * Returns the meta object for class '{@link thing_ui.core.ThingUserInterface <em>Thing User Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Thing</em>'.
-	 * @see thing_ui.core.Thing
+	 * @return the meta object for class '<em>Thing User Interface</em>'.
+	 * @see thing_ui.core.ThingUserInterface
 	 * @generated
 	 */
-	EClass getThing();
+	EClass getThingUserInterface();
 
 	/**
-	 * Returns the meta object for the reference '{@link thing_ui.core.Thing#getLocation <em>Location</em>}'.
+	 * Returns the meta object for the reference '{@link thing_ui.core.ThingUserInterface#getLocation <em>Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Location</em>'.
-	 * @see thing_ui.core.Thing#getLocation()
-	 * @see #getThing()
+	 * @see thing_ui.core.ThingUserInterface#getLocation()
+	 * @see #getThingUserInterface()
 	 * @generated
 	 */
-	EReference getThing_Location();
+	EReference getThingUserInterface_Location();
 
 	/**
-	 * Returns the meta object for the reference list '{@link thing_ui.core.Thing#getProperties <em>Properties</em>}'.
+	 * Returns the meta object for the reference list '{@link thing_ui.core.ThingUserInterface#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Properties</em>'.
-	 * @see thing_ui.core.Thing#getProperties()
-	 * @see #getThing()
+	 * @see thing_ui.core.ThingUserInterface#getProperties()
+	 * @see #getThingUserInterface()
 	 * @generated
 	 */
-	EReference getThing_Properties();
+	EReference getThingUserInterface_Properties();
 
 	/**
-	 * Returns the meta object for the reference list '{@link thing_ui.core.Thing#getActions <em>Actions</em>}'.
+	 * Returns the meta object for the reference list '{@link thing_ui.core.ThingUserInterface#getActions <em>Actions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Actions</em>'.
-	 * @see thing_ui.core.Thing#getActions()
-	 * @see #getThing()
+	 * @see thing_ui.core.ThingUserInterface#getActions()
+	 * @see #getThingUserInterface()
 	 * @generated
 	 */
-	EReference getThing_Actions();
+	EReference getThingUserInterface_Actions();
 
 	/**
-	 * Returns the meta object for the reference list '{@link thing_ui.core.Thing#getEvents <em>Events</em>}'.
+	 * Returns the meta object for the reference list '{@link thing_ui.core.ThingUserInterface#getEvents <em>Events</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Events</em>'.
-	 * @see thing_ui.core.Thing#getEvents()
-	 * @see #getThing()
+	 * @see thing_ui.core.ThingUserInterface#getEvents()
+	 * @see #getThingUserInterface()
 	 * @generated
 	 */
-	EReference getThing_Events();
+	EReference getThingUserInterface_Events();
 
 	/**
-	 * Returns the meta object for the attribute '{@link thing_ui.core.Thing#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link thing_ui.core.ThingUserInterface#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see thing_ui.core.Thing#getName()
-	 * @see #getThing()
+	 * @see thing_ui.core.ThingUserInterface#getName()
+	 * @see #getThingUserInterface()
 	 * @generated
 	 */
-	EAttribute getThing_Name();
+	EAttribute getThingUserInterface_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link thing_ui.core.Thing#getDescription <em>Description</em>}'.
+	 * Returns the meta object for the attribute '{@link thing_ui.core.ThingUserInterface#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see thing_ui.core.Thing#getDescription()
-	 * @see #getThing()
+	 * @see thing_ui.core.ThingUserInterface#getDescription()
+	 * @see #getThingUserInterface()
 	 * @generated
 	 */
-	EAttribute getThing_Description();
+	EAttribute getThingUserInterface_Description();
 
 	/**
-	 * Returns the meta object for the attribute '{@link thing_ui.core.Thing#getIcon <em>Icon</em>}'.
+	 * Returns the meta object for the attribute '{@link thing_ui.core.ThingUserInterface#getIcon <em>Icon</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Icon</em>'.
-	 * @see thing_ui.core.Thing#getIcon()
-	 * @see #getThing()
+	 * @see thing_ui.core.ThingUserInterface#getIcon()
+	 * @see #getThingUserInterface()
 	 * @generated
 	 */
-	EAttribute getThing_Icon();
+	EAttribute getThingUserInterface_Icon();
 
 	/**
 	 * Returns the meta object for class '{@link thing_ui.core.Location <em>Location</em>}'.
@@ -475,14 +475,14 @@ public interface CorePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link thing_ui.core.impl.ThingImpl <em>Thing</em>}' class.
+		 * The meta object literal for the '{@link thing_ui.core.impl.ThingUserInterfaceImpl <em>Thing User Interface</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see thing_ui.core.impl.ThingImpl
-		 * @see thing_ui.core.impl.CorePackageImpl#getThing()
+		 * @see thing_ui.core.impl.ThingUserInterfaceImpl
+		 * @see thing_ui.core.impl.CorePackageImpl#getThingUserInterface()
 		 * @generated
 		 */
-		EClass THING = eINSTANCE.getThing();
+		EClass THING_USER_INTERFACE = eINSTANCE.getThingUserInterface();
 
 		/**
 		 * The meta object literal for the '<em><b>Location</b></em>' reference feature.
@@ -490,7 +490,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference THING__LOCATION = eINSTANCE.getThing_Location();
+		EReference THING_USER_INTERFACE__LOCATION = eINSTANCE.getThingUserInterface_Location();
 
 		/**
 		 * The meta object literal for the '<em><b>Properties</b></em>' reference list feature.
@@ -498,7 +498,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference THING__PROPERTIES = eINSTANCE.getThing_Properties();
+		EReference THING_USER_INTERFACE__PROPERTIES = eINSTANCE.getThingUserInterface_Properties();
 
 		/**
 		 * The meta object literal for the '<em><b>Actions</b></em>' reference list feature.
@@ -506,7 +506,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference THING__ACTIONS = eINSTANCE.getThing_Actions();
+		EReference THING_USER_INTERFACE__ACTIONS = eINSTANCE.getThingUserInterface_Actions();
 
 		/**
 		 * The meta object literal for the '<em><b>Events</b></em>' reference list feature.
@@ -514,7 +514,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference THING__EVENTS = eINSTANCE.getThing_Events();
+		EReference THING_USER_INTERFACE__EVENTS = eINSTANCE.getThingUserInterface_Events();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -522,7 +522,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute THING__NAME = eINSTANCE.getThing_Name();
+		EAttribute THING_USER_INTERFACE__NAME = eINSTANCE.getThingUserInterface_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -530,7 +530,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute THING__DESCRIPTION = eINSTANCE.getThing_Description();
+		EAttribute THING_USER_INTERFACE__DESCRIPTION = eINSTANCE.getThingUserInterface_Description();
 
 		/**
 		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
@@ -538,7 +538,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute THING__ICON = eINSTANCE.getThing_Icon();
+		EAttribute THING_USER_INTERFACE__ICON = eINSTANCE.getThingUserInterface_Icon();
 
 		/**
 		 * The meta object literal for the '{@link thing_ui.core.impl.LocationImpl <em>Location</em>}' class.

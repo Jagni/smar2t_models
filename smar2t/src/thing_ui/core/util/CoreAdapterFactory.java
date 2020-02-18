@@ -68,8 +68,8 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	protected CoreSwitch<Adapter> modelSwitch =
 		new CoreSwitch<Adapter>() {
 			@Override
-			public Adapter caseThing(Thing object) {
-				return createThingAdapter();
+			public Adapter caseThingUserInterface(ThingUserInterface object) {
+				return createThingUserInterfaceAdapter();
 			}
 			@Override
 			public Adapter caseLocation(Location object) {
@@ -100,16 +100,16 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link thing_ui.core.Thing <em>Thing</em>}'.
+	 * Creates a new adapter for an object of class '{@link thing_ui.core.ThingUserInterface <em>Thing User Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see thing_ui.core.Thing
+	 * @see thing_ui.core.ThingUserInterface
 	 * @generated
 	 */
-	public Adapter createThingAdapter() {
+	public Adapter createThingUserInterfaceAdapter() {
 		return null;
 	}
 

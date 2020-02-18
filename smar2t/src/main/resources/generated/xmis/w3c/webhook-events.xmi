@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<W3cTd:Thing xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:W3cTd="com.smar2t.w3c_td.core" id="urn:dev:ops:32473-Thing-1234" title="WebhookThing" description="Webhook-based Event with subscription and unsubscribe form.">
+  <security>nosec_sc</security>
+  <events key="temperature">
+    <value description="Provides periodic temperature value updates.">
+      <forms href="http://192.168.0.124:8080/events/temp/subscribe">
+        <op>subscribeevent</op>
+      </forms>
+      <forms href="http://192.168.0.124:8080/events/temp/{subscriptionID}">
+        <op>unsubscribeevent</op>
+      </forms>
+    </value>
+  </events>
+</W3cTd:Thing>

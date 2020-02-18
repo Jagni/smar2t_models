@@ -1,14 +1,15 @@
+-- @atlcompiler emftvm
 -- @path W3CTD=/smar2t/model/W3CTD/W3CTD.ecore
 -- @path ThingUI=/smar2t/model/ThingUI/ThingUI.ecore
 
 module W3CTD2ThingUI;
-create UI : ThingUI from Thing : W3CTD;
+create ThingUserInterface : ThingUI from Thing : W3CTD;
 
 rule ThingData {
 	from
 		td: W3CTD!Thing
 	to
-		t: ThingUI!Thing (
+		t: ThingUI!ThingUserInterface (
 			description <- td.description,
 			name <- td.title,
 			icon <- td.semanticType.first(),
@@ -49,4 +50,3 @@ lazy rule getActuatorFromForm {
 }
 
 helper context W3CTD!Form def: readOnly(): Boolean = self.op.includes('writeproperty');
-

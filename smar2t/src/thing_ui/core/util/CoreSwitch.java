@@ -66,9 +66,9 @@ public class CoreSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CorePackage.THING: {
-				Thing thing = (Thing)theEObject;
-				T result = caseThing(thing);
+			case CorePackage.THING_USER_INTERFACE: {
+				ThingUserInterface thingUserInterface = (ThingUserInterface)theEObject;
+				T result = caseThingUserInterface(thingUserInterface);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -89,17 +89,17 @@ public class CoreSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Thing</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Thing User Interface</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Thing</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Thing User Interface</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseThing(Thing object) {
+	public T caseThingUserInterface(ThingUserInterface object) {
 		return null;
 	}
 

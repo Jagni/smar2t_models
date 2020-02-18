@@ -22,13 +22,13 @@ public interface CoreFactory extends EFactory {
 	CoreFactory eINSTANCE = thing_ui.core.impl.CoreFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Thing</em>'.
+	 * Returns a new object of class '<em>Thing User Interface</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Thing</em>'.
+	 * @return a new object of class '<em>Thing User Interface</em>'.
 	 * @generated
 	 */
-	Thing createThing();
+	ThingUserInterface createThingUserInterface();
 
 	/**
 	 * Returns a new object of class '<em>Location</em>'.

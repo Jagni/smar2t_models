@@ -5,7 +5,8 @@
     complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>ThingUI.ecore</foreignModel>
   <genPackages prefix="Thing_ui" disposableProviderFactory="true" ecorePackage="ThingUI.ecore#/">
-    <nestedGenPackages prefix="Actuation" disposableProviderFactory="true" ecorePackage="ThingUI.ecore#//actuation">
+    <nestedGenPackages prefix="Actuation" basePackage="thing_ui" disposableProviderFactory="true"
+        ecorePackage="ThingUI.ecore#//actuation">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//actuation/CommunicationProtocol">
         <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//actuation/CommunicationProtocol/http"/>
         <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//actuation/CommunicationProtocol/mqtt"/>
@@ -21,7 +22,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//actuation/Actuator/securityScheme"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Interaction" disposableProviderFactory="true" ecorePackage="ThingUI.ecore#//interaction">
+    <nestedGenPackages prefix="Interaction" basePackage="thing_ui" disposableProviderFactory="true"
+        ecorePackage="ThingUI.ecore#//interaction">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//interaction/InputType">
         <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/InputType/text"/>
         <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/InputType/number"/>
@@ -80,19 +82,20 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/boolInput/inputType"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Core" disposableProviderFactory="true" ecorePackage="ThingUI.ecore#//core">
-      <genClasses ecoreClass="ThingUI.ecore#//core/Thing">
+    <nestedGenPackages prefix="Core" basePackage="thing_ui" disposableProviderFactory="true"
+        ecorePackage="ThingUI.ecore#//core">
+      <genClasses ecoreClass="ThingUI.ecore#//core/ThingUserInterface">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ThingUI.ecore#//core/Thing/location"/>
+            ecoreFeature="ecore:EReference ThingUI.ecore#//core/ThingUserInterface/location"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ThingUI.ecore#//core/Thing/properties"/>
+            ecoreFeature="ecore:EReference ThingUI.ecore#//core/ThingUserInterface/properties"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ThingUI.ecore#//core/Thing/actions"/>
+            ecoreFeature="ecore:EReference ThingUI.ecore#//core/ThingUserInterface/actions"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ThingUI.ecore#//core/Thing/events"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/Thing/name"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/Thing/description"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/Thing/icon"/>
+            ecoreFeature="ecore:EReference ThingUI.ecore#//core/ThingUserInterface/events"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/ThingUserInterface/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/ThingUserInterface/description"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/ThingUserInterface/icon"/>
       </genClasses>
       <genClasses ecoreClass="ThingUI.ecore#//core/Location">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/Location/latitude"/>
@@ -107,6 +110,7 @@
             ecoreFeature="ecore:EReference ThingUI.ecore#//core/Resource/form"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Security" disposableProviderFactory="true" ecorePackage="ThingUI.ecore#//security"/>
+    <nestedGenPackages prefix="Security" basePackage="thing_ui" disposableProviderFactory="true"
+        ecorePackage="ThingUI.ecore#//security"/>
   </genPackages>
 </genmodel:GenModel>

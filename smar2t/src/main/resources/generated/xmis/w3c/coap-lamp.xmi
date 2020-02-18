@@ -16,6 +16,9 @@
       <forms href="coaps://mylamp.example.com/status">
         <op>readproperty</op>
       </forms>
+      <forms href="coaps://mylamp.example.com/status">
+        <op>readproperty</op>
+      </forms>
     </value>
   </properties>
 </W3cTd:Thing>

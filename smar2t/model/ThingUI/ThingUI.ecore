@@ -90,7 +90,7 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="core" nsURI="com.smar2t.thing_ui.core" nsPrefix="UICore">
-    <eClassifiers xsi:type="ecore:EClass" name="Thing">
+    <eClassifiers xsi:type="ecore:EClass" name="ThingUserInterface">
       <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//core/Location"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
           eType="#//core/Resource"/>

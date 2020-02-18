@@ -56,7 +56,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CorePackage.THING: return createThing();
+			case CorePackage.THING_USER_INTERFACE: return createThingUserInterface();
 			case CorePackage.LOCATION: return createLocation();
 			case CorePackage.RESOURCE: return createResource();
 			default:
@@ -69,9 +69,9 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Thing createThing() {
-		ThingImpl thing = new ThingImpl();
-		return thing;
+	public ThingUserInterface createThingUserInterface() {
+		ThingUserInterfaceImpl thingUserInterface = new ThingUserInterfaceImpl();
+		return thingUserInterface;
 	}
 
 	/**

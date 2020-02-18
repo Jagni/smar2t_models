@@ -19,8 +19,7 @@ import thing_ui.core.CoreFactory;
 import thing_ui.core.CorePackage;
 import thing_ui.core.Location;
 import thing_ui.core.Resource;
-import thing_ui.core.Thing;
-
+import thing_ui.core.ThingUserInterface;
 import thing_ui.interaction.InteractionPackage;
 
 import thing_ui.interaction.impl.InteractionPackageImpl;
@@ -37,7 +36,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass thingEClass = null;
+	private EClass thingUserInterfaceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,8 +131,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getThing() {
-		return thingEClass;
+	public EClass getThingUserInterface() {
+		return thingUserInterfaceEClass;
 	}
 
 	/**
@@ -141,8 +140,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getThing_Location() {
-		return (EReference)thingEClass.getEStructuralFeatures().get(0);
+	public EReference getThingUserInterface_Location() {
+		return (EReference)thingUserInterfaceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -150,8 +149,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getThing_Properties() {
-		return (EReference)thingEClass.getEStructuralFeatures().get(1);
+	public EReference getThingUserInterface_Properties() {
+		return (EReference)thingUserInterfaceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -159,8 +158,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getThing_Actions() {
-		return (EReference)thingEClass.getEStructuralFeatures().get(2);
+	public EReference getThingUserInterface_Actions() {
+		return (EReference)thingUserInterfaceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -168,8 +167,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getThing_Events() {
-		return (EReference)thingEClass.getEStructuralFeatures().get(3);
+	public EReference getThingUserInterface_Events() {
+		return (EReference)thingUserInterfaceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -177,8 +176,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getThing_Name() {
-		return (EAttribute)thingEClass.getEStructuralFeatures().get(4);
+	public EAttribute getThingUserInterface_Name() {
+		return (EAttribute)thingUserInterfaceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -186,8 +185,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getThing_Description() {
-		return (EAttribute)thingEClass.getEStructuralFeatures().get(5);
+	public EAttribute getThingUserInterface_Description() {
+		return (EAttribute)thingUserInterfaceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -195,8 +194,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getThing_Icon() {
-		return (EAttribute)thingEClass.getEStructuralFeatures().get(6);
+	public EAttribute getThingUserInterface_Icon() {
+		return (EAttribute)thingUserInterfaceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -308,14 +307,14 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		isCreated = true;
 
 		// Create classes and their features
-		thingEClass = createEClass(THING);
-		createEReference(thingEClass, THING__LOCATION);
-		createEReference(thingEClass, THING__PROPERTIES);
-		createEReference(thingEClass, THING__ACTIONS);
-		createEReference(thingEClass, THING__EVENTS);
-		createEAttribute(thingEClass, THING__NAME);
-		createEAttribute(thingEClass, THING__DESCRIPTION);
-		createEAttribute(thingEClass, THING__ICON);
+		thingUserInterfaceEClass = createEClass(THING_USER_INTERFACE);
+		createEReference(thingUserInterfaceEClass, THING_USER_INTERFACE__LOCATION);
+		createEReference(thingUserInterfaceEClass, THING_USER_INTERFACE__PROPERTIES);
+		createEReference(thingUserInterfaceEClass, THING_USER_INTERFACE__ACTIONS);
+		createEReference(thingUserInterfaceEClass, THING_USER_INTERFACE__EVENTS);
+		createEAttribute(thingUserInterfaceEClass, THING_USER_INTERFACE__NAME);
+		createEAttribute(thingUserInterfaceEClass, THING_USER_INTERFACE__DESCRIPTION);
+		createEAttribute(thingUserInterfaceEClass, THING_USER_INTERFACE__ICON);
 
 		locationEClass = createEClass(LOCATION);
 		createEAttribute(locationEClass, LOCATION__LATITUDE);
@@ -363,14 +362,14 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(thingEClass, Thing.class, "Thing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getThing_Location(), this.getLocation(), null, "location", null, 0, 1, Thing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getThing_Properties(), this.getResource(), null, "properties", null, 0, -1, Thing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getThing_Actions(), this.getResource(), null, "actions", null, 0, -1, Thing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getThing_Events(), this.getResource(), null, "events", null, 0, -1, Thing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getThing_Name(), ecorePackage.getEString(), "name", null, 0, 1, Thing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getThing_Description(), ecorePackage.getEString(), "description", null, 0, 1, Thing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getThing_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, Thing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(thingUserInterfaceEClass, ThingUserInterface.class, "ThingUserInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getThingUserInterface_Location(), this.getLocation(), null, "location", null, 0, 1, ThingUserInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getThingUserInterface_Properties(), this.getResource(), null, "properties", null, 0, -1, ThingUserInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getThingUserInterface_Actions(), this.getResource(), null, "actions", null, 0, -1, ThingUserInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getThingUserInterface_Events(), this.getResource(), null, "events", null, 0, -1, ThingUserInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThingUserInterface_Name(), ecorePackage.getEString(), "name", null, 0, 1, ThingUserInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThingUserInterface_Description(), ecorePackage.getEString(), "description", null, 0, 1, ThingUserInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThingUserInterface_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, ThingUserInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(locationEClass, Location.class, "Location", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLocation_Latitude(), theXMLTypePackage.getDouble(), "latitude", null, 0, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

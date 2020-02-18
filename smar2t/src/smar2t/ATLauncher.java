@@ -1,7 +1,5 @@
 package smar2t;
 
-import java.io.IOException;
-import java.util.Collections;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -21,9 +19,6 @@ import org.eclipse.m2m.atl.emftvm.impl.resource.EMFTVMResourceFactoryImpl;
 import org.eclipse.m2m.atl.emftvm.util.DefaultModuleResolver;
 import org.eclipse.m2m.atl.emftvm.util.ModuleResolver;
 import org.eclipse.m2m.atl.emftvm.util.TimingData;
-import org.emfjson.jackson.resource.JsonResourceFactory;
-
-import w3c_td.core.Thing;
 
 /**
  * An off-the-shelf launcher for ATL/EMFTVM transformations
@@ -115,7 +110,7 @@ public class ATLauncher {
 	    // Enables extended meta-data, weird we have to do this but well...
 	    final ExtendedMetaData extendedMetaData = new BasicExtendedMetaData(EPackage.Registry.INSTANCE);
 	    rs.getLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, extendedMetaData);
-	
+	    	
 	    Resource r = rs.getResource(URI.createFileURI(metamodelPath), true);
 	    EObject eObject = r.getContents().get(0);
 	    // A meta-model might have multiple packages we assume the main package is the first one listed
