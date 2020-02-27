@@ -26,18 +26,18 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Thing/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Thing/title"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Thing/description"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//Thing/properties"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//Thing/actions"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//Thing/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//Thing/actions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//Thing/events"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//Thing/properties"/>
     </genClasses>
     <genClasses ecoreClass="MozillaTD.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Attribute/unit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Attribute/enum"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Attribute/minimum"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Attribute/maximum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Attribute/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Attribute/max"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Attribute/multipleOf"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Attribute/type"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//Attribute/properties"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//Attribute/properties"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Attribute/id"/>
     </genClasses>
     <genClasses ecoreClass="MozillaTD.ecore#//Link">
@@ -48,7 +48,7 @@
     <genClasses ecoreClass="MozillaTD.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Action/title"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Action/description"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//Action/input"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//Action/input"/>
     </genClasses>
     <genClasses ecoreClass="MozillaTD.ecore#//Input">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Input/semanticType"/>
@@ -64,7 +64,24 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Event/description"/>
     </genClasses>
     <genClasses image="false" ecoreClass="MozillaTD.ecore#//Linkable">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//Linkable/links"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//Linkable/links"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//Linkable/href"/>
+    </genClasses>
+    <genClasses ecoreClass="MozillaTD.ecore#//StringToActionMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//StringToActionMap/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//StringToActionMap/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MozillaTD.ecore#//StringToEventMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//StringToEventMap/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//StringToEventMap/key"/>
+    </genClasses>
+    <genClasses ecoreClass="MozillaTD.ecore#//StringToPropertyMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//StringToPropertyMap/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//StringToPropertyMap/key"/>
+    </genClasses>
+    <genClasses ecoreClass="MozillaTD.ecore#//StringToAttributeMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MozillaTD.ecore#//StringToAttributeMap/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MozillaTD.ecore#//StringToAttributeMap/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

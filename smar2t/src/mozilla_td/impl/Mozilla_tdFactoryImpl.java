@@ -2,6 +2,7 @@
  */
 package mozilla_td.impl;
 
+import java.util.Map;
 import mozilla_td.*;
 
 import org.eclipse.emf.ecore.EClass;
@@ -64,6 +65,10 @@ public class Mozilla_tdFactoryImpl extends EFactoryImpl implements Mozilla_tdFac
 			case Mozilla_tdPackage.INPUT: return createInput();
 			case Mozilla_tdPackage.PROPERTY: return createProperty();
 			case Mozilla_tdPackage.EVENT: return createEvent();
+			case Mozilla_tdPackage.STRING_TO_ACTION_MAP: return (EObject)createStringToActionMap();
+			case Mozilla_tdPackage.STRING_TO_EVENT_MAP: return (EObject)createStringToEventMap();
+			case Mozilla_tdPackage.STRING_TO_PROPERTY_MAP: return (EObject)createStringToPropertyMap();
+			case Mozilla_tdPackage.STRING_TO_ATTRIBUTE_MAP: return (EObject)createStringToAttributeMap();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -171,6 +176,46 @@ public class Mozilla_tdFactoryImpl extends EFactoryImpl implements Mozilla_tdFac
 	public Event createEvent() {
 		EventImpl event = new EventImpl();
 		return event;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map.Entry<String, Action> createStringToActionMap() {
+		StringToActionMapImpl stringToActionMap = new StringToActionMapImpl();
+		return stringToActionMap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map.Entry<String, Event> createStringToEventMap() {
+		StringToEventMapImpl stringToEventMap = new StringToEventMapImpl();
+		return stringToEventMap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map.Entry<String, Property> createStringToPropertyMap() {
+		StringToPropertyMapImpl stringToPropertyMap = new StringToPropertyMapImpl();
+		return stringToPropertyMap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map.Entry<String, Attribute> createStringToAttributeMap() {
+		StringToAttributeMapImpl stringToAttributeMap = new StringToAttributeMapImpl();
+		return stringToAttributeMap;
 	}
 
 	/**

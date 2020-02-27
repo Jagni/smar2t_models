@@ -10,15 +10,20 @@ import mozilla_td.PrimitiveType;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreEMap;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -152,14 +157,14 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	protected PrimitiveType type = TYPE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' reference list.
+	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProperties()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Attribute> properties;
+	protected EMap<String, Attribute> properties;
 
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -322,9 +327,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Attribute> getProperties() {
+	public EMap<String, Attribute> getProperties() {
 		if (properties == null) {
-			properties = new EObjectResolvingEList<Attribute>(Attribute.class, this, Mozilla_tdPackage.ATTRIBUTE__PROPERTIES);
+			properties = new EcoreEMap<String,Attribute>(Mozilla_tdPackage.Literals.STRING_TO_ATTRIBUTE_MAP, StringToAttributeMapImpl.class, this, Mozilla_tdPackage.ATTRIBUTE__PROPERTIES);
 		}
 		return properties;
 	}
@@ -356,6 +361,20 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Mozilla_tdPackage.ATTRIBUTE__PROPERTIES:
+				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mozilla_tdPackage.ATTRIBUTE__UNIT:
@@ -371,7 +390,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 			case Mozilla_tdPackage.ATTRIBUTE__TYPE:
 				return getType();
 			case Mozilla_tdPackage.ATTRIBUTE__PROPERTIES:
-				return getProperties();
+				if (coreType) return getProperties();
+				else return getProperties().map();
 			case Mozilla_tdPackage.ATTRIBUTE__ID:
 				return getId();
 		}
@@ -407,8 +427,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 				setType((PrimitiveType)newValue);
 				return;
 			case Mozilla_tdPackage.ATTRIBUTE__PROPERTIES:
-				getProperties().clear();
-				getProperties().addAll((Collection<? extends Attribute>)newValue);
+				((EStructuralFeature.Setting)getProperties()).set(newValue);
 				return;
 			case Mozilla_tdPackage.ATTRIBUTE__ID:
 				setId((String)newValue);

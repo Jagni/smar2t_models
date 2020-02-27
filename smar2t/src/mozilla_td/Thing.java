@@ -3,6 +3,7 @@
 package mozilla_td;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,9 +19,9 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link mozilla_td.Thing#getId <em>Id</em>}</li>
  *   <li>{@link mozilla_td.Thing#getTitle <em>Title</em>}</li>
  *   <li>{@link mozilla_td.Thing#getDescription <em>Description</em>}</li>
- *   <li>{@link mozilla_td.Thing#getProperties <em>Properties</em>}</li>
  *   <li>{@link mozilla_td.Thing#getActions <em>Actions</em>}</li>
- *   <li>{@link mozilla_td.Thing#getEvent <em>Event</em>}</li>
+ *   <li>{@link mozilla_td.Thing#getEvents <em>Events</em>}</li>
+ *   <li>{@link mozilla_td.Thing#getProperties <em>Properties</em>}</li>
  * </ul>
  *
  * @see mozilla_td.Mozilla_tdPackage#getThing()
@@ -129,49 +130,42 @@ public interface Thing extends Linkable {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Properties</b></em>' reference list.
-	 * The list contents are of type {@link mozilla_td.Property}.
+	 * Returns the value of the '<em><b>Properties</b></em>' map.
+	 * The key is of type {@link java.lang.String},
+	 * and the value is of type {@link mozilla_td.Property},
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Properties</em>' reference list.
+	 * @return the value of the '<em>Properties</em>' map.
 	 * @see mozilla_td.Mozilla_tdPackage#getThing_Properties()
-	 * @model
+	 * @model mapType="mozilla_td.StringToPropertyMap&lt;org.eclipse.emf.ecore.EString, mozilla_td.Property&gt;"
 	 * @generated
 	 */
-	EList<Property> getProperties();
+	EMap<String, Property> getProperties();
 
 	/**
-	 * Returns the value of the '<em><b>Actions</b></em>' reference list.
-	 * The list contents are of type {@link mozilla_td.Action}.
+	 * Returns the value of the '<em><b>Actions</b></em>' map.
+	 * The key is of type {@link java.lang.String},
+	 * and the value is of type {@link mozilla_td.Action},
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Actions</em>' reference list.
+	 * @return the value of the '<em>Actions</em>' map.
 	 * @see mozilla_td.Mozilla_tdPackage#getThing_Actions()
-	 * @model
+	 * @model mapType="mozilla_td.StringToActionMap&lt;org.eclipse.emf.ecore.EString, mozilla_td.Action&gt;"
 	 * @generated
 	 */
-	EList<Action> getActions();
+	EMap<String, Action> getActions();
 
 	/**
-	 * Returns the value of the '<em><b>Event</b></em>' reference.
+	 * Returns the value of the '<em><b>Events</b></em>' map.
+	 * The key is of type {@link java.lang.String},
+	 * and the value is of type {@link mozilla_td.Event},
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Event</em>' reference.
-	 * @see #setEvent(Event)
-	 * @see mozilla_td.Mozilla_tdPackage#getThing_Event()
-	 * @model
+	 * @return the value of the '<em>Events</em>' map.
+	 * @see mozilla_td.Mozilla_tdPackage#getThing_Events()
+	 * @model mapType="mozilla_td.StringToEventMap&lt;org.eclipse.emf.ecore.EString, mozilla_td.Event&gt;"
 	 * @generated
 	 */
-	Event getEvent();
-
-	/**
-	 * Sets the value of the '{@link mozilla_td.Thing#getEvent <em>Event</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Event</em>' reference.
-	 * @see #getEvent()
-	 * @generated
-	 */
-	void setEvent(Event value);
+	EMap<String, Event> getEvents();
 
 } // Thing

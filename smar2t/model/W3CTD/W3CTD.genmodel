@@ -5,188 +5,165 @@
     complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>W3CTD.ecore</foreignModel>
   <genPackages prefix="W3c_td" disposableProviderFactory="true" ecorePackage="W3CTD.ecore#/">
-    <nestedGenPackages prefix="Core" basePackage="w3c_td" disposableProviderFactory="true"
-        ecorePackage="W3CTD.ecore#//core">
-      <genClasses ecoreClass="W3CTD.ecore#//core/Thing">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/Thing/id"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/Thing/title"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/Thing/description"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/Thing/semanticContext"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/Thing/semanticType"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/Thing/created"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/Thing/modified"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/Thing/support"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/Thing/base"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/Thing/security"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//core/Thing/links"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference W3CTD.ecore#//core/Thing/forms"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference W3CTD.ecore#//core/Thing/version"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference W3CTD.ecore#//core/Thing/titles"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//core/Thing/descriptions"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//core/Thing/events"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//core/Thing/actions"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//core/Thing/properties"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//core/VersionInfo">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/VersionInfo/instance"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//core/PropertyAffordance">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/PropertyAffordance/observable"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="W3CTD.ecore#//core/InteractionAffordance">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//core/InteractionAffordance/forms"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference W3CTD.ecore#//core/InteractionAffordance/titles"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference W3CTD.ecore#//core/InteractionAffordance/descriptions"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/InteractionAffordance/type"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/InteractionAffordance/title"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/InteractionAffordance/description"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//core/EventAffordance"/>
-      <genClasses ecoreClass="W3CTD.ecore#//core/ActionAffordance">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/ActionAffordance/safe"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/ActionAffordance/idempotent"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//core/MultiLanguage"/>
-      <genClasses ecoreClass="W3CTD.ecore#//core/StringToEventMap">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/StringToEventMap/key"/>
-        <genFeatures children="true" createChild="true" propertySortChoices="true"
-            ecoreFeature="ecore:EReference W3CTD.ecore#//core/StringToEventMap/value"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//core/StringToActionMap">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/StringToActionMap/key"/>
-        <genFeatures children="true" createChild="true" propertySortChoices="true"
-            ecoreFeature="ecore:EReference W3CTD.ecore#//core/StringToActionMap/value"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//core/StringToPropertyMap">
-        <genFeatures children="true" createChild="true" propertySortChoices="true"
-            ecoreFeature="ecore:EReference W3CTD.ecore#//core/StringToPropertyMap/value"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//core/StringToPropertyMap/key"/>
-      </genClasses>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Hypermediacontrols" basePackage="w3c_td" disposableProviderFactory="true"
-        ecorePackage="W3CTD.ecore#//hypermediacontrols">
-      <genClasses ecoreClass="W3CTD.ecore#//hypermediacontrols/Link">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//hypermediacontrols/Link/href"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//hypermediacontrols/Link/type"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//hypermediacontrols/Link/rel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//hypermediacontrols/Link/anchor"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//hypermediacontrols/Form">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//hypermediacontrols/Form/op"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//hypermediacontrols/Form/href"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//hypermediacontrols/Form/contentType"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//hypermediacontrols/Form/contentCoding"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//hypermediacontrols/Form/subprotocol"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//hypermediacontrols/Form/security"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//hypermediacontrols/Form/scopes"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference W3CTD.ecore#//hypermediacontrols/Form/response"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//hypermediacontrols/ExpectedResponse">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//hypermediacontrols/ExpectedResponse/contentType"/>
-      </genClasses>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Dataschema" basePackage="w3c_td" disposableProviderFactory="true"
-        ecorePackage="W3CTD.ecore#//dataschema">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="W3CTD.ecore#//dataschema/NewEnum1"/>
-      <genClasses image="false" ecoreClass="W3CTD.ecore#//dataschema/DataSchema">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/DataSchema/semanticType"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/DataSchema/title"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/DataSchema/description"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/DataSchema/type"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/DataSchema/unit"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/DataSchema/enum"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference W3CTD.ecore#//dataschema/DataSchema/oneOf"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference W3CTD.ecore#//dataschema/DataSchema/titles"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference W3CTD.ecore#//dataschema/DataSchema/descriptions"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/DataSchema/const"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/DataSchema/readOnly"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/DataSchema/writeOnly"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/DataSchema/format"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//dataschema/ArraySchema">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/ArraySchema/minItems"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/ArraySchema/maxItems"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//dataschema/ArraySchema/items"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//dataschema/ObjectSchema">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/ObjectSchema/required"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//dataschema/ObjectSchema/properties"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//dataschema/StringSchema"/>
-      <genClasses ecoreClass="W3CTD.ecore#//dataschema/BooleanSchema"/>
-      <genClasses ecoreClass="W3CTD.ecore#//dataschema/NumberSchema">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/NumberSchema/minimum"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/NumberSchema/maximum"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//dataschema/IntegerSchema">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/IntegerSchema/minimum"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//dataschema/IntegerSchema/maximum"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//dataschema/NullSchema"/>
-    </nestedGenPackages>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="W3CTD.ecore#//NewEnum1"/>
+    <genClasses ecoreClass="W3CTD.ecore#//Thing">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Thing/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Thing/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Thing/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Thing/semanticContext"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Thing/semanticType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Thing/created"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Thing/modified"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Thing/support"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Thing/base"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Thing/security"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//Thing/links"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference W3CTD.ecore#//Thing/forms"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference W3CTD.ecore#//Thing/version"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference W3CTD.ecore#//Thing/titles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//Thing/descriptions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//Thing/events"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//Thing/actions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//Thing/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//VersionInfo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//VersionInfo/instance"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//PropertyAffordance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//PropertyAffordance/observable"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="W3CTD.ecore#//InteractionAffordance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//InteractionAffordance/forms"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference W3CTD.ecore#//InteractionAffordance/titles"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference W3CTD.ecore#//InteractionAffordance/descriptions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//InteractionAffordance/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//InteractionAffordance/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//InteractionAffordance/description"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//EventAffordance"/>
+    <genClasses ecoreClass="W3CTD.ecore#//ActionAffordance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//ActionAffordance/safe"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//ActionAffordance/idempotent"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//MultiLanguage"/>
+    <genClasses ecoreClass="W3CTD.ecore#//StringToEventMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//StringToEventMap/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//StringToEventMap/value"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//StringToActionMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//StringToActionMap/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//StringToActionMap/value"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//StringToPropertyMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//StringToPropertyMap/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//StringToPropertyMap/key"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//Link">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Link/href"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Link/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Link/rel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Link/anchor"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//Form">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Form/op"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Form/href"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Form/contentType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Form/contentCoding"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Form/subprotocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Form/security"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//Form/scopes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference W3CTD.ecore#//Form/response"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//ExpectedResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//ExpectedResponse/contentType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="W3CTD.ecore#//DataSchema">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//DataSchema/semanticType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//DataSchema/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//DataSchema/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//DataSchema/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//DataSchema/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//DataSchema/enum"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference W3CTD.ecore#//DataSchema/oneOf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference W3CTD.ecore#//DataSchema/titles"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference W3CTD.ecore#//DataSchema/descriptions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//DataSchema/const"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//DataSchema/readOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//DataSchema/writeOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//DataSchema/format"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//ArraySchema">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//ArraySchema/minItems"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//ArraySchema/maxItems"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//ArraySchema/items"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//ObjectSchema">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//ObjectSchema/required"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//ObjectSchema/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//StringSchema"/>
+    <genClasses ecoreClass="W3CTD.ecore#//BooleanSchema"/>
+    <genClasses ecoreClass="W3CTD.ecore#//NumberSchema">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//NumberSchema/minimum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//NumberSchema/maximum"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//IntegerSchema">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//IntegerSchema/minimum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//IntegerSchema/maximum"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//NullSchema"/>
+    <genClasses image="false" ecoreClass="W3CTD.ecore#//SecurityScheme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//SecurityScheme/semanticType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//SecurityScheme/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//SecurityScheme/proxy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//SecurityScheme/scheme"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference W3CTD.ecore#//SecurityScheme/descriptions"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//NoSecurityScheme"/>
+    <genClasses ecoreClass="W3CTD.ecore#//BasicSecurityScheme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//BasicSecurityScheme/in"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//BasicSecurityScheme/name"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//DigestSecurityScheme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//DigestSecurityScheme/qop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//DigestSecurityScheme/in"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//DigestSecurityScheme/name"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//APIKeySecurityScheme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//APIKeySecurityScheme/in"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//APIKeySecurityScheme/name"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//BearerSecurityScheme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//BearerSecurityScheme/authorization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//BearerSecurityScheme/alg"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//BearerSecurityScheme/format"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//BearerSecurityScheme/in"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//BearerSecurityScheme/name"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//CertSecurityScheme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//CertSecurityScheme/identity"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//PSKSecurityScheme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//PSKSecurityScheme/identity"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//PublicSecurityScheme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//PublicSecurityScheme/identity"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//PoPSecurityScheme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//PoPSecurityScheme/authorization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//PoPSecurityScheme/alg"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//PoPSecurityScheme/format"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//PoPSecurityScheme/in"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//PoPSecurityScheme/name"/>
+    </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//OAuth2SecurityScheme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//OAuth2SecurityScheme/authorization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//OAuth2SecurityScheme/token"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//OAuth2SecurityScheme/refresh"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//OAuth2SecurityScheme/scopes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//OAuth2SecurityScheme/flow"/>
+    </genClasses>
     <nestedGenPackages prefix="Security" basePackage="w3c_td" disposableProviderFactory="true"
-        ecorePackage="W3CTD.ecore#//security">
-      <genClasses image="false" ecoreClass="W3CTD.ecore#//security/SecurityScheme">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/SecurityScheme/semanticType"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/SecurityScheme/description"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/SecurityScheme/proxy"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/SecurityScheme/scheme"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference W3CTD.ecore#//security/SecurityScheme/descriptions"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//security/NoSecurityScheme"/>
-      <genClasses ecoreClass="W3CTD.ecore#//security/BasicSecurityScheme">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/BasicSecurityScheme/in"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/BasicSecurityScheme/name"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//security/DigestSecurityScheme">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/DigestSecurityScheme/qop"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/DigestSecurityScheme/in"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/DigestSecurityScheme/name"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//security/APIKeySecurityScheme">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/APIKeySecurityScheme/in"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/APIKeySecurityScheme/name"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//security/BearerSecurityScheme">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/BearerSecurityScheme/authorization"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/BearerSecurityScheme/alg"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/BearerSecurityScheme/format"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/BearerSecurityScheme/in"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/BearerSecurityScheme/name"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//security/CertSecurityScheme">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/CertSecurityScheme/identity"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//security/PSKSecurityScheme">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/PSKSecurityScheme/identity"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//security/PublicSecurityScheme">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/PublicSecurityScheme/identity"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//security/PoPSecurityScheme">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/PoPSecurityScheme/authorization"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/PoPSecurityScheme/alg"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/PoPSecurityScheme/format"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/PoPSecurityScheme/in"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/PoPSecurityScheme/name"/>
-      </genClasses>
-      <genClasses ecoreClass="W3CTD.ecore#//security/OAuth2SecurityScheme">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/OAuth2SecurityScheme/authorization"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/OAuth2SecurityScheme/token"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/OAuth2SecurityScheme/refresh"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/OAuth2SecurityScheme/scopes"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//security/OAuth2SecurityScheme/flow"/>
-      </genClasses>
-    </nestedGenPackages>
+        ecorePackage="W3CTD.ecore#//security"/>
   </genPackages>
 </genmodel:GenModel>

@@ -1,0 +1,7 @@
+{
+  "eClass" : "http://smar2t.org/models/thing_ui#//ThingUI",
+  "location" : {
+    "altitude" : 1.0
+  },
+  "name" : "Lamp"
+}

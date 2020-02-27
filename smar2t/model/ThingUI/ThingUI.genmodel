@@ -5,112 +5,97 @@
     complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>ThingUI.ecore</foreignModel>
   <genPackages prefix="Thing_ui" disposableProviderFactory="true" ecorePackage="ThingUI.ecore#/">
-    <nestedGenPackages prefix="Actuation" basePackage="thing_ui" disposableProviderFactory="true"
-        ecorePackage="ThingUI.ecore#//actuation">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//actuation/CommunicationProtocol">
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//actuation/CommunicationProtocol/http"/>
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//actuation/CommunicationProtocol/mqtt"/>
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//actuation/CommunicationProtocol/coap"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//actuation/SecurityScheme">
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//actuation/SecurityScheme/none"/>
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//actuation/SecurityScheme/oauth2"/>
-      </genEnums>
-      <genClasses ecoreClass="ThingUI.ecore#//actuation/Actuator">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//actuation/Actuator/href"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//actuation/Actuator/communicationProtocol"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//actuation/Actuator/securityScheme"/>
-      </genClasses>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Interaction" basePackage="thing_ui" disposableProviderFactory="true"
-        ecorePackage="ThingUI.ecore#//interaction">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//interaction/InputType">
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/InputType/text"/>
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/InputType/number"/>
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/InputType/bool"/>
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/InputType/object"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//interaction/TextInputType">
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/TextInputType/plain"/>
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/TextInputType/email"/>
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/TextInputType/multiline"/>
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/TextInputType/phone"/>
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/TextInputType/datetime"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//interaction/NumberInputType">
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/NumberInputType/dial"/>
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/NumberInputType/slider"/>
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/NumberInputType/keyboard"/>
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/NumberInputType/stepper"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//interaction/BoolInputType">
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/BoolInputType/switch"/>
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/BoolInputType/checkbox"/>
-        <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//interaction/BoolInputType/button"/>
-      </genEnums>
-      <genClasses ecoreClass="ThingUI.ecore#//interaction/Form">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/Form/readOnly"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/Form/showsSubmitButton"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ThingUI.ecore#//interaction/Form/inputs"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ThingUI.ecore#//interaction/Form/actuator"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="ThingUI.ecore#//interaction/Input">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/Input/label"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/Input/id"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/Input/editingValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/Input/thingValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/Input/type"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/Input/interactionEnabled"/>
-      </genClasses>
-      <genClasses ecoreClass="ThingUI.ecore#//interaction/TextInput">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/TextInput/inputType"/>
-      </genClasses>
-      <genClasses ecoreClass="ThingUI.ecore#//interaction/NumberInput">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/NumberInput/minimum"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/NumberInput/minimumLabel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/NumberInput/maximum"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/NumberInput/maximumLabel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/NumberInput/inputType"/>
-      </genClasses>
-      <genClasses ecoreClass="ThingUI.ecore#//interaction/ObjectInput">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ThingUI.ecore#//interaction/ObjectInput/form"/>
-      </genClasses>
-      <genClasses ecoreClass="ThingUI.ecore#//interaction/boolInput">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//interaction/boolInput/inputType"/>
-      </genClasses>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Core" basePackage="thing_ui" disposableProviderFactory="true"
-        ecorePackage="ThingUI.ecore#//core">
-      <genClasses ecoreClass="ThingUI.ecore#//core/ThingUserInterface">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ThingUI.ecore#//core/ThingUserInterface/location"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ThingUI.ecore#//core/ThingUserInterface/properties"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ThingUI.ecore#//core/ThingUserInterface/actions"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ThingUI.ecore#//core/ThingUserInterface/events"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/ThingUserInterface/name"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/ThingUserInterface/description"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/ThingUserInterface/icon"/>
-      </genClasses>
-      <genClasses ecoreClass="ThingUI.ecore#//core/Location">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/Location/latitude"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/Location/longitude"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/Location/altitude"/>
-      </genClasses>
-      <genClasses ecoreClass="ThingUI.ecore#//core/Resource">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/Resource/name"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/Resource/description"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//core/Resource/icon"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ThingUI.ecore#//core/Resource/form"/>
-      </genClasses>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Security" basePackage="thing_ui" disposableProviderFactory="true"
-        ecorePackage="ThingUI.ecore#//security"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//CommunicationProtocol">
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//CommunicationProtocol/http"/>
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//CommunicationProtocol/mqtt"/>
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//CommunicationProtocol/coap"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//SecurityScheme">
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//SecurityScheme/none"/>
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//SecurityScheme/oauth2"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//InputType">
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//InputType/text"/>
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//InputType/number"/>
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//InputType/bool"/>
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//InputType/object"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//TextInputType">
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//TextInputType/plain"/>
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//TextInputType/email"/>
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//TextInputType/multiline"/>
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//TextInputType/phone"/>
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//TextInputType/datetime"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//NumberInputType">
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//NumberInputType/dial"/>
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//NumberInputType/slider"/>
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//NumberInputType/keyboard"/>
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//NumberInputType/stepper"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//BoolInputType">
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//BoolInputType/switch"/>
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//BoolInputType/checkbox"/>
+      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//BoolInputType/button"/>
+    </genEnums>
+    <genClasses ecoreClass="ThingUI.ecore#//Actuator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Actuator/href"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Actuator/communicationProtocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Actuator/securityScheme"/>
+    </genClasses>
+    <genClasses ecoreClass="ThingUI.ecore#//Form">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Form/readOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Form/showsSubmitButton"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ThingUI.ecore#//Form/inputs"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ThingUI.ecore#//Form/actuator"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ThingUI.ecore#//Input">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Input/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Input/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Input/editingValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Input/thingValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Input/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Input/interactionEnabled"/>
+    </genClasses>
+    <genClasses ecoreClass="ThingUI.ecore#//TextInput">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//TextInput/inputType"/>
+    </genClasses>
+    <genClasses ecoreClass="ThingUI.ecore#//NumberInput">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//NumberInput/minimum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//NumberInput/minimumLabel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//NumberInput/maximum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//NumberInput/maximumLabel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//NumberInput/inputType"/>
+    </genClasses>
+    <genClasses ecoreClass="ThingUI.ecore#//ObjectInput">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ThingUI.ecore#//ObjectInput/form"/>
+    </genClasses>
+    <genClasses ecoreClass="ThingUI.ecore#//boolInput">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//boolInput/inputType"/>
+    </genClasses>
+    <genClasses ecoreClass="ThingUI.ecore#//ThingUI">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ThingUI.ecore#//ThingUI/location"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ThingUI.ecore#//ThingUI/properties"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ThingUI.ecore#//ThingUI/actions"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ThingUI.ecore#//ThingUI/events"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//ThingUI/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//ThingUI/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//ThingUI/icon"/>
+    </genClasses>
+    <genClasses ecoreClass="ThingUI.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Location/latitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Location/longitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Location/altitude"/>
+    </genClasses>
+    <genClasses ecoreClass="ThingUI.ecore#//Resource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Resource/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Resource/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Resource/icon"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ThingUI.ecore#//Resource/form"/>
+    </genClasses>
+    <genClasses ecoreClass="ThingUI.ecore#//StringToResourceMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ThingUI.ecore#//StringToResourceMap/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//StringToResourceMap/key"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

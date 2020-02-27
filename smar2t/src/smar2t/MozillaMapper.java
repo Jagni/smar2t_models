@@ -2,15 +2,20 @@ package smar2t;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.emfjson.jackson.databind.EMFContext;
 import org.emfjson.jackson.module.EMFModule;
 import org.emfjson.jackson.resource.JsonResourceFactory;
+
+import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import mozilla_td.Mozilla_tdFactory;
@@ -50,7 +55,7 @@ public class MozillaMapper {
 			Thing thing = mapper.reader()
 			.withAttribute(EMFContext.Attributes.RESOURCE, resource)
 			.forType(Thing.class)
-			.readValue(new File("src/main/resources/sample.json"));
+			.readValue(file);
 			return thing;
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -71,9 +76,53 @@ public class MozillaMapper {
 		}
 	}
 	
+	public Thing readXMI(String filepath) {
+		try {
+			Resource res = resourceSet.getResource(URI.createFileURI(filepath), true);
+			res.load(null);
+			return (Thing) resource.getContents().get(0);
+		} catch (IOException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public void convertToJSON(Thing thing, String filepath) {		
+		try {
+			File file = new File(filepath);
+			file.delete();
+			file.createNewFile();
+			mapper.writer()
+			.withAttribute(EMFContext.Attributes.RESOURCE, resource)
+			.forType(Thing.class)
+			.writeValue(file, thing);
+		} catch (JsonGenerationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void convertToXMI(Thing thing, String filepath) {
+		
+		try {
+			Resource res = resourceSet.createResource(URI.createFileURI(filepath));
+			res.getContents().add(thing);
+			res.save(Collections.EMPTY_MAP);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	private void setupResourceSet() {
 		resourceSet = new ResourceSetImpl();
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("json", new JsonResourceFactory());
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 	}
 	
 	private void setupResource(){

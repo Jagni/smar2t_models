@@ -11,13 +11,16 @@ import mozilla_td.Mozilla_tdPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,6 +31,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link mozilla_td.impl.EventImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link mozilla_td.impl.EventImpl#getHref <em>Href</em>}</li>
  *   <li>{@link mozilla_td.impl.EventImpl#getSemanticType <em>Semantic Type</em>}</li>
  *   <li>{@link mozilla_td.impl.EventImpl#getDescription <em>Description</em>}</li>
  * </ul>
@@ -36,7 +40,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class EventImpl extends AttributeImpl implements Event {
 	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' reference list.
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLinks()
@@ -44,6 +48,26 @@ public class EventImpl extends AttributeImpl implements Event {
 	 * @ordered
 	 */
 	protected EList<Link> links;
+
+	/**
+	 * The default value of the '{@link #getHref() <em>Href</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHref()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HREF_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getHref() <em>Href</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHref()
+	 * @generated
+	 * @ordered
+	 */
+	protected String href = HREF_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSemanticType() <em>Semantic Type</em>}' attribute.
@@ -111,9 +135,30 @@ public class EventImpl extends AttributeImpl implements Event {
 	 */
 	public EList<Link> getLinks() {
 		if (links == null) {
-			links = new EObjectResolvingEList<Link>(Link.class, this, Mozilla_tdPackage.EVENT__LINKS);
+			links = new EObjectContainmentEList<Link>(Link.class, this, Mozilla_tdPackage.EVENT__LINKS);
 		}
 		return links;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getHref() {
+		return href;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHref(String newHref) {
+		String oldHref = href;
+		href = newHref;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Mozilla_tdPackage.EVENT__HREF, oldHref, href));
 	}
 
 	/**
@@ -164,10 +209,26 @@ public class EventImpl extends AttributeImpl implements Event {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Mozilla_tdPackage.EVENT__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mozilla_tdPackage.EVENT__LINKS:
 				return getLinks();
+			case Mozilla_tdPackage.EVENT__HREF:
+				return getHref();
 			case Mozilla_tdPackage.EVENT__SEMANTIC_TYPE:
 				return getSemanticType();
 			case Mozilla_tdPackage.EVENT__DESCRIPTION:
@@ -188,6 +249,9 @@ public class EventImpl extends AttributeImpl implements Event {
 			case Mozilla_tdPackage.EVENT__LINKS:
 				getLinks().clear();
 				getLinks().addAll((Collection<? extends Link>)newValue);
+				return;
+			case Mozilla_tdPackage.EVENT__HREF:
+				setHref((String)newValue);
 				return;
 			case Mozilla_tdPackage.EVENT__SEMANTIC_TYPE:
 				setSemanticType((String)newValue);
@@ -210,6 +274,9 @@ public class EventImpl extends AttributeImpl implements Event {
 			case Mozilla_tdPackage.EVENT__LINKS:
 				getLinks().clear();
 				return;
+			case Mozilla_tdPackage.EVENT__HREF:
+				setHref(HREF_EDEFAULT);
+				return;
 			case Mozilla_tdPackage.EVENT__SEMANTIC_TYPE:
 				setSemanticType(SEMANTIC_TYPE_EDEFAULT);
 				return;
@@ -230,6 +297,8 @@ public class EventImpl extends AttributeImpl implements Event {
 		switch (featureID) {
 			case Mozilla_tdPackage.EVENT__LINKS:
 				return links != null && !links.isEmpty();
+			case Mozilla_tdPackage.EVENT__HREF:
+				return HREF_EDEFAULT == null ? href != null : !HREF_EDEFAULT.equals(href);
 			case Mozilla_tdPackage.EVENT__SEMANTIC_TYPE:
 				return SEMANTIC_TYPE_EDEFAULT == null ? semanticType != null : !SEMANTIC_TYPE_EDEFAULT.equals(semanticType);
 			case Mozilla_tdPackage.EVENT__DESCRIPTION:
@@ -248,6 +317,7 @@ public class EventImpl extends AttributeImpl implements Event {
 		if (baseClass == Linkable.class) {
 			switch (derivedFeatureID) {
 				case Mozilla_tdPackage.EVENT__LINKS: return Mozilla_tdPackage.LINKABLE__LINKS;
+				case Mozilla_tdPackage.EVENT__HREF: return Mozilla_tdPackage.LINKABLE__HREF;
 				default: return -1;
 			}
 		}
@@ -264,6 +334,7 @@ public class EventImpl extends AttributeImpl implements Event {
 		if (baseClass == Linkable.class) {
 			switch (baseFeatureID) {
 				case Mozilla_tdPackage.LINKABLE__LINKS: return Mozilla_tdPackage.EVENT__LINKS;
+				case Mozilla_tdPackage.LINKABLE__HREF: return Mozilla_tdPackage.EVENT__HREF;
 				default: return -1;
 			}
 		}
@@ -280,7 +351,9 @@ public class EventImpl extends AttributeImpl implements Event {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (semanticType: ");
+		result.append(" (href: ");
+		result.append(href);
+		result.append(", semanticType: ");
 		result.append(semanticType);
 		result.append(", description: ");
 		result.append(description);

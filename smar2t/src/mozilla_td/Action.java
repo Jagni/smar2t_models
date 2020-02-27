@@ -67,22 +67,22 @@ public interface Action extends Linkable {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Input</b></em>' reference.
+	 * Returns the value of the '<em><b>Input</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Input</em>' reference.
+	 * @return the value of the '<em>Input</em>' containment reference.
 	 * @see #setInput(Input)
 	 * @see mozilla_td.Mozilla_tdPackage#getAction_Input()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	Input getInput();
 
 	/**
-	 * Sets the value of the '{@link mozilla_td.Action#getInput <em>Input</em>}' reference.
+	 * Sets the value of the '{@link mozilla_td.Action#getInput <em>Input</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Input</em>' reference.
+	 * @param value the new value of the '<em>Input</em>' containment reference.
 	 * @see #getInput()
 	 * @generated
 	 */

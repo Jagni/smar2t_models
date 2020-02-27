@@ -2,6 +2,7 @@
  */
 package mozilla_td.util;
 
+import java.util.Map;
 import mozilla_td.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -98,6 +99,22 @@ public class Mozilla_tdAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseLinkable(Linkable object) {
 				return createLinkableAdapter();
+			}
+			@Override
+			public Adapter caseStringToActionMap(Map.Entry<String, Action> object) {
+				return createStringToActionMapAdapter();
+			}
+			@Override
+			public Adapter caseStringToEventMap(Map.Entry<String, Event> object) {
+				return createStringToEventMapAdapter();
+			}
+			@Override
+			public Adapter caseStringToPropertyMap(Map.Entry<String, Property> object) {
+				return createStringToPropertyMapAdapter();
+			}
+			@Override
+			public Adapter caseStringToAttributeMap(Map.Entry<String, Attribute> object) {
+				return createStringToAttributeMapAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -228,6 +245,62 @@ public class Mozilla_tdAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLinkableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>String To Action Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see java.util.Map.Entry
+	 * @generated
+	 */
+	public Adapter createStringToActionMapAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>String To Event Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see java.util.Map.Entry
+	 * @generated
+	 */
+	public Adapter createStringToEventMapAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>String To Property Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see java.util.Map.Entry
+	 * @generated
+	 */
+	public Adapter createStringToPropertyMapAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>String To Attribute Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see java.util.Map.Entry
+	 * @generated
+	 */
+	public Adapter createStringToAttributeMapAdapter() {
 		return null;
 	}
 

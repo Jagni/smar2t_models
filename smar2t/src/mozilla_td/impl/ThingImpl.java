@@ -13,16 +13,21 @@ import mozilla_td.Thing;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreEMap;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,21 +38,22 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link mozilla_td.impl.ThingImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link mozilla_td.impl.ThingImpl#getHref <em>Href</em>}</li>
  *   <li>{@link mozilla_td.impl.ThingImpl#getContext <em>Context</em>}</li>
  *   <li>{@link mozilla_td.impl.ThingImpl#getSemanticType <em>Semantic Type</em>}</li>
  *   <li>{@link mozilla_td.impl.ThingImpl#getId <em>Id</em>}</li>
  *   <li>{@link mozilla_td.impl.ThingImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link mozilla_td.impl.ThingImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link mozilla_td.impl.ThingImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link mozilla_td.impl.ThingImpl#getActions <em>Actions</em>}</li>
- *   <li>{@link mozilla_td.impl.ThingImpl#getEvent <em>Event</em>}</li>
+ *   <li>{@link mozilla_td.impl.ThingImpl#getEvents <em>Events</em>}</li>
+ *   <li>{@link mozilla_td.impl.ThingImpl#getProperties <em>Properties</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' reference list.
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLinks()
@@ -55,6 +61,26 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	 * @ordered
 	 */
 	protected EList<Link> links;
+
+	/**
+	 * The default value of the '{@link #getHref() <em>Href</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHref()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HREF_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getHref() <em>Href</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHref()
+	 * @generated
+	 * @ordered
+	 */
+	protected String href = HREF_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getContext() <em>Context</em>}' attribute.
@@ -147,34 +173,34 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProperties()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Property> properties;
-
-	/**
-	 * The cached value of the '{@link #getActions() <em>Actions</em>}' reference list.
+	 * The cached value of the '{@link #getActions() <em>Actions</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getActions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Action> actions;
+	protected EMap<String, Action> actions;
 
 	/**
-	 * The cached value of the '{@link #getEvent() <em>Event</em>}' reference.
+	 * The cached value of the '{@link #getEvents() <em>Events</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEvent()
+	 * @see #getEvents()
 	 * @generated
 	 * @ordered
 	 */
-	protected Event event;
+	protected EMap<String, Event> events;
+
+	/**
+	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProperties()
+	 * @generated
+	 * @ordered
+	 */
+	protected EMap<String, Property> properties;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,9 +228,30 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	 */
 	public EList<Link> getLinks() {
 		if (links == null) {
-			links = new EObjectResolvingEList<Link>(Link.class, this, Mozilla_tdPackage.THING__LINKS);
+			links = new EObjectContainmentEList<Link>(Link.class, this, Mozilla_tdPackage.THING__LINKS);
 		}
 		return links;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getHref() {
+		return href;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHref(String newHref) {
+		String oldHref = href;
+		href = newHref;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Mozilla_tdPackage.THING__HREF, oldHref, href));
 	}
 
 	/**
@@ -308,9 +355,9 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Property> getProperties() {
+	public EMap<String, Property> getProperties() {
 		if (properties == null) {
-			properties = new EObjectResolvingEList<Property>(Property.class, this, Mozilla_tdPackage.THING__PROPERTIES);
+			properties = new EcoreEMap<String,Property>(Mozilla_tdPackage.Literals.STRING_TO_PROPERTY_MAP, StringToPropertyMapImpl.class, this, Mozilla_tdPackage.THING__PROPERTIES);
 		}
 		return properties;
 	}
@@ -320,9 +367,29 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Action> getActions() {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Mozilla_tdPackage.THING__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
+			case Mozilla_tdPackage.THING__ACTIONS:
+				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
+			case Mozilla_tdPackage.THING__EVENTS:
+				return ((InternalEList<?>)getEvents()).basicRemove(otherEnd, msgs);
+			case Mozilla_tdPackage.THING__PROPERTIES:
+				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EMap<String, Action> getActions() {
 		if (actions == null) {
-			actions = new EObjectResolvingEList<Action>(Action.class, this, Mozilla_tdPackage.THING__ACTIONS);
+			actions = new EcoreEMap<String,Action>(Mozilla_tdPackage.Literals.STRING_TO_ACTION_MAP, StringToActionMapImpl.class, this, Mozilla_tdPackage.THING__ACTIONS);
 		}
 		return actions;
 	}
@@ -332,37 +399,11 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Event getEvent() {
-		if (event != null && event.eIsProxy()) {
-			InternalEObject oldEvent = (InternalEObject)event;
-			event = (Event)eResolveProxy(oldEvent);
-			if (event != oldEvent) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Mozilla_tdPackage.THING__EVENT, oldEvent, event));
-			}
+	public EMap<String, Event> getEvents() {
+		if (events == null) {
+			events = new EcoreEMap<String,Event>(Mozilla_tdPackage.Literals.STRING_TO_EVENT_MAP, StringToEventMapImpl.class, this, Mozilla_tdPackage.THING__EVENTS);
 		}
-		return event;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Event basicGetEvent() {
-		return event;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEvent(Event newEvent) {
-		Event oldEvent = event;
-		event = newEvent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mozilla_tdPackage.THING__EVENT, oldEvent, event));
+		return events;
 	}
 
 	/**
@@ -375,6 +416,8 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 		switch (featureID) {
 			case Mozilla_tdPackage.THING__LINKS:
 				return getLinks();
+			case Mozilla_tdPackage.THING__HREF:
+				return getHref();
 			case Mozilla_tdPackage.THING__CONTEXT:
 				return getContext();
 			case Mozilla_tdPackage.THING__SEMANTIC_TYPE:
@@ -385,13 +428,15 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 				return getTitle();
 			case Mozilla_tdPackage.THING__DESCRIPTION:
 				return getDescription();
-			case Mozilla_tdPackage.THING__PROPERTIES:
-				return getProperties();
 			case Mozilla_tdPackage.THING__ACTIONS:
-				return getActions();
-			case Mozilla_tdPackage.THING__EVENT:
-				if (resolve) return getEvent();
-				return basicGetEvent();
+				if (coreType) return getActions();
+				else return getActions().map();
+			case Mozilla_tdPackage.THING__EVENTS:
+				if (coreType) return getEvents();
+				else return getEvents().map();
+			case Mozilla_tdPackage.THING__PROPERTIES:
+				if (coreType) return getProperties();
+				else return getProperties().map();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -409,6 +454,9 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 				getLinks().clear();
 				getLinks().addAll((Collection<? extends Link>)newValue);
 				return;
+			case Mozilla_tdPackage.THING__HREF:
+				setHref((String)newValue);
+				return;
 			case Mozilla_tdPackage.THING__CONTEXT:
 				setContext((String)newValue);
 				return;
@@ -425,16 +473,14 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 			case Mozilla_tdPackage.THING__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case Mozilla_tdPackage.THING__PROPERTIES:
-				getProperties().clear();
-				getProperties().addAll((Collection<? extends Property>)newValue);
-				return;
 			case Mozilla_tdPackage.THING__ACTIONS:
-				getActions().clear();
-				getActions().addAll((Collection<? extends Action>)newValue);
+				((EStructuralFeature.Setting)getActions()).set(newValue);
 				return;
-			case Mozilla_tdPackage.THING__EVENT:
-				setEvent((Event)newValue);
+			case Mozilla_tdPackage.THING__EVENTS:
+				((EStructuralFeature.Setting)getEvents()).set(newValue);
+				return;
+			case Mozilla_tdPackage.THING__PROPERTIES:
+				((EStructuralFeature.Setting)getProperties()).set(newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -451,6 +497,9 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 			case Mozilla_tdPackage.THING__LINKS:
 				getLinks().clear();
 				return;
+			case Mozilla_tdPackage.THING__HREF:
+				setHref(HREF_EDEFAULT);
+				return;
 			case Mozilla_tdPackage.THING__CONTEXT:
 				setContext(CONTEXT_EDEFAULT);
 				return;
@@ -466,14 +515,14 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 			case Mozilla_tdPackage.THING__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case Mozilla_tdPackage.THING__PROPERTIES:
-				getProperties().clear();
-				return;
 			case Mozilla_tdPackage.THING__ACTIONS:
 				getActions().clear();
 				return;
-			case Mozilla_tdPackage.THING__EVENT:
-				setEvent((Event)null);
+			case Mozilla_tdPackage.THING__EVENTS:
+				getEvents().clear();
+				return;
+			case Mozilla_tdPackage.THING__PROPERTIES:
+				getProperties().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -489,6 +538,8 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 		switch (featureID) {
 			case Mozilla_tdPackage.THING__LINKS:
 				return links != null && !links.isEmpty();
+			case Mozilla_tdPackage.THING__HREF:
+				return HREF_EDEFAULT == null ? href != null : !HREF_EDEFAULT.equals(href);
 			case Mozilla_tdPackage.THING__CONTEXT:
 				return CONTEXT_EDEFAULT == null ? context != null : !CONTEXT_EDEFAULT.equals(context);
 			case Mozilla_tdPackage.THING__SEMANTIC_TYPE:
@@ -499,12 +550,12 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case Mozilla_tdPackage.THING__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case Mozilla_tdPackage.THING__PROPERTIES:
-				return properties != null && !properties.isEmpty();
 			case Mozilla_tdPackage.THING__ACTIONS:
 				return actions != null && !actions.isEmpty();
-			case Mozilla_tdPackage.THING__EVENT:
-				return event != null;
+			case Mozilla_tdPackage.THING__EVENTS:
+				return events != null && !events.isEmpty();
+			case Mozilla_tdPackage.THING__PROPERTIES:
+				return properties != null && !properties.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -519,7 +570,9 @@ public class ThingImpl extends MinimalEObjectImpl.Container implements Thing {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (context: ");
+		result.append(" (href: ");
+		result.append(href);
+		result.append(", context: ");
 		result.append(context);
 		result.append(", semanticType: ");
 		result.append(semanticType);

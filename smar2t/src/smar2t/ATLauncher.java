@@ -1,5 +1,8 @@
 package smar2t;
 
+import java.io.IOException;
+import java.util.Collections;
+
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -35,10 +38,13 @@ public class ATLauncher {
 
 	private String outputMetamodelNsURI;
 	private String outputMetamodelName;
+	
+	public String transformationDir;
+	public String transformationModule;
 
 	
 	//Main transformation launch method
-	public Model w3c2ui(String inModelPath, String transformationDir, String transformationModule){
+	public void transform(String inModelPath, String outModelPath){
 		
 		/* 
 		 * Creates the execution environment where the transformation is going to be executed,
@@ -78,6 +84,7 @@ public class ATLauncher {
 		env.registerInputModel("IN", inModel);
 		
 		Model outModel = EmftvmFactory.eINSTANCE.createModel();
+		outModel.setResource(rs.createResource(URI.createURI(outModelPath)));
 		env.registerOutputModel("OUT", outModel);
 		
 		/*
@@ -92,7 +99,12 @@ public class ATLauncher {
 		env.run(td);
 		td.finish();
 		
-		return outModel;
+		// Save models
+				try {
+					outModel.getResource().save(Collections.emptyMap());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 	}
 	
 	/*

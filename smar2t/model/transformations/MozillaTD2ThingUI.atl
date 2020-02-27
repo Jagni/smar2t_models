@@ -1,0 +1,87 @@
+-- @atlcompiler emftvm
+-- @path MozillaTD=/smar2t/model/MozillaTD/MozillaTD.ecore
+-- @path ThingUI=/smar2t/model/ThingUI/ThingUI.ecore
+
+module MozillaTD2ThingUI;
+create OUT : ThingUI from IN : MozillaTD;
+
+rule ThingData {
+	from
+		td: MozillaTD!Thing
+	to
+		t: ThingUI!ThingUI (
+			description <- td.description,
+			name <- td.title,
+			properties <- td.properties ->collect(m | thisModule.getResourceMapEntry(m))
+		)
+}
+
+lazy rule getResourceMapEntry {
+   from
+     m: MozillaTD!StringToPropertyMap
+   to 
+     res: ThingUI!StringToResourceMap (
+     	value <- thisModule.getProperty(m.value),
+		key <- m.key
+     )
+ }
+
+lazy rule getProperty {
+   from
+     p: MozillaTD!Property
+   to 
+     res: ThingUI!Resource (
+     	name <- p.title,
+     	description <- p.description,
+		icon <- p.type,
+		form <- thisModule.getPropertyForm(p)
+     )
+ }
+
+lazy rule getPropertyForm {
+   from
+     p: MozillaTD!Property
+   to 
+     form: ThingUI!Form (
+     	readOnly <- p.readOnly,
+		showsSubmitButton <- not p.readOnly,
+		inputs <-  Sequence{p.input()},
+		actuator <- thisModule.getActuatorFromProperty(p)
+     )
+}
+
+lazy rule getNumberInputFromProperty {
+   from
+     p: MozillaTD!Property
+   to 
+     input: ThingUI!NumberInput (
+     	editingValue <- 0,
+		interactionEnabled <- p.readOnly
+     )
+}
+
+lazy rule getObjectInputFromProperty {
+   from
+     p: MozillaTD!Property
+   to 
+     input: ThingUI!NumberInput (
+		interactionEnabled <- p.readOnly
+     )
+}
+
+lazy rule getActuatorFromProperty {
+	from
+	  p: MozillaTD!Property
+	to
+	  actuator: ThingUI!Actuator (
+		communicationProtocol <- 'http',
+		href <- p.href
+	)
+}
+
+helper context MozillaTD!Property def: input(): ThingUI!Input = 
+if (self.type.startsWith('number')) then
+	thisModule.getNumberInputFromProperty(self)
+else
+	thisModule.getObjectInputFromProperty(self)
+endif;

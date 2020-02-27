@@ -68,7 +68,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	int LINKABLE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Links</b></em>' reference list.
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -77,13 +77,22 @@ public interface Mozilla_tdPackage extends EPackage {
 	int LINKABLE__LINKS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Href</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINKABLE__HREF = 1;
+
+	/**
 	 * The number of structural features of the '<em>Linkable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINKABLE_FEATURE_COUNT = 1;
+	int LINKABLE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Linkable</em>' class.
@@ -105,13 +114,22 @@ public interface Mozilla_tdPackage extends EPackage {
 	int THING = 0;
 
 	/**
-	 * The feature id for the '<em><b>Links</b></em>' reference list.
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int THING__LINKS = LINKABLE__LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Href</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THING__HREF = LINKABLE__HREF;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' attribute.
@@ -159,31 +177,31 @@ public interface Mozilla_tdPackage extends EPackage {
 	int THING__DESCRIPTION = LINKABLE_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Properties</b></em>' reference list.
+	 * The feature id for the '<em><b>Actions</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THING__PROPERTIES = LINKABLE_FEATURE_COUNT + 5;
+	int THING__ACTIONS = LINKABLE_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Actions</b></em>' reference list.
+	 * The feature id for the '<em><b>Events</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THING__ACTIONS = LINKABLE_FEATURE_COUNT + 6;
+	int THING__EVENTS = LINKABLE_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Event</b></em>' reference.
+	 * The feature id for the '<em><b>Properties</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THING__EVENT = LINKABLE_FEATURE_COUNT + 7;
+	int THING__PROPERTIES = LINKABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Thing</em>' class.
@@ -268,7 +286,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	int ATTRIBUTE__TYPE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Properties</b></em>' reference list.
+	 * The feature id for the '<em><b>Properties</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -369,13 +387,22 @@ public interface Mozilla_tdPackage extends EPackage {
 	int ACTION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Links</b></em>' reference list.
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ACTION__LINKS = LINKABLE__LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Href</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__HREF = LINKABLE__HREF;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -396,7 +423,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	int ACTION__DESCRIPTION = LINKABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Input</b></em>' reference.
+	 * The feature id for the '<em><b>Input</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -487,7 +514,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	int INPUT__TYPE = ATTRIBUTE__TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Properties</b></em>' reference list.
+	 * The feature id for the '<em><b>Properties</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -596,7 +623,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	int PROPERTY__TYPE = ATTRIBUTE__TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Properties</b></em>' reference list.
+	 * The feature id for the '<em><b>Properties</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -614,7 +641,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	int PROPERTY__ID = ATTRIBUTE__ID;
 
 	/**
-	 * The feature id for the '<em><b>Links</b></em>' reference list.
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -623,13 +650,22 @@ public interface Mozilla_tdPackage extends EPackage {
 	int PROPERTY__LINKS = ATTRIBUTE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Href</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__HREF = ATTRIBUTE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Semantic Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__SEMANTIC_TYPE = ATTRIBUTE_FEATURE_COUNT + 1;
+	int PROPERTY__SEMANTIC_TYPE = ATTRIBUTE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Read Only</b></em>' attribute.
@@ -638,7 +674,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__READ_ONLY = ATTRIBUTE_FEATURE_COUNT + 2;
+	int PROPERTY__READ_ONLY = ATTRIBUTE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -647,7 +683,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__DESCRIPTION = ATTRIBUTE_FEATURE_COUNT + 3;
+	int PROPERTY__DESCRIPTION = ATTRIBUTE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -656,7 +692,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__TITLE = ATTRIBUTE_FEATURE_COUNT + 4;
+	int PROPERTY__TITLE = ATTRIBUTE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Property</em>' class.
@@ -665,7 +701,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 5;
+	int PROPERTY_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Property</em>' class.
@@ -741,7 +777,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	int EVENT__TYPE = ATTRIBUTE__TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Properties</b></em>' reference list.
+	 * The feature id for the '<em><b>Properties</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -759,7 +795,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	int EVENT__ID = ATTRIBUTE__ID;
 
 	/**
-	 * The feature id for the '<em><b>Links</b></em>' reference list.
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -768,13 +804,22 @@ public interface Mozilla_tdPackage extends EPackage {
 	int EVENT__LINKS = ATTRIBUTE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Href</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT__HREF = ATTRIBUTE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Semantic Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT__SEMANTIC_TYPE = ATTRIBUTE_FEATURE_COUNT + 1;
+	int EVENT__SEMANTIC_TYPE = ATTRIBUTE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -783,7 +828,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT__DESCRIPTION = ATTRIBUTE_FEATURE_COUNT + 2;
+	int EVENT__DESCRIPTION = ATTRIBUTE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Event</em>' class.
@@ -792,7 +837,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 3;
+	int EVENT_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Event</em>' class.
@@ -804,6 +849,190 @@ public interface Mozilla_tdPackage extends EPackage {
 	int EVENT_OPERATION_COUNT = ATTRIBUTE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link mozilla_td.impl.StringToActionMapImpl <em>String To Action Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mozilla_td.impl.StringToActionMapImpl
+	 * @see mozilla_td.impl.Mozilla_tdPackageImpl#getStringToActionMap()
+	 * @generated
+	 */
+	int STRING_TO_ACTION_MAP = 8;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_ACTION_MAP__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_ACTION_MAP__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>String To Action Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_ACTION_MAP_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>String To Action Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_ACTION_MAP_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link mozilla_td.impl.StringToEventMapImpl <em>String To Event Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mozilla_td.impl.StringToEventMapImpl
+	 * @see mozilla_td.impl.Mozilla_tdPackageImpl#getStringToEventMap()
+	 * @generated
+	 */
+	int STRING_TO_EVENT_MAP = 9;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_EVENT_MAP__VALUE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_EVENT_MAP__KEY = 1;
+
+	/**
+	 * The number of structural features of the '<em>String To Event Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_EVENT_MAP_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>String To Event Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_EVENT_MAP_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link mozilla_td.impl.StringToPropertyMapImpl <em>String To Property Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mozilla_td.impl.StringToPropertyMapImpl
+	 * @see mozilla_td.impl.Mozilla_tdPackageImpl#getStringToPropertyMap()
+	 * @generated
+	 */
+	int STRING_TO_PROPERTY_MAP = 10;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_PROPERTY_MAP__VALUE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_PROPERTY_MAP__KEY = 1;
+
+	/**
+	 * The number of structural features of the '<em>String To Property Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_PROPERTY_MAP_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>String To Property Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_PROPERTY_MAP_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link mozilla_td.impl.StringToAttributeMapImpl <em>String To Attribute Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mozilla_td.impl.StringToAttributeMapImpl
+	 * @see mozilla_td.impl.Mozilla_tdPackageImpl#getStringToAttributeMap()
+	 * @generated
+	 */
+	int STRING_TO_ATTRIBUTE_MAP = 11;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_ATTRIBUTE_MAP__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_ATTRIBUTE_MAP__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>String To Attribute Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_ATTRIBUTE_MAP_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>String To Attribute Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_ATTRIBUTE_MAP_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link mozilla_td.PrimitiveType <em>Primitive Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -811,7 +1040,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	 * @see mozilla_td.impl.Mozilla_tdPackageImpl#getPrimitiveType()
 	 * @generated
 	 */
-	int PRIMITIVE_TYPE = 8;
+	int PRIMITIVE_TYPE = 12;
 
 	/**
 	 * The meta object id for the '{@link mozilla_td.Relationship <em>Relationship</em>}' enum.
@@ -821,7 +1050,7 @@ public interface Mozilla_tdPackage extends EPackage {
 	 * @see mozilla_td.impl.Mozilla_tdPackageImpl#getRelationship()
 	 * @generated
 	 */
-	int RELATIONSHIP = 9;
+	int RELATIONSHIP = 13;
 
 
 	/**
@@ -890,10 +1119,10 @@ public interface Mozilla_tdPackage extends EPackage {
 	EAttribute getThing_Description();
 
 	/**
-	 * Returns the meta object for the reference list '{@link mozilla_td.Thing#getProperties <em>Properties</em>}'.
+	 * Returns the meta object for the map '{@link mozilla_td.Thing#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Properties</em>'.
+	 * @return the meta object for the map '<em>Properties</em>'.
 	 * @see mozilla_td.Thing#getProperties()
 	 * @see #getThing()
 	 * @generated
@@ -901,10 +1130,10 @@ public interface Mozilla_tdPackage extends EPackage {
 	EReference getThing_Properties();
 
 	/**
-	 * Returns the meta object for the reference list '{@link mozilla_td.Thing#getActions <em>Actions</em>}'.
+	 * Returns the meta object for the map '{@link mozilla_td.Thing#getActions <em>Actions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Actions</em>'.
+	 * @return the meta object for the map '<em>Actions</em>'.
 	 * @see mozilla_td.Thing#getActions()
 	 * @see #getThing()
 	 * @generated
@@ -912,15 +1141,15 @@ public interface Mozilla_tdPackage extends EPackage {
 	EReference getThing_Actions();
 
 	/**
-	 * Returns the meta object for the reference '{@link mozilla_td.Thing#getEvent <em>Event</em>}'.
+	 * Returns the meta object for the map '{@link mozilla_td.Thing#getEvents <em>Events</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Event</em>'.
-	 * @see mozilla_td.Thing#getEvent()
+	 * @return the meta object for the map '<em>Events</em>'.
+	 * @see mozilla_td.Thing#getEvents()
 	 * @see #getThing()
 	 * @generated
 	 */
-	EReference getThing_Event();
+	EReference getThing_Events();
 
 	/**
 	 * Returns the meta object for class '{@link mozilla_td.Attribute <em>Attribute</em>}'.
@@ -999,10 +1228,10 @@ public interface Mozilla_tdPackage extends EPackage {
 	EAttribute getAttribute_Type();
 
 	/**
-	 * Returns the meta object for the reference list '{@link mozilla_td.Attribute#getProperties <em>Properties</em>}'.
+	 * Returns the meta object for the map '{@link mozilla_td.Attribute#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Properties</em>'.
+	 * @return the meta object for the map '<em>Properties</em>'.
 	 * @see mozilla_td.Attribute#getProperties()
 	 * @see #getAttribute()
 	 * @generated
@@ -1096,10 +1325,10 @@ public interface Mozilla_tdPackage extends EPackage {
 	EAttribute getAction_Description();
 
 	/**
-	 * Returns the meta object for the reference '{@link mozilla_td.Action#getInput <em>Input</em>}'.
+	 * Returns the meta object for the containment reference '{@link mozilla_td.Action#getInput <em>Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Input</em>'.
+	 * @return the meta object for the containment reference '<em>Input</em>'.
 	 * @see mozilla_td.Action#getInput()
 	 * @see #getAction()
 	 * @generated
@@ -1224,15 +1453,164 @@ public interface Mozilla_tdPackage extends EPackage {
 	EClass getLinkable();
 
 	/**
-	 * Returns the meta object for the reference list '{@link mozilla_td.Linkable#getLinks <em>Links</em>}'.
+	 * Returns the meta object for the containment reference list '{@link mozilla_td.Linkable#getLinks <em>Links</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Links</em>'.
+	 * @return the meta object for the containment reference list '<em>Links</em>'.
 	 * @see mozilla_td.Linkable#getLinks()
 	 * @see #getLinkable()
 	 * @generated
 	 */
 	EReference getLinkable_Links();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mozilla_td.Linkable#getHref <em>Href</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Href</em>'.
+	 * @see mozilla_td.Linkable#getHref()
+	 * @see #getLinkable()
+	 * @generated
+	 */
+	EAttribute getLinkable_Href();
+
+	/**
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>String To Action Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String To Action Map</em>'.
+	 * @see java.util.Map.Entry
+	 * @model keyDataType="org.eclipse.emf.ecore.EString"
+	 *        valueType="mozilla_td.Action" valueContainment="true" valueRequired="true"
+	 * @generated
+	 */
+	EClass getStringToActionMap();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToActionMap()
+	 * @generated
+	 */
+	EAttribute getStringToActionMap_Key();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToActionMap()
+	 * @generated
+	 */
+	EReference getStringToActionMap_Value();
+
+	/**
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>String To Event Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String To Event Map</em>'.
+	 * @see java.util.Map.Entry
+	 * @model features="value key" 
+	 *        valueType="mozilla_td.Event" valueContainment="true" valueRequired="true"
+	 *        keyDataType="org.eclipse.emf.ecore.EString"
+	 * @generated
+	 */
+	EClass getStringToEventMap();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToEventMap()
+	 * @generated
+	 */
+	EReference getStringToEventMap_Value();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToEventMap()
+	 * @generated
+	 */
+	EAttribute getStringToEventMap_Key();
+
+	/**
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>String To Property Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String To Property Map</em>'.
+	 * @see java.util.Map.Entry
+	 * @model features="value key" 
+	 *        valueType="mozilla_td.Property" valueContainment="true" valueRequired="true"
+	 *        keyDataType="org.eclipse.emf.ecore.EString"
+	 * @generated
+	 */
+	EClass getStringToPropertyMap();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToPropertyMap()
+	 * @generated
+	 */
+	EReference getStringToPropertyMap_Value();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToPropertyMap()
+	 * @generated
+	 */
+	EAttribute getStringToPropertyMap_Key();
+
+	/**
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>String To Attribute Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String To Attribute Map</em>'.
+	 * @see java.util.Map.Entry
+	 * @model keyDataType="org.eclipse.emf.ecore.EString"
+	 *        valueType="mozilla_td.Attribute" valueContainment="true" valueRequired="true"
+	 * @generated
+	 */
+	EClass getStringToAttributeMap();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToAttributeMap()
+	 * @generated
+	 */
+	EAttribute getStringToAttributeMap_Key();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToAttributeMap()
+	 * @generated
+	 */
+	EReference getStringToAttributeMap_Value();
 
 	/**
 	 * Returns the meta object for enum '{@link mozilla_td.PrimitiveType <em>Primitive Type</em>}'.
@@ -1328,7 +1706,7 @@ public interface Mozilla_tdPackage extends EPackage {
 		EAttribute THING__DESCRIPTION = eINSTANCE.getThing_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Properties</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Properties</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1336,7 +1714,7 @@ public interface Mozilla_tdPackage extends EPackage {
 		EReference THING__PROPERTIES = eINSTANCE.getThing_Properties();
 
 		/**
-		 * The meta object literal for the '<em><b>Actions</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Actions</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1344,12 +1722,12 @@ public interface Mozilla_tdPackage extends EPackage {
 		EReference THING__ACTIONS = eINSTANCE.getThing_Actions();
 
 		/**
-		 * The meta object literal for the '<em><b>Event</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Events</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference THING__EVENT = eINSTANCE.getThing_Event();
+		EReference THING__EVENTS = eINSTANCE.getThing_Events();
 
 		/**
 		 * The meta object literal for the '{@link mozilla_td.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -1410,7 +1788,7 @@ public interface Mozilla_tdPackage extends EPackage {
 		EAttribute ATTRIBUTE__TYPE = eINSTANCE.getAttribute_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Properties</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Properties</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1486,7 +1864,7 @@ public interface Mozilla_tdPackage extends EPackage {
 		EAttribute ACTION__DESCRIPTION = eINSTANCE.getAction_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Input</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Input</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1590,12 +1968,124 @@ public interface Mozilla_tdPackage extends EPackage {
 		EClass LINKABLE = eINSTANCE.getLinkable();
 
 		/**
-		 * The meta object literal for the '<em><b>Links</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference LINKABLE__LINKS = eINSTANCE.getLinkable_Links();
+
+		/**
+		 * The meta object literal for the '<em><b>Href</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LINKABLE__HREF = eINSTANCE.getLinkable_Href();
+
+		/**
+		 * The meta object literal for the '{@link mozilla_td.impl.StringToActionMapImpl <em>String To Action Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mozilla_td.impl.StringToActionMapImpl
+		 * @see mozilla_td.impl.Mozilla_tdPackageImpl#getStringToActionMap()
+		 * @generated
+		 */
+		EClass STRING_TO_ACTION_MAP = eINSTANCE.getStringToActionMap();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_TO_ACTION_MAP__KEY = eINSTANCE.getStringToActionMap_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRING_TO_ACTION_MAP__VALUE = eINSTANCE.getStringToActionMap_Value();
+
+		/**
+		 * The meta object literal for the '{@link mozilla_td.impl.StringToEventMapImpl <em>String To Event Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mozilla_td.impl.StringToEventMapImpl
+		 * @see mozilla_td.impl.Mozilla_tdPackageImpl#getStringToEventMap()
+		 * @generated
+		 */
+		EClass STRING_TO_EVENT_MAP = eINSTANCE.getStringToEventMap();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRING_TO_EVENT_MAP__VALUE = eINSTANCE.getStringToEventMap_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_TO_EVENT_MAP__KEY = eINSTANCE.getStringToEventMap_Key();
+
+		/**
+		 * The meta object literal for the '{@link mozilla_td.impl.StringToPropertyMapImpl <em>String To Property Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mozilla_td.impl.StringToPropertyMapImpl
+		 * @see mozilla_td.impl.Mozilla_tdPackageImpl#getStringToPropertyMap()
+		 * @generated
+		 */
+		EClass STRING_TO_PROPERTY_MAP = eINSTANCE.getStringToPropertyMap();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRING_TO_PROPERTY_MAP__VALUE = eINSTANCE.getStringToPropertyMap_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_TO_PROPERTY_MAP__KEY = eINSTANCE.getStringToPropertyMap_Key();
+
+		/**
+		 * The meta object literal for the '{@link mozilla_td.impl.StringToAttributeMapImpl <em>String To Attribute Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mozilla_td.impl.StringToAttributeMapImpl
+		 * @see mozilla_td.impl.Mozilla_tdPackageImpl#getStringToAttributeMap()
+		 * @generated
+		 */
+		EClass STRING_TO_ATTRIBUTE_MAP = eINSTANCE.getStringToAttributeMap();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_TO_ATTRIBUTE_MAP__KEY = eINSTANCE.getStringToAttributeMap_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRING_TO_ATTRIBUTE_MAP__VALUE = eINSTANCE.getStringToAttributeMap_Value();
 
 		/**
 		 * The meta object literal for the '{@link mozilla_td.PrimitiveType <em>Primitive Type</em>}' enum.

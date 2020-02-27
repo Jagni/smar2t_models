@@ -1,0 +1,7 @@
+{
+  "eClass" : "http://smar2t.org/models/mozilla_td#//Thing",
+  "links" : [ {
+    "href" : "teste.com"
+  } ],
+  "title" : "Lamp"
+}

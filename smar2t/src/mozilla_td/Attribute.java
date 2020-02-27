@@ -3,7 +3,7 @@
 package mozilla_td;
 
 import org.eclipse.emf.common.util.EList;
-
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -158,16 +158,17 @@ public interface Attribute extends EObject {
 	void setType(PrimitiveType value);
 
 	/**
-	 * Returns the value of the '<em><b>Properties</b></em>' reference list.
-	 * The list contents are of type {@link mozilla_td.Attribute}.
+	 * Returns the value of the '<em><b>Properties</b></em>' map.
+	 * The key is of type {@link java.lang.String},
+	 * and the value is of type {@link mozilla_td.Attribute},
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Properties</em>' reference list.
+	 * @return the value of the '<em>Properties</em>' map.
 	 * @see mozilla_td.Mozilla_tdPackage#getAttribute_Properties()
-	 * @model
+	 * @model mapType="mozilla_td.StringToAttributeMap&lt;org.eclipse.emf.ecore.EString, mozilla_td.Attribute&gt;"
 	 * @generated
 	 */
-	EList<Attribute> getProperties();
+	EMap<String, Attribute> getProperties();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.

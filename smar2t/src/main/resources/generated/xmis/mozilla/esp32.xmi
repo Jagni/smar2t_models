@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<MozillaTD:Thing xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:MozillaTD="http://smar2t.org/models/mozilla_td" href="/things/led" title="Built-in LED">
+  <properties key="on">
+    <value type="boolean" href="/things/led/properties/on"/>
+  </properties>
+  <properties key="level">
+    <value type="number" href="/things/led/properties/level"/>
+  </properties>
+  <properties key="limitTime">
+    <value type="number" href="/things/led/properties/level"/>
+  </properties>
+</MozillaTD:Thing>

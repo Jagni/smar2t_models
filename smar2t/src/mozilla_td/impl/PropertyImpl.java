@@ -11,13 +11,16 @@ import mozilla_td.Property;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,6 +31,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link mozilla_td.impl.PropertyImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link mozilla_td.impl.PropertyImpl#getHref <em>Href</em>}</li>
  *   <li>{@link mozilla_td.impl.PropertyImpl#getSemanticType <em>Semantic Type</em>}</li>
  *   <li>{@link mozilla_td.impl.PropertyImpl#isReadOnly <em>Read Only</em>}</li>
  *   <li>{@link mozilla_td.impl.PropertyImpl#getDescription <em>Description</em>}</li>
@@ -38,7 +42,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class PropertyImpl extends AttributeImpl implements Property {
 	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' reference list.
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLinks()
@@ -46,6 +50,26 @@ public class PropertyImpl extends AttributeImpl implements Property {
 	 * @ordered
 	 */
 	protected EList<Link> links;
+
+	/**
+	 * The default value of the '{@link #getHref() <em>Href</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHref()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HREF_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getHref() <em>Href</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHref()
+	 * @generated
+	 * @ordered
+	 */
+	protected String href = HREF_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSemanticType() <em>Semantic Type</em>}' attribute.
@@ -153,9 +177,30 @@ public class PropertyImpl extends AttributeImpl implements Property {
 	 */
 	public EList<Link> getLinks() {
 		if (links == null) {
-			links = new EObjectResolvingEList<Link>(Link.class, this, Mozilla_tdPackage.PROPERTY__LINKS);
+			links = new EObjectContainmentEList<Link>(Link.class, this, Mozilla_tdPackage.PROPERTY__LINKS);
 		}
 		return links;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getHref() {
+		return href;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHref(String newHref) {
+		String oldHref = href;
+		href = newHref;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Mozilla_tdPackage.PROPERTY__HREF, oldHref, href));
 	}
 
 	/**
@@ -248,10 +293,26 @@ public class PropertyImpl extends AttributeImpl implements Property {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Mozilla_tdPackage.PROPERTY__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mozilla_tdPackage.PROPERTY__LINKS:
 				return getLinks();
+			case Mozilla_tdPackage.PROPERTY__HREF:
+				return getHref();
 			case Mozilla_tdPackage.PROPERTY__SEMANTIC_TYPE:
 				return getSemanticType();
 			case Mozilla_tdPackage.PROPERTY__READ_ONLY:
@@ -276,6 +337,9 @@ public class PropertyImpl extends AttributeImpl implements Property {
 			case Mozilla_tdPackage.PROPERTY__LINKS:
 				getLinks().clear();
 				getLinks().addAll((Collection<? extends Link>)newValue);
+				return;
+			case Mozilla_tdPackage.PROPERTY__HREF:
+				setHref((String)newValue);
 				return;
 			case Mozilla_tdPackage.PROPERTY__SEMANTIC_TYPE:
 				setSemanticType((String)newValue);
@@ -304,6 +368,9 @@ public class PropertyImpl extends AttributeImpl implements Property {
 			case Mozilla_tdPackage.PROPERTY__LINKS:
 				getLinks().clear();
 				return;
+			case Mozilla_tdPackage.PROPERTY__HREF:
+				setHref(HREF_EDEFAULT);
+				return;
 			case Mozilla_tdPackage.PROPERTY__SEMANTIC_TYPE:
 				setSemanticType(SEMANTIC_TYPE_EDEFAULT);
 				return;
@@ -330,6 +397,8 @@ public class PropertyImpl extends AttributeImpl implements Property {
 		switch (featureID) {
 			case Mozilla_tdPackage.PROPERTY__LINKS:
 				return links != null && !links.isEmpty();
+			case Mozilla_tdPackage.PROPERTY__HREF:
+				return HREF_EDEFAULT == null ? href != null : !HREF_EDEFAULT.equals(href);
 			case Mozilla_tdPackage.PROPERTY__SEMANTIC_TYPE:
 				return SEMANTIC_TYPE_EDEFAULT == null ? semanticType != null : !SEMANTIC_TYPE_EDEFAULT.equals(semanticType);
 			case Mozilla_tdPackage.PROPERTY__READ_ONLY:
@@ -352,6 +421,7 @@ public class PropertyImpl extends AttributeImpl implements Property {
 		if (baseClass == Linkable.class) {
 			switch (derivedFeatureID) {
 				case Mozilla_tdPackage.PROPERTY__LINKS: return Mozilla_tdPackage.LINKABLE__LINKS;
+				case Mozilla_tdPackage.PROPERTY__HREF: return Mozilla_tdPackage.LINKABLE__HREF;
 				default: return -1;
 			}
 		}
@@ -368,6 +438,7 @@ public class PropertyImpl extends AttributeImpl implements Property {
 		if (baseClass == Linkable.class) {
 			switch (baseFeatureID) {
 				case Mozilla_tdPackage.LINKABLE__LINKS: return Mozilla_tdPackage.PROPERTY__LINKS;
+				case Mozilla_tdPackage.LINKABLE__HREF: return Mozilla_tdPackage.PROPERTY__HREF;
 				default: return -1;
 			}
 		}
@@ -384,7 +455,9 @@ public class PropertyImpl extends AttributeImpl implements Property {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (semanticType: ");
+		result.append(" (href: ");
+		result.append(href);
+		result.append(", semanticType: ");
 		result.append(semanticType);
 		result.append(", readOnly: ");
 		result.append(readOnly);

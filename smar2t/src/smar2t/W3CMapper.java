@@ -19,10 +19,9 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import w3c_td.core.CoreFactory;
-import w3c_td.core.Thing;
-import w3c_td.hypermediacontrols.HypermediacontrolsFactory;
-import w3c_td.hypermediacontrols.Link;
+import w3c_td.W3c_tdFactory;
+import w3c_td.Thing;
+import w3c_td.Link;
 
 public class W3CMapper {
 	ObjectMapper mapper;
@@ -34,10 +33,10 @@ public class W3CMapper {
 		setupMapper();
 		setupResource();
 		
-		Thing thing = CoreFactory.eINSTANCE.createThing();
+		Thing thing = W3c_tdFactory.eINSTANCE.createThing();
 		thing.setTitle("Lamp");
 
-		Link link = HypermediacontrolsFactory.eINSTANCE.createLink();
+		Link link = W3c_tdFactory.eINSTANCE.createLink();
 		link.setHref("teste.com");
 		
 		thing.getLinks().add(link);
@@ -89,6 +88,17 @@ public class W3CMapper {
 			.forType(Thing.class)
 			.readValue(file);
 			return thing;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public Thing readXMI(String filepath) {
+		try {
+			Resource res = resourceSet.getResource(URI.createFileURI(filepath), false);
+			res.load(null);
+			return (Thing) resource.getContents().get(0);
 		} catch (IOException e) {
 			e.printStackTrace();
 			return null;

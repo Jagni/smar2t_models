@@ -11,6 +11,7 @@ import mozilla_td.Mozilla_tdPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -19,7 +20,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +32,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link mozilla_td.impl.ActionImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link mozilla_td.impl.ActionImpl#getHref <em>Href</em>}</li>
  *   <li>{@link mozilla_td.impl.ActionImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link mozilla_td.impl.ActionImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link mozilla_td.impl.ActionImpl#getInput <em>Input</em>}</li>
@@ -39,7 +42,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' reference list.
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLinks()
@@ -47,6 +50,26 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * @ordered
 	 */
 	protected EList<Link> links;
+
+	/**
+	 * The default value of the '{@link #getHref() <em>Href</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHref()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HREF_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getHref() <em>Href</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHref()
+	 * @generated
+	 * @ordered
+	 */
+	protected String href = HREF_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -89,7 +112,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getInput() <em>Input</em>}' reference.
+	 * The cached value of the '{@link #getInput() <em>Input</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInput()
@@ -124,9 +147,30 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 */
 	public EList<Link> getLinks() {
 		if (links == null) {
-			links = new EObjectResolvingEList<Link>(Link.class, this, Mozilla_tdPackage.ACTION__LINKS);
+			links = new EObjectContainmentEList<Link>(Link.class, this, Mozilla_tdPackage.ACTION__LINKS);
 		}
 		return links;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getHref() {
+		return href;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHref(String newHref) {
+		String oldHref = href;
+		href = newHref;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Mozilla_tdPackage.ACTION__HREF, oldHref, href));
 	}
 
 	/**
@@ -177,14 +221,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * @generated
 	 */
 	public Input getInput() {
-		if (input != null && input.eIsProxy()) {
-			InternalEObject oldInput = (InternalEObject)input;
-			input = (Input)eResolveProxy(oldInput);
-			if (input != oldInput) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Mozilla_tdPackage.ACTION__INPUT, oldInput, input));
-			}
-		}
 		return input;
 	}
 
@@ -193,8 +229,14 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Input basicGetInput() {
-		return input;
+	public NotificationChain basicSetInput(Input newInput, NotificationChain msgs) {
+		Input oldInput = input;
+		input = newInput;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mozilla_tdPackage.ACTION__INPUT, oldInput, newInput);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -203,10 +245,33 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * @generated
 	 */
 	public void setInput(Input newInput) {
-		Input oldInput = input;
-		input = newInput;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mozilla_tdPackage.ACTION__INPUT, oldInput, input));
+		if (newInput != input) {
+			NotificationChain msgs = null;
+			if (input != null)
+				msgs = ((InternalEObject)input).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mozilla_tdPackage.ACTION__INPUT, null, msgs);
+			if (newInput != null)
+				msgs = ((InternalEObject)newInput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mozilla_tdPackage.ACTION__INPUT, null, msgs);
+			msgs = basicSetInput(newInput, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Mozilla_tdPackage.ACTION__INPUT, newInput, newInput));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Mozilla_tdPackage.ACTION__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
+			case Mozilla_tdPackage.ACTION__INPUT:
+				return basicSetInput(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -219,13 +284,14 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		switch (featureID) {
 			case Mozilla_tdPackage.ACTION__LINKS:
 				return getLinks();
+			case Mozilla_tdPackage.ACTION__HREF:
+				return getHref();
 			case Mozilla_tdPackage.ACTION__TITLE:
 				return getTitle();
 			case Mozilla_tdPackage.ACTION__DESCRIPTION:
 				return getDescription();
 			case Mozilla_tdPackage.ACTION__INPUT:
-				if (resolve) return getInput();
-				return basicGetInput();
+				return getInput();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -242,6 +308,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			case Mozilla_tdPackage.ACTION__LINKS:
 				getLinks().clear();
 				getLinks().addAll((Collection<? extends Link>)newValue);
+				return;
+			case Mozilla_tdPackage.ACTION__HREF:
+				setHref((String)newValue);
 				return;
 			case Mozilla_tdPackage.ACTION__TITLE:
 				setTitle((String)newValue);
@@ -267,6 +336,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			case Mozilla_tdPackage.ACTION__LINKS:
 				getLinks().clear();
 				return;
+			case Mozilla_tdPackage.ACTION__HREF:
+				setHref(HREF_EDEFAULT);
+				return;
 			case Mozilla_tdPackage.ACTION__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -290,6 +362,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		switch (featureID) {
 			case Mozilla_tdPackage.ACTION__LINKS:
 				return links != null && !links.isEmpty();
+			case Mozilla_tdPackage.ACTION__HREF:
+				return HREF_EDEFAULT == null ? href != null : !HREF_EDEFAULT.equals(href);
 			case Mozilla_tdPackage.ACTION__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case Mozilla_tdPackage.ACTION__DESCRIPTION:
@@ -310,7 +384,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (title: ");
+		result.append(" (href: ");
+		result.append(href);
+		result.append(", title: ");
 		result.append(title);
 		result.append(", description: ");
 		result.append(description);

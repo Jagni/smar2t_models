@@ -11,57 +11,19 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated ThingUI -->
+      <!-- @generated W3CTD -->
       <package
-            uri="http://smar2t.org/models/thing_ui/actuation"
-            class="thing_ui.actuation.ActuationPackage"
-            genModel="model/ThingUI/ThingUI.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated ThingUI -->
-      <package
-            uri="http://smar2t.org/models/thing_ui/interaction"
-            class="thing_ui.interaction.InteractionPackage"
-            genModel="model/ThingUI/ThingUI.genmodel"/>
+            uri="http://smar2t.org/models/w3c_td"
+            class="w3c_td.W3c_tdPackage"
+            genModel="model/W3CTD/W3CTD.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated ThingUI -->
       <package
-            uri="http://smar2t.org/models/thing_ui/core"
-            class="thing_ui.core.CorePackage"
+            uri="http://smar2t.org/models/thing_ui"
+            class="thing_ui.Thing_uiPackage"
             genModel="model/ThingUI/ThingUI.genmodel"/>
    </extension>
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated W3CTD -->
-      <package
-            uri="http://smar2t.org/models/w3c_td/core"
-            class="w3c_td.core.CorePackage"
-            genModel="model/W3CTD/W3CTD.genmodel"/>
-   </extension>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated W3CTD -->
-      <package
-            uri="http://smar2t.org/models/w3c_td/hypermediacontrols"
-            class="w3c_td.hypermediacontrols.HypermediacontrolsPackage"
-            genModel="model/W3CTD/W3CTD.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated W3CTD -->
-      <package
-            uri="http://smar2t.org/models/w3c_td/dataschema"
-            class="w3c_td.dataschema.DataschemaPackage"
-            genModel="model/W3CTD/W3CTD.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated W3CTD -->
-      <package
-            uri="http://smar2t.org/models/w3c_td/security"
-            class="w3c_td.security.SecurityPackage"
-            genModel="model/W3CTD/W3CTD.genmodel"/>
-   </extension>
 </plugin>

@@ -1,0 +1,50 @@
+{
+	"eClass": "http://smar2t.org/models/thing_ui#//ThingUI",
+	"properties": {
+		"on": {
+			"icon": "boolean",
+			"form": {
+				"inputs": [
+					{
+						"eClass": "http://smar2t.org/models/thing_ui#//NumberInput",
+						"interactionEnabled": false
+					}
+				],
+				"actuator": {
+					"communicationProtocol": "http"
+				}
+			}
+		},
+		"level": {
+			"icon": "number",
+			"form": {
+				"inputs": [
+					{
+						"eClass": "http://smar2t.org/models/thing_ui#//NumberInput",
+						"editingValue": "0",
+						"interactionEnabled": false
+					}
+				],
+				"actuator": {
+					"communicationProtocol": "http"
+				}
+			}
+		},
+		"limitTime": {
+			"icon": "number",
+			"form": {
+				"inputs": [
+					{
+						"eClass": "http://smar2t.org/models/thing_ui#//NumberInput",
+						"editingValue": "0",
+						"interactionEnabled": false
+					}
+				],
+				"actuator": {
+					"communicationProtocol": "http"
+				}
+			}
+		}
+	},
+	"name": "Built-in LED"
+}

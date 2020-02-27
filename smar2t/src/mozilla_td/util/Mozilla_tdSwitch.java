@@ -2,6 +2,7 @@
  */
 package mozilla_td.util;
 
+import java.util.Map;
 import mozilla_td.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -118,6 +119,30 @@ public class Mozilla_tdSwitch<T> extends Switch<T> {
 			case Mozilla_tdPackage.LINKABLE: {
 				Linkable linkable = (Linkable)theEObject;
 				T result = caseLinkable(linkable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Mozilla_tdPackage.STRING_TO_ACTION_MAP: {
+				@SuppressWarnings("unchecked") Map.Entry<String, Action> stringToActionMap = (Map.Entry<String, Action>)theEObject;
+				T result = caseStringToActionMap(stringToActionMap);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Mozilla_tdPackage.STRING_TO_EVENT_MAP: {
+				@SuppressWarnings("unchecked") Map.Entry<String, Event> stringToEventMap = (Map.Entry<String, Event>)theEObject;
+				T result = caseStringToEventMap(stringToEventMap);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Mozilla_tdPackage.STRING_TO_PROPERTY_MAP: {
+				@SuppressWarnings("unchecked") Map.Entry<String, Property> stringToPropertyMap = (Map.Entry<String, Property>)theEObject;
+				T result = caseStringToPropertyMap(stringToPropertyMap);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Mozilla_tdPackage.STRING_TO_ATTRIBUTE_MAP: {
+				@SuppressWarnings("unchecked") Map.Entry<String, Attribute> stringToAttributeMap = (Map.Entry<String, Attribute>)theEObject;
+				T result = caseStringToAttributeMap(stringToAttributeMap);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -242,6 +267,66 @@ public class Mozilla_tdSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLinkable(Linkable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String To Action Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String To Action Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringToActionMap(Map.Entry<String, Action> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String To Event Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String To Event Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringToEventMap(Map.Entry<String, Event> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String To Property Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String To Property Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringToPropertyMap(Map.Entry<String, Property> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String To Attribute Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String To Attribute Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringToAttributeMap(Map.Entry<String, Attribute> object) {
 		return null;
 	}
 

@@ -10,10 +10,7 @@ rule ThingData {
 		td: W3CTD!Thing
 	to
 		t: ThingUI!ThingUserInterface (
-			description <- td.description,
-			name <- td.title,
-			icon <- td.semanticType.first(),
-			properties <- W3CTD!PropertyAffordance.allInstances()->collect(p | thisModule.getProperty(p))
+			description <- 'test'
 		)
 }
 
