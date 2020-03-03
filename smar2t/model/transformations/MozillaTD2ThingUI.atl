@@ -34,7 +34,7 @@ lazy rule getProperty {
      res: ThingUI!Resource (
      	name <- key,
      	description <- p.description,
-		icon <- p.type,
+		type <- p.type,
 		form <- thisModule.getPropertyForm(p, key)
      )
  }
