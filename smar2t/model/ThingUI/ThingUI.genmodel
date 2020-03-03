@@ -97,5 +97,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ThingUI.ecore#//StringToResourceMap/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//StringToResourceMap/key"/>
     </genClasses>
+    <genClasses ecoreClass="ThingUI.ecore#//StringToInputMap">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ThingUI.ecore#//StringToInputMap/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//StringToInputMap/key"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -2,44 +2,47 @@
 	"eClass": "http://smar2t.org/models/thing_ui#//ThingUI",
 	"properties": {
 		"on": {
+			"name": "on",
 			"icon": "boolean",
 			"form": {
-				"inputs": [
-					{
+				"inputs": {
+					"on": {
 						"eClass": "http://smar2t.org/models/thing_ui#//NumberInput",
 						"interactionEnabled": false
 					}
-				],
+				},
 				"actuator": {
 					"communicationProtocol": "http"
 				}
 			}
 		},
 		"level": {
+			"name": "level",
 			"icon": "number",
 			"form": {
-				"inputs": [
-					{
+				"inputs": {
+					"level": {
 						"eClass": "http://smar2t.org/models/thing_ui#//NumberInput",
 						"editingValue": "0",
 						"interactionEnabled": false
 					}
-				],
+				},
 				"actuator": {
 					"communicationProtocol": "http"
 				}
 			}
 		},
 		"limitTime": {
+			"name": "limitTime",
 			"icon": "number",
 			"form": {
-				"inputs": [
-					{
+				"inputs": {
+					"limitTime": {
 						"eClass": "http://smar2t.org/models/thing_ui#//NumberInput",
 						"editingValue": "0",
 						"interactionEnabled": false
 					}
-				],
+				},
 				"actuator": {
 					"communicationProtocol": "http"
 				}

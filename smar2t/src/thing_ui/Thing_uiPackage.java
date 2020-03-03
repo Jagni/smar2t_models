@@ -141,7 +141,7 @@ public interface Thing_uiPackage extends EPackage {
 	int FORM__SHOWS_SUBMIT_BUTTON = 1;
 
 	/**
-	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Inputs</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -915,6 +915,52 @@ public interface Thing_uiPackage extends EPackage {
 	int STRING_TO_RESOURCE_MAP_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link thing_ui.impl.StringToInputMapImpl <em>String To Input Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see thing_ui.impl.StringToInputMapImpl
+	 * @see thing_ui.impl.Thing_uiPackageImpl#getStringToInputMap()
+	 * @generated
+	 */
+	int STRING_TO_INPUT_MAP = 11;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_INPUT_MAP__VALUE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_INPUT_MAP__KEY = 1;
+
+	/**
+	 * The number of structural features of the '<em>String To Input Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_INPUT_MAP_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>String To Input Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_INPUT_MAP_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link thing_ui.CommunicationProtocol <em>Communication Protocol</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -922,7 +968,7 @@ public interface Thing_uiPackage extends EPackage {
 	 * @see thing_ui.impl.Thing_uiPackageImpl#getCommunicationProtocol()
 	 * @generated
 	 */
-	int COMMUNICATION_PROTOCOL = 11;
+	int COMMUNICATION_PROTOCOL = 12;
 
 	/**
 	 * The meta object id for the '{@link thing_ui.SecurityScheme <em>Security Scheme</em>}' enum.
@@ -932,7 +978,7 @@ public interface Thing_uiPackage extends EPackage {
 	 * @see thing_ui.impl.Thing_uiPackageImpl#getSecurityScheme()
 	 * @generated
 	 */
-	int SECURITY_SCHEME = 12;
+	int SECURITY_SCHEME = 13;
 
 	/**
 	 * The meta object id for the '{@link thing_ui.InputType <em>Input Type</em>}' enum.
@@ -942,7 +988,7 @@ public interface Thing_uiPackage extends EPackage {
 	 * @see thing_ui.impl.Thing_uiPackageImpl#getInputType()
 	 * @generated
 	 */
-	int INPUT_TYPE = 13;
+	int INPUT_TYPE = 14;
 
 	/**
 	 * The meta object id for the '{@link thing_ui.TextInputType <em>Text Input Type</em>}' enum.
@@ -952,7 +998,7 @@ public interface Thing_uiPackage extends EPackage {
 	 * @see thing_ui.impl.Thing_uiPackageImpl#getTextInputType()
 	 * @generated
 	 */
-	int TEXT_INPUT_TYPE = 14;
+	int TEXT_INPUT_TYPE = 15;
 
 	/**
 	 * The meta object id for the '{@link thing_ui.NumberInputType <em>Number Input Type</em>}' enum.
@@ -962,7 +1008,7 @@ public interface Thing_uiPackage extends EPackage {
 	 * @see thing_ui.impl.Thing_uiPackageImpl#getNumberInputType()
 	 * @generated
 	 */
-	int NUMBER_INPUT_TYPE = 15;
+	int NUMBER_INPUT_TYPE = 16;
 
 	/**
 	 * The meta object id for the '{@link thing_ui.BoolInputType <em>Bool Input Type</em>}' enum.
@@ -972,7 +1018,7 @@ public interface Thing_uiPackage extends EPackage {
 	 * @see thing_ui.impl.Thing_uiPackageImpl#getBoolInputType()
 	 * @generated
 	 */
-	int BOOL_INPUT_TYPE = 16;
+	int BOOL_INPUT_TYPE = 17;
 
 
 	/**
@@ -1051,10 +1097,10 @@ public interface Thing_uiPackage extends EPackage {
 	EAttribute getForm_ShowsSubmitButton();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link thing_ui.Form#getInputs <em>Inputs</em>}'.
+	 * Returns the meta object for the map '{@link thing_ui.Form#getInputs <em>Inputs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Inputs</em>'.
+	 * @return the meta object for the map '<em>Inputs</em>'.
 	 * @see thing_ui.Form#getInputs()
 	 * @see #getForm()
 	 * @generated
@@ -1496,6 +1542,41 @@ public interface Thing_uiPackage extends EPackage {
 	EAttribute getStringToResourceMap_Key();
 
 	/**
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>String To Input Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String To Input Map</em>'.
+	 * @see java.util.Map.Entry
+	 * @model features="value key" 
+	 *        valueType="thing_ui.Input" valueContainment="true" valueRequired="true"
+	 *        keyDataType="org.eclipse.emf.ecore.EString"
+	 * @generated
+	 */
+	EClass getStringToInputMap();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToInputMap()
+	 * @generated
+	 */
+	EReference getStringToInputMap_Value();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToInputMap()
+	 * @generated
+	 */
+	EAttribute getStringToInputMap_Key();
+
+	/**
 	 * Returns the meta object for enum '{@link thing_ui.CommunicationProtocol <em>Communication Protocol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1639,7 +1720,7 @@ public interface Thing_uiPackage extends EPackage {
 		EAttribute FORM__SHOWS_SUBMIT_BUTTON = eINSTANCE.getForm_ShowsSubmitButton();
 
 		/**
-		 * The meta object literal for the '<em><b>Inputs</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Inputs</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1983,6 +2064,32 @@ public interface Thing_uiPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STRING_TO_RESOURCE_MAP__KEY = eINSTANCE.getStringToResourceMap_Key();
+
+		/**
+		 * The meta object literal for the '{@link thing_ui.impl.StringToInputMapImpl <em>String To Input Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see thing_ui.impl.StringToInputMapImpl
+		 * @see thing_ui.impl.Thing_uiPackageImpl#getStringToInputMap()
+		 * @generated
+		 */
+		EClass STRING_TO_INPUT_MAP = eINSTANCE.getStringToInputMap();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRING_TO_INPUT_MAP__VALUE = eINSTANCE.getStringToInputMap_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_TO_INPUT_MAP__KEY = eINSTANCE.getStringToInputMap_Key();
 
 		/**
 		 * The meta object literal for the '{@link thing_ui.CommunicationProtocol <em>Communication Protocol</em>}' enum.

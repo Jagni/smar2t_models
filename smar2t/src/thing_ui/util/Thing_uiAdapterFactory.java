@@ -113,6 +113,10 @@ public class Thing_uiAdapterFactory extends AdapterFactoryImpl {
 				return createStringToResourceMapAdapter();
 			}
 			@Override
+			public Adapter caseStringToInputMap(Map.Entry<String, Input> object) {
+				return createStringToInputMapAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -283,6 +287,20 @@ public class Thing_uiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStringToResourceMapAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>String To Input Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see java.util.Map.Entry
+	 * @generated
+	 */
+	public Adapter createStringToInputMapAdapter() {
 		return null;
 	}
 

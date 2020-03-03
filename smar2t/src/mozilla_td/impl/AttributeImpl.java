@@ -35,8 +35,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link mozilla_td.impl.AttributeImpl#getUnit <em>Unit</em>}</li>
  *   <li>{@link mozilla_td.impl.AttributeImpl#getEnum <em>Enum</em>}</li>
- *   <li>{@link mozilla_td.impl.AttributeImpl#getMinimum <em>Minimum</em>}</li>
- *   <li>{@link mozilla_td.impl.AttributeImpl#getMaximum <em>Maximum</em>}</li>
+ *   <li>{@link mozilla_td.impl.AttributeImpl#getMin <em>Min</em>}</li>
+ *   <li>{@link mozilla_td.impl.AttributeImpl#getMax <em>Max</em>}</li>
  *   <li>{@link mozilla_td.impl.AttributeImpl#getMultipleOf <em>Multiple Of</em>}</li>
  *   <li>{@link mozilla_td.impl.AttributeImpl#getType <em>Type</em>}</li>
  *   <li>{@link mozilla_td.impl.AttributeImpl#getProperties <em>Properties</em>}</li>
@@ -77,44 +77,44 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	protected EList<PrimitiveType> enum_;
 
 	/**
-	 * The default value of the '{@link #getMinimum() <em>Minimum</em>}' attribute.
+	 * The default value of the '{@link #getMin() <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMinimum()
+	 * @see #getMin()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double MINIMUM_EDEFAULT = 0.0;
+	protected static final double MIN_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' attribute.
+	 * The cached value of the '{@link #getMin() <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMinimum()
+	 * @see #getMin()
 	 * @generated
 	 * @ordered
 	 */
-	protected double minimum = MINIMUM_EDEFAULT;
+	protected double min = MIN_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMaximum() <em>Maximum</em>}' attribute.
+	 * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMaximum()
+	 * @see #getMax()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double MAXIMUM_EDEFAULT = 0.0;
+	protected static final double MAX_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getMaximum() <em>Maximum</em>}' attribute.
+	 * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMaximum()
+	 * @see #getMax()
 	 * @generated
 	 * @ordered
 	 */
-	protected double maximum = MAXIMUM_EDEFAULT;
+	protected double max = MAX_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMultipleOf() <em>Multiple Of</em>}' attribute.
@@ -144,7 +144,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * @generated
 	 * @ordered
 	 */
-	protected static final PrimitiveType TYPE_EDEFAULT = PrimitiveType.NULL;
+	protected static final String TYPE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -154,7 +154,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * @generated
 	 * @ordered
 	 */
-	protected PrimitiveType type = TYPE_EDEFAULT;
+	protected String type = TYPE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' map.
@@ -243,8 +243,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double getMinimum() {
-		return minimum;
+	public double getMin() {
+		return min;
 	}
 
 	/**
@@ -252,11 +252,11 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMinimum(double newMinimum) {
-		double oldMinimum = minimum;
-		minimum = newMinimum;
+	public void setMin(double newMin) {
+		double oldMin = min;
+		min = newMin;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mozilla_tdPackage.ATTRIBUTE__MINIMUM, oldMinimum, minimum));
+			eNotify(new ENotificationImpl(this, Notification.SET, Mozilla_tdPackage.ATTRIBUTE__MIN, oldMin, min));
 	}
 
 	/**
@@ -264,8 +264,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double getMaximum() {
-		return maximum;
+	public double getMax() {
+		return max;
 	}
 
 	/**
@@ -273,11 +273,11 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMaximum(double newMaximum) {
-		double oldMaximum = maximum;
-		maximum = newMaximum;
+	public void setMax(double newMax) {
+		double oldMax = max;
+		max = newMax;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mozilla_tdPackage.ATTRIBUTE__MAXIMUM, oldMaximum, maximum));
+			eNotify(new ENotificationImpl(this, Notification.SET, Mozilla_tdPackage.ATTRIBUTE__MAX, oldMax, max));
 	}
 
 	/**
@@ -306,7 +306,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PrimitiveType getType() {
+	public String getType() {
 		return type;
 	}
 
@@ -315,9 +315,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(PrimitiveType newType) {
-		PrimitiveType oldType = type;
-		type = newType == null ? TYPE_EDEFAULT : newType;
+	public void setType(String newType) {
+		String oldType = type;
+		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Mozilla_tdPackage.ATTRIBUTE__TYPE, oldType, type));
 	}
@@ -381,10 +381,10 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 				return getUnit();
 			case Mozilla_tdPackage.ATTRIBUTE__ENUM:
 				return getEnum();
-			case Mozilla_tdPackage.ATTRIBUTE__MINIMUM:
-				return getMinimum();
-			case Mozilla_tdPackage.ATTRIBUTE__MAXIMUM:
-				return getMaximum();
+			case Mozilla_tdPackage.ATTRIBUTE__MIN:
+				return getMin();
+			case Mozilla_tdPackage.ATTRIBUTE__MAX:
+				return getMax();
 			case Mozilla_tdPackage.ATTRIBUTE__MULTIPLE_OF:
 				return getMultipleOf();
 			case Mozilla_tdPackage.ATTRIBUTE__TYPE:
@@ -414,17 +414,17 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 				getEnum().clear();
 				getEnum().addAll((Collection<? extends PrimitiveType>)newValue);
 				return;
-			case Mozilla_tdPackage.ATTRIBUTE__MINIMUM:
-				setMinimum((Double)newValue);
+			case Mozilla_tdPackage.ATTRIBUTE__MIN:
+				setMin((Double)newValue);
 				return;
-			case Mozilla_tdPackage.ATTRIBUTE__MAXIMUM:
-				setMaximum((Double)newValue);
+			case Mozilla_tdPackage.ATTRIBUTE__MAX:
+				setMax((Double)newValue);
 				return;
 			case Mozilla_tdPackage.ATTRIBUTE__MULTIPLE_OF:
 				setMultipleOf((Double)newValue);
 				return;
 			case Mozilla_tdPackage.ATTRIBUTE__TYPE:
-				setType((PrimitiveType)newValue);
+				setType((String)newValue);
 				return;
 			case Mozilla_tdPackage.ATTRIBUTE__PROPERTIES:
 				((EStructuralFeature.Setting)getProperties()).set(newValue);
@@ -450,11 +450,11 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 			case Mozilla_tdPackage.ATTRIBUTE__ENUM:
 				getEnum().clear();
 				return;
-			case Mozilla_tdPackage.ATTRIBUTE__MINIMUM:
-				setMinimum(MINIMUM_EDEFAULT);
+			case Mozilla_tdPackage.ATTRIBUTE__MIN:
+				setMin(MIN_EDEFAULT);
 				return;
-			case Mozilla_tdPackage.ATTRIBUTE__MAXIMUM:
-				setMaximum(MAXIMUM_EDEFAULT);
+			case Mozilla_tdPackage.ATTRIBUTE__MAX:
+				setMax(MAX_EDEFAULT);
 				return;
 			case Mozilla_tdPackage.ATTRIBUTE__MULTIPLE_OF:
 				setMultipleOf(MULTIPLE_OF_EDEFAULT);
@@ -484,14 +484,14 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 				return UNIT_EDEFAULT == null ? unit != null : !UNIT_EDEFAULT.equals(unit);
 			case Mozilla_tdPackage.ATTRIBUTE__ENUM:
 				return enum_ != null && !enum_.isEmpty();
-			case Mozilla_tdPackage.ATTRIBUTE__MINIMUM:
-				return minimum != MINIMUM_EDEFAULT;
-			case Mozilla_tdPackage.ATTRIBUTE__MAXIMUM:
-				return maximum != MAXIMUM_EDEFAULT;
+			case Mozilla_tdPackage.ATTRIBUTE__MIN:
+				return min != MIN_EDEFAULT;
+			case Mozilla_tdPackage.ATTRIBUTE__MAX:
+				return max != MAX_EDEFAULT;
 			case Mozilla_tdPackage.ATTRIBUTE__MULTIPLE_OF:
 				return multipleOf != MULTIPLE_OF_EDEFAULT;
 			case Mozilla_tdPackage.ATTRIBUTE__TYPE:
-				return type != TYPE_EDEFAULT;
+				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case Mozilla_tdPackage.ATTRIBUTE__PROPERTIES:
 				return properties != null && !properties.isEmpty();
 			case Mozilla_tdPackage.ATTRIBUTE__ID:
@@ -514,10 +514,10 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 		result.append(unit);
 		result.append(", enum: ");
 		result.append(enum_);
-		result.append(", minimum: ");
-		result.append(minimum);
-		result.append(", maximum: ");
-		result.append(maximum);
+		result.append(", min: ");
+		result.append(min);
+		result.append(", max: ");
+		result.append(max);
 		result.append(", multipleOf: ");
 		result.append(multipleOf);
 		result.append(", type: ");

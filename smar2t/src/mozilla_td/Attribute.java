@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link mozilla_td.Attribute#getUnit <em>Unit</em>}</li>
  *   <li>{@link mozilla_td.Attribute#getEnum <em>Enum</em>}</li>
- *   <li>{@link mozilla_td.Attribute#getMinimum <em>Minimum</em>}</li>
- *   <li>{@link mozilla_td.Attribute#getMaximum <em>Maximum</em>}</li>
+ *   <li>{@link mozilla_td.Attribute#getMin <em>Min</em>}</li>
+ *   <li>{@link mozilla_td.Attribute#getMax <em>Max</em>}</li>
  *   <li>{@link mozilla_td.Attribute#getMultipleOf <em>Multiple Of</em>}</li>
  *   <li>{@link mozilla_td.Attribute#getType <em>Type</em>}</li>
  *   <li>{@link mozilla_td.Attribute#getProperties <em>Properties</em>}</li>
@@ -67,48 +67,48 @@ public interface Attribute extends EObject {
 	EList<PrimitiveType> getEnum();
 
 	/**
-	 * Returns the value of the '<em><b>Minimum</b></em>' attribute.
+	 * Returns the value of the '<em><b>Min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Minimum</em>' attribute.
-	 * @see #setMinimum(double)
-	 * @see mozilla_td.Mozilla_tdPackage#getAttribute_Minimum()
+	 * @return the value of the '<em>Min</em>' attribute.
+	 * @see #setMin(double)
+	 * @see mozilla_td.Mozilla_tdPackage#getAttribute_Min()
 	 * @model dataType="org.eclipse.emf.ecore.xml.type.Double"
 	 * @generated
 	 */
-	double getMinimum();
+	double getMin();
 
 	/**
-	 * Sets the value of the '{@link mozilla_td.Attribute#getMinimum <em>Minimum</em>}' attribute.
+	 * Sets the value of the '{@link mozilla_td.Attribute#getMin <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Minimum</em>' attribute.
-	 * @see #getMinimum()
+	 * @param value the new value of the '<em>Min</em>' attribute.
+	 * @see #getMin()
 	 * @generated
 	 */
-	void setMinimum(double value);
+	void setMin(double value);
 
 	/**
-	 * Returns the value of the '<em><b>Maximum</b></em>' attribute.
+	 * Returns the value of the '<em><b>Max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Maximum</em>' attribute.
-	 * @see #setMaximum(double)
-	 * @see mozilla_td.Mozilla_tdPackage#getAttribute_Maximum()
+	 * @return the value of the '<em>Max</em>' attribute.
+	 * @see #setMax(double)
+	 * @see mozilla_td.Mozilla_tdPackage#getAttribute_Max()
 	 * @model dataType="org.eclipse.emf.ecore.xml.type.Double"
 	 * @generated
 	 */
-	double getMaximum();
+	double getMax();
 
 	/**
-	 * Sets the value of the '{@link mozilla_td.Attribute#getMaximum <em>Maximum</em>}' attribute.
+	 * Sets the value of the '{@link mozilla_td.Attribute#getMax <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Maximum</em>' attribute.
-	 * @see #getMaximum()
+	 * @param value the new value of the '<em>Max</em>' attribute.
+	 * @see #getMax()
 	 * @generated
 	 */
-	void setMaximum(double value);
+	void setMax(double value);
 
 	/**
 	 * Returns the value of the '<em><b>Multiple Of</b></em>' attribute.
@@ -134,28 +134,25 @@ public interface Attribute extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link mozilla_td.PrimitiveType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see mozilla_td.PrimitiveType
-	 * @see #setType(PrimitiveType)
+	 * @see #setType(String)
 	 * @see mozilla_td.Mozilla_tdPackage#getAttribute_Type()
 	 * @model required="true"
 	 * @generated
 	 */
-	PrimitiveType getType();
+	String getType();
 
 	/**
 	 * Sets the value of the '{@link mozilla_td.Attribute#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see mozilla_td.PrimitiveType
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(PrimitiveType value);
+	void setType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' map.

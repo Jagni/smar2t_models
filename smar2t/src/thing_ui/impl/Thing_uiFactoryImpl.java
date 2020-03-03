@@ -68,6 +68,7 @@ public class Thing_uiFactoryImpl extends EFactoryImpl implements Thing_uiFactory
 			case Thing_uiPackage.LOCATION: return createLocation();
 			case Thing_uiPackage.RESOURCE: return createResource();
 			case Thing_uiPackage.STRING_TO_RESOURCE_MAP: return (EObject)createStringToResourceMap();
+			case Thing_uiPackage.STRING_TO_INPUT_MAP: return (EObject)createStringToInputMap();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -221,6 +222,16 @@ public class Thing_uiFactoryImpl extends EFactoryImpl implements Thing_uiFactory
 	public Map.Entry<String, Resource> createStringToResourceMap() {
 		StringToResourceMapImpl stringToResourceMap = new StringToResourceMapImpl();
 		return stringToResourceMap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map.Entry<String, Input> createStringToInputMap() {
+		StringToInputMapImpl stringToInputMap = new StringToInputMapImpl();
+		return stringToInputMap;
 	}
 
 	/**

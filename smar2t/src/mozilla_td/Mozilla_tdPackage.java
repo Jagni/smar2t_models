@@ -250,22 +250,22 @@ public interface Mozilla_tdPackage extends EPackage {
 	int ATTRIBUTE__ENUM = 1;
 
 	/**
-	 * The feature id for the '<em><b>Minimum</b></em>' attribute.
+	 * The feature id for the '<em><b>Min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__MINIMUM = 2;
+	int ATTRIBUTE__MIN = 2;
 
 	/**
-	 * The feature id for the '<em><b>Maximum</b></em>' attribute.
+	 * The feature id for the '<em><b>Max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__MAXIMUM = 3;
+	int ATTRIBUTE__MAX = 3;
 
 	/**
 	 * The feature id for the '<em><b>Multiple Of</b></em>' attribute.
@@ -478,22 +478,22 @@ public interface Mozilla_tdPackage extends EPackage {
 	int INPUT__ENUM = ATTRIBUTE__ENUM;
 
 	/**
-	 * The feature id for the '<em><b>Minimum</b></em>' attribute.
+	 * The feature id for the '<em><b>Min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT__MINIMUM = ATTRIBUTE__MINIMUM;
+	int INPUT__MIN = ATTRIBUTE__MIN;
 
 	/**
-	 * The feature id for the '<em><b>Maximum</b></em>' attribute.
+	 * The feature id for the '<em><b>Max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT__MAXIMUM = ATTRIBUTE__MAXIMUM;
+	int INPUT__MAX = ATTRIBUTE__MAX;
 
 	/**
 	 * The feature id for the '<em><b>Multiple Of</b></em>' attribute.
@@ -587,22 +587,22 @@ public interface Mozilla_tdPackage extends EPackage {
 	int PROPERTY__ENUM = ATTRIBUTE__ENUM;
 
 	/**
-	 * The feature id for the '<em><b>Minimum</b></em>' attribute.
+	 * The feature id for the '<em><b>Min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__MINIMUM = ATTRIBUTE__MINIMUM;
+	int PROPERTY__MIN = ATTRIBUTE__MIN;
 
 	/**
-	 * The feature id for the '<em><b>Maximum</b></em>' attribute.
+	 * The feature id for the '<em><b>Max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__MAXIMUM = ATTRIBUTE__MAXIMUM;
+	int PROPERTY__MAX = ATTRIBUTE__MAX;
 
 	/**
 	 * The feature id for the '<em><b>Multiple Of</b></em>' attribute.
@@ -741,22 +741,22 @@ public interface Mozilla_tdPackage extends EPackage {
 	int EVENT__ENUM = ATTRIBUTE__ENUM;
 
 	/**
-	 * The feature id for the '<em><b>Minimum</b></em>' attribute.
+	 * The feature id for the '<em><b>Min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT__MINIMUM = ATTRIBUTE__MINIMUM;
+	int EVENT__MIN = ATTRIBUTE__MIN;
 
 	/**
-	 * The feature id for the '<em><b>Maximum</b></em>' attribute.
+	 * The feature id for the '<em><b>Max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT__MAXIMUM = ATTRIBUTE__MAXIMUM;
+	int EVENT__MAX = ATTRIBUTE__MAX;
 
 	/**
 	 * The feature id for the '<em><b>Multiple Of</b></em>' attribute.
@@ -1184,26 +1184,26 @@ public interface Mozilla_tdPackage extends EPackage {
 	EAttribute getAttribute_Enum();
 
 	/**
-	 * Returns the meta object for the attribute '{@link mozilla_td.Attribute#getMinimum <em>Minimum</em>}'.
+	 * Returns the meta object for the attribute '{@link mozilla_td.Attribute#getMin <em>Min</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Minimum</em>'.
-	 * @see mozilla_td.Attribute#getMinimum()
+	 * @return the meta object for the attribute '<em>Min</em>'.
+	 * @see mozilla_td.Attribute#getMin()
 	 * @see #getAttribute()
 	 * @generated
 	 */
-	EAttribute getAttribute_Minimum();
+	EAttribute getAttribute_Min();
 
 	/**
-	 * Returns the meta object for the attribute '{@link mozilla_td.Attribute#getMaximum <em>Maximum</em>}'.
+	 * Returns the meta object for the attribute '{@link mozilla_td.Attribute#getMax <em>Max</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Maximum</em>'.
-	 * @see mozilla_td.Attribute#getMaximum()
+	 * @return the meta object for the attribute '<em>Max</em>'.
+	 * @see mozilla_td.Attribute#getMax()
 	 * @see #getAttribute()
 	 * @generated
 	 */
-	EAttribute getAttribute_Maximum();
+	EAttribute getAttribute_Max();
 
 	/**
 	 * Returns the meta object for the attribute '{@link mozilla_td.Attribute#getMultipleOf <em>Multiple Of</em>}'.
@@ -1756,20 +1756,20 @@ public interface Mozilla_tdPackage extends EPackage {
 		EAttribute ATTRIBUTE__ENUM = eINSTANCE.getAttribute_Enum();
 
 		/**
-		 * The meta object literal for the '<em><b>Minimum</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ATTRIBUTE__MINIMUM = eINSTANCE.getAttribute_Minimum();
+		EAttribute ATTRIBUTE__MIN = eINSTANCE.getAttribute_Min();
 
 		/**
-		 * The meta object literal for the '<em><b>Maximum</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ATTRIBUTE__MAXIMUM = eINSTANCE.getAttribute_Maximum();
+		EAttribute ATTRIBUTE__MAX = eINSTANCE.getAttribute_Max();
 
 		/**
 		 * The meta object literal for the '<em><b>Multiple Of</b></em>' attribute feature.

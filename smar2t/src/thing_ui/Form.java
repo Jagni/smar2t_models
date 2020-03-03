@@ -2,8 +2,7 @@
  */
 package thing_ui;
 
-import org.eclipse.emf.common.util.EList;
-
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -72,16 +71,17 @@ public interface Form extends EObject {
 	void setShowsSubmitButton(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Inputs</b></em>' containment reference list.
-	 * The list contents are of type {@link thing_ui.Input}.
+	 * Returns the value of the '<em><b>Inputs</b></em>' map.
+	 * The key is of type {@link java.lang.String},
+	 * and the value is of type {@link thing_ui.Input},
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inputs</em>' containment reference list.
+	 * @return the value of the '<em>Inputs</em>' map.
 	 * @see thing_ui.Thing_uiPackage#getForm_Inputs()
-	 * @model containment="true" required="true"
+	 * @model mapType="thing_ui.StringToInputMap&lt;org.eclipse.emf.ecore.EString, thing_ui.Input&gt;"
 	 * @generated
 	 */
-	EList<Input> getInputs();
+	EMap<String, Input> getInputs();
 
 	/**
 	 * Returns the value of the '<em><b>Actuator</b></em>' containment reference.

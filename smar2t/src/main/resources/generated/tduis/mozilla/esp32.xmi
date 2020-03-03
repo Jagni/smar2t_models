@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="ASCII"?>
 <ThingUI:ThingUI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ThingUI="http://smar2t.org/models/thing_ui" name="Built-in LED">
   <properties key="on">
-    <value icon="boolean">
+    <value name="on" icon="boolean">
       <form>
-        <inputs xsi:type="ThingUI:NumberInput" interactionEnabled="false"/>
+        <inputs key="on">
+          <value xsi:type="ThingUI:NumberInput" interactionEnabled="false"/>
+        </inputs>
         <actuator communicationProtocol="http"/>
       </form>
     </value>
   </properties>
   <properties key="level">
-    <value icon="number">
+    <value name="level" icon="number">
       <form>
-        <inputs xsi:type="ThingUI:NumberInput" editingValue="0" interactionEnabled="false"/>
+        <inputs key="level">
+          <value xsi:type="ThingUI:NumberInput" editingValue="0" interactionEnabled="false"/>
+        </inputs>
         <actuator communicationProtocol="http"/>
       </form>
     </value>
   </properties>
   <properties key="limitTime">
-    <value icon="number">
+    <value name="limitTime" icon="number">
       <form>
-        <inputs xsi:type="ThingUI:NumberInput" editingValue="0" interactionEnabled="false"/>
+        <inputs key="limitTime">
+          <value xsi:type="ThingUI:NumberInput" editingValue="0" interactionEnabled="false"/>
+        </inputs>
         <actuator communicationProtocol="http"/>
       </form>
     </value>

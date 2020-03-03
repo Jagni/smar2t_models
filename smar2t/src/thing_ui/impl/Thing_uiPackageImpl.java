@@ -121,6 +121,13 @@ public class Thing_uiPackageImpl extends EPackageImpl implements Thing_uiPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass stringToInputMapEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum communicationProtocolEEnum = null;
 
 	/**
@@ -659,6 +666,33 @@ public class Thing_uiPackageImpl extends EPackageImpl implements Thing_uiPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getStringToInputMap() {
+		return stringToInputMapEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStringToInputMap_Value() {
+		return (EReference)stringToInputMapEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStringToInputMap_Key() {
+		return (EAttribute)stringToInputMapEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getCommunicationProtocol() {
 		return communicationProtocolEEnum;
 	}
@@ -795,6 +829,10 @@ public class Thing_uiPackageImpl extends EPackageImpl implements Thing_uiPackage
 		createEReference(stringToResourceMapEClass, STRING_TO_RESOURCE_MAP__VALUE);
 		createEAttribute(stringToResourceMapEClass, STRING_TO_RESOURCE_MAP__KEY);
 
+		stringToInputMapEClass = createEClass(STRING_TO_INPUT_MAP);
+		createEReference(stringToInputMapEClass, STRING_TO_INPUT_MAP__VALUE);
+		createEAttribute(stringToInputMapEClass, STRING_TO_INPUT_MAP__KEY);
+
 		// Create enums
 		communicationProtocolEEnum = createEEnum(COMMUNICATION_PROTOCOL);
 		securitySchemeEEnum = createEEnum(SECURITY_SCHEME);
@@ -849,7 +887,7 @@ public class Thing_uiPackageImpl extends EPackageImpl implements Thing_uiPackage
 		initEClass(formEClass, Form.class, "Form", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getForm_ReadOnly(), theXMLTypePackage.getBoolean(), "readOnly", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getForm_ShowsSubmitButton(), theXMLTypePackage.getBoolean(), "showsSubmitButton", "true", 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getForm_Inputs(), this.getInput(), null, "inputs", null, 1, -1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getForm_Inputs(), this.getStringToInputMap(), null, "inputs", null, 1, -1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getForm_Actuator(), this.getActuator(), null, "actuator", null, 1, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(inputEClass, Input.class, "Input", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -899,6 +937,10 @@ public class Thing_uiPackageImpl extends EPackageImpl implements Thing_uiPackage
 		initEClass(stringToResourceMapEClass, Map.Entry.class, "StringToResourceMap", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStringToResourceMap_Value(), this.getResource(), null, "value", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStringToResourceMap_Key(), ecorePackage.getEString(), "key", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(stringToInputMapEClass, Map.Entry.class, "StringToInputMap", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStringToInputMap_Value(), this.getInput(), null, "value", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStringToInputMap_Key(), ecorePackage.getEString(), "key", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(communicationProtocolEEnum, CommunicationProtocol.class, "CommunicationProtocol");

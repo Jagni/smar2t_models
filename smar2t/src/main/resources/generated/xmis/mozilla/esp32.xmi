@@ -4,7 +4,7 @@
     <value type="boolean" href="/things/led/properties/on"/>
   </properties>
   <properties key="level">
-    <value type="number" href="/things/led/properties/level"/>
+    <value max="100.0" type="number" href="/things/led/properties/level"/>
   </properties>
   <properties key="limitTime">
     <value type="number" href="/things/led/properties/level"/>

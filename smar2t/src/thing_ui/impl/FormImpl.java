@@ -2,20 +2,17 @@
  */
 package thing_ui.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 import thing_ui.Actuator;
 import thing_ui.Form;
@@ -80,14 +77,14 @@ public class FormImpl extends MinimalEObjectImpl.Container implements Form {
 	protected boolean showsSubmitButton = SHOWS_SUBMIT_BUTTON_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getInputs() <em>Inputs</em>}' containment reference list.
+	 * The cached value of the '{@link #getInputs() <em>Inputs</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInputs()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Input> inputs;
+	protected EMap<String, Input> inputs;
 
 	/**
 	 * The cached value of the '{@link #getActuator() <em>Actuator</em>}' containment reference.
@@ -165,9 +162,9 @@ public class FormImpl extends MinimalEObjectImpl.Container implements Form {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Input> getInputs() {
+	public EMap<String, Input> getInputs() {
 		if (inputs == null) {
-			inputs = new EObjectContainmentEList<Input>(Input.class, this, Thing_uiPackage.FORM__INPUTS);
+			inputs = new EcoreEMap<String,Input>(Thing_uiPackage.Literals.STRING_TO_INPUT_MAP, StringToInputMapImpl.class, this, Thing_uiPackage.FORM__INPUTS);
 		}
 		return inputs;
 	}
@@ -244,7 +241,8 @@ public class FormImpl extends MinimalEObjectImpl.Container implements Form {
 			case Thing_uiPackage.FORM__SHOWS_SUBMIT_BUTTON:
 				return isShowsSubmitButton();
 			case Thing_uiPackage.FORM__INPUTS:
-				return getInputs();
+				if (coreType) return getInputs();
+				else return getInputs().map();
 			case Thing_uiPackage.FORM__ACTUATOR:
 				return getActuator();
 		}
@@ -267,8 +265,7 @@ public class FormImpl extends MinimalEObjectImpl.Container implements Form {
 				setShowsSubmitButton((Boolean)newValue);
 				return;
 			case Thing_uiPackage.FORM__INPUTS:
-				getInputs().clear();
-				getInputs().addAll((Collection<? extends Input>)newValue);
+				((EStructuralFeature.Setting)getInputs()).set(newValue);
 				return;
 			case Thing_uiPackage.FORM__ACTUATOR:
 				setActuator((Actuator)newValue);

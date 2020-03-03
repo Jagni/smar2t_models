@@ -308,7 +308,7 @@ public class Mozilla_tdPackageImpl extends EPackageImpl implements Mozilla_tdPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAttribute_Minimum() {
+	public EAttribute getAttribute_Min() {
 		return (EAttribute)attributeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -317,7 +317,7 @@ public class Mozilla_tdPackageImpl extends EPackageImpl implements Mozilla_tdPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAttribute_Maximum() {
+	public EAttribute getAttribute_Max() {
 		return (EAttribute)attributeEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -713,8 +713,8 @@ public class Mozilla_tdPackageImpl extends EPackageImpl implements Mozilla_tdPac
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEAttribute(attributeEClass, ATTRIBUTE__UNIT);
 		createEAttribute(attributeEClass, ATTRIBUTE__ENUM);
-		createEAttribute(attributeEClass, ATTRIBUTE__MINIMUM);
-		createEAttribute(attributeEClass, ATTRIBUTE__MAXIMUM);
+		createEAttribute(attributeEClass, ATTRIBUTE__MIN);
+		createEAttribute(attributeEClass, ATTRIBUTE__MAX);
 		createEAttribute(attributeEClass, ATTRIBUTE__MULTIPLE_OF);
 		createEAttribute(attributeEClass, ATTRIBUTE__TYPE);
 		createEReference(attributeEClass, ATTRIBUTE__PROPERTIES);
@@ -821,10 +821,10 @@ public class Mozilla_tdPackageImpl extends EPackageImpl implements Mozilla_tdPac
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAttribute_Unit(), ecorePackage.getEString(), "unit", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Enum(), this.getPrimitiveType(), "enum", null, 0, -1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAttribute_Minimum(), theXMLTypePackage.getDouble(), "minimum", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAttribute_Maximum(), theXMLTypePackage.getDouble(), "maximum", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttribute_Min(), theXMLTypePackage.getDouble(), "min", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttribute_Max(), theXMLTypePackage.getDouble(), "max", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_MultipleOf(), theXMLTypePackage.getDouble(), "multipleOf", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAttribute_Type(), this.getPrimitiveType(), "type", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttribute_Type(), ecorePackage.getEString(), "type", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAttribute_Properties(), this.getStringToAttributeMap(), null, "properties", null, 0, -1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Id(), ecorePackage.getEString(), "id", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

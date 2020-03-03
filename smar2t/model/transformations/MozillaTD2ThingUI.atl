@@ -21,32 +21,45 @@ lazy rule getResourceMapEntry {
      m: MozillaTD!StringToPropertyMap
    to 
      res: ThingUI!StringToResourceMap (
-     	value <- thisModule.getProperty(m.value),
+     	value <- thisModule.getProperty(m.value, m.key),
 		key <- m.key
      )
  }
 
 lazy rule getProperty {
    from
-     p: MozillaTD!Property
+     p: MozillaTD!Property,
+	 key: String
    to 
      res: ThingUI!Resource (
-     	name <- p.title,
+     	name <- key,
      	description <- p.description,
 		icon <- p.type,
-		form <- thisModule.getPropertyForm(p)
+		form <- thisModule.getPropertyForm(p, key)
      )
  }
 
 lazy rule getPropertyForm {
    from
-     p: MozillaTD!Property
+     p: MozillaTD!Property,
+	 key: String
    to 
      form: ThingUI!Form (
      	readOnly <- p.readOnly,
 		showsSubmitButton <- not p.readOnly,
-		inputs <-  Sequence{p.input()},
+		inputs <-  Sequence{thisModule.getMapEntryFromProperty(p, key)},
 		actuator <- thisModule.getActuatorFromProperty(p)
+     )
+}
+
+lazy rule getMapEntryFromProperty {
+   from
+     p: MozillaTD!Property,
+	 key: String
+   to 
+     input: ThingUI!StringToInputMap (
+     	key <- key,
+		value <- p.input()
      )
 }
 
