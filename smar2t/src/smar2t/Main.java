@@ -3,7 +3,6 @@ package smar2t;
 import java.io.File;
 import java.io.IOException;
 import thing_ui.ThingUI;
-import smar2t.W3CMapper;
 import w3c_td.Thing;
 
 class ModelToJSON {
