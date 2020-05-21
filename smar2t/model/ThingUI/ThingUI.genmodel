@@ -74,18 +74,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//boolInput/inputType"/>
     </genClasses>
     <genClasses ecoreClass="ThingUI.ecore#//ThingUI">
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ThingUI.ecore#//ThingUI/location"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ThingUI.ecore#//ThingUI/properties"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ThingUI.ecore#//ThingUI/actions"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ThingUI.ecore#//ThingUI/events"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//ThingUI/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//ThingUI/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//ThingUI/icon"/>
-    </genClasses>
-    <genClasses ecoreClass="ThingUI.ecore#//Location">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Location/latitude"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Location/longitude"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Location/altitude"/>
     </genClasses>
     <genClasses ecoreClass="ThingUI.ecore#//Resource">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ThingUI.ecore#//Resource/name"/>
