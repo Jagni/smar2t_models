@@ -38,42 +38,62 @@
   <eClassifiers xsi:type="ecore:EClass" name="VersionInfo">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="instance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyAffordance" eSuperTypes="#//InteractionAffordance">
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyAffordance" eSuperTypes="#//DataSchema">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="observable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractionAffordance" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uriVariables" upperBound="-1"
+        eType="#//StringToDataSchemaMap" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="forms" lowerBound="1" upperBound="-1"
         eType="#//Form" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="titles" eType="#//MultiLanguage"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" eType="#//MultiLanguage"
-        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractionAffordance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="forms" lowerBound="1" upperBound="-1"
+        eType="#//Form" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="titles" upperBound="-1"
+        eType="#//MultiLanguage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
+        eType="#//MultiLanguage" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uriVariables" upperBound="-1"
+        eType="#//StringToDataSchemaMap" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EventAffordance" eSuperTypes="#//InteractionAffordance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EventAffordance" eSuperTypes="#//InteractionAffordance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//DataSchema"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subscription" eType="#//DataSchema"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cancellation" eType="#//DataSchema"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionAffordance" eSuperTypes="#//InteractionAffordance">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="safe" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="idempotent" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="input" eType="#//DataSchema"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="output" eType="#//DataSchema"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MultiLanguage"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiLanguage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StringToEventMap" instanceClassName="java.util.Map$Entry">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//EventAffordance"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StringToActionMap" instanceClassName="java.util.Map$Entry">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//ActionAffordance"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StringToPropertyMap" instanceClassName="java.util.Map$Entry">
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//PropertyAffordance"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Link">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -195,6 +215,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="refresh" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scopes" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="flow" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringToDataSchemaMap">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
+        eType="#//DataSchema" containment="true"/>
   </eClassifiers>
   <eSubpackages name="security" nsURI="http://smar2t.org/models/w3c_td/security" nsPrefix="W3cTd"/>
 </ecore:EPackage>

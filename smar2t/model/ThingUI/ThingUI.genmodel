@@ -14,12 +14,6 @@
       <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//SecurityScheme/none"/>
       <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//SecurityScheme/oauth2"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//InputType">
-      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//InputType/text"/>
-      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//InputType/number"/>
-      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//InputType/bool"/>
-      <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//InputType/object"/>
-    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="ThingUI.ecore#//TextInputType">
       <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//TextInputType/plain"/>
       <genEnumLiterals ecoreEnumLiteral="ThingUI.ecore#//TextInputType/email"/>

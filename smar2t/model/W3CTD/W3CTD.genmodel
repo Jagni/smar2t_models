@@ -30,6 +30,8 @@
     </genClasses>
     <genClasses ecoreClass="W3CTD.ecore#//PropertyAffordance">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//PropertyAffordance/observable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//PropertyAffordance/uriVariables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//PropertyAffordance/forms"/>
     </genClasses>
     <genClasses image="false" ecoreClass="W3CTD.ecore#//InteractionAffordance">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//InteractionAffordance/forms"/>
@@ -38,13 +40,23 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//InteractionAffordance/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//InteractionAffordance/title"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//InteractionAffordance/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//InteractionAffordance/uriVariables"/>
     </genClasses>
-    <genClasses ecoreClass="W3CTD.ecore#//EventAffordance"/>
+    <genClasses ecoreClass="W3CTD.ecore#//EventAffordance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//EventAffordance/data"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//EventAffordance/subscription"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//EventAffordance/cancellation"/>
+    </genClasses>
     <genClasses ecoreClass="W3CTD.ecore#//ActionAffordance">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//ActionAffordance/safe"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//ActionAffordance/idempotent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//ActionAffordance/input"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//ActionAffordance/output"/>
     </genClasses>
-    <genClasses ecoreClass="W3CTD.ecore#//MultiLanguage"/>
+    <genClasses ecoreClass="W3CTD.ecore#//MultiLanguage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//MultiLanguage/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//MultiLanguage/value"/>
+    </genClasses>
     <genClasses ecoreClass="W3CTD.ecore#//StringToEventMap">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//StringToEventMap/key"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//StringToEventMap/value"/>
@@ -162,7 +174,91 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//OAuth2SecurityScheme/scopes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//OAuth2SecurityScheme/flow"/>
     </genClasses>
+    <genClasses ecoreClass="W3CTD.ecore#//StringToDataSchemaMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute W3CTD.ecore#//StringToDataSchemaMap/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference W3CTD.ecore#//StringToDataSchemaMap/value"/>
+    </genClasses>
     <nestedGenPackages prefix="Security" basePackage="w3c_td" disposableProviderFactory="true"
         ecorePackage="W3CTD.ecore#//security"/>
+  </genPackages>
+  <genPackages prefix="Mozilla_td" ecorePackage="../MozillaTD/MozillaTD.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../MozillaTD/MozillaTD.ecore#//PrimitiveType">
+      <genEnumLiterals ecoreEnumLiteral="../MozillaTD/MozillaTD.ecore#//PrimitiveType/null"/>
+      <genEnumLiterals ecoreEnumLiteral="../MozillaTD/MozillaTD.ecore#//PrimitiveType/string"/>
+      <genEnumLiterals ecoreEnumLiteral="../MozillaTD/MozillaTD.ecore#//PrimitiveType/boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="../MozillaTD/MozillaTD.ecore#//PrimitiveType/object"/>
+      <genEnumLiterals ecoreEnumLiteral="../MozillaTD/MozillaTD.ecore#//PrimitiveType/array"/>
+      <genEnumLiterals ecoreEnumLiteral="../MozillaTD/MozillaTD.ecore#//PrimitiveType/number"/>
+      <genEnumLiterals ecoreEnumLiteral="../MozillaTD/MozillaTD.ecore#//PrimitiveType/integer"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../MozillaTD/MozillaTD.ecore#//Relationship">
+      <genEnumLiterals ecoreEnumLiteral="../MozillaTD/MozillaTD.ecore#//Relationship/properties"/>
+      <genEnumLiterals ecoreEnumLiteral="../MozillaTD/MozillaTD.ecore#//Relationship/actions"/>
+      <genEnumLiterals ecoreEnumLiteral="../MozillaTD/MozillaTD.ecore#//Relationship/events"/>
+      <genEnumLiterals ecoreEnumLiteral="../MozillaTD/MozillaTD.ecore#//Relationship/alternate"/>
+    </genEnums>
+    <genClasses ecoreClass="../MozillaTD/MozillaTD.ecore#//Thing">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Thing/context"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Thing/semanticType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Thing/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Thing/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Thing/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../MozillaTD/MozillaTD.ecore#//Thing/actions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../MozillaTD/MozillaTD.ecore#//Thing/events"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../MozillaTD/MozillaTD.ecore#//Thing/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="../MozillaTD/MozillaTD.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Attribute/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Attribute/enum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Attribute/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Attribute/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Attribute/multipleOf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Attribute/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../MozillaTD/MozillaTD.ecore#//Attribute/properties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Attribute/id"/>
+    </genClasses>
+    <genClasses ecoreClass="../MozillaTD/MozillaTD.ecore#//Link">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Link/href"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Link/rel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Link/mediaType"/>
+    </genClasses>
+    <genClasses ecoreClass="../MozillaTD/MozillaTD.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Action/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Action/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../MozillaTD/MozillaTD.ecore#//Action/input"/>
+    </genClasses>
+    <genClasses ecoreClass="../MozillaTD/MozillaTD.ecore#//Input">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Input/semanticType"/>
+    </genClasses>
+    <genClasses ecoreClass="../MozillaTD/MozillaTD.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Property/semanticType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Property/readOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Property/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Property/title"/>
+    </genClasses>
+    <genClasses ecoreClass="../MozillaTD/MozillaTD.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Event/semanticType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Event/description"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../MozillaTD/MozillaTD.ecore#//Linkable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../MozillaTD/MozillaTD.ecore#//Linkable/links"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//Linkable/href"/>
+    </genClasses>
+    <genClasses ecoreClass="../MozillaTD/MozillaTD.ecore#//StringToActionMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//StringToActionMap/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../MozillaTD/MozillaTD.ecore#//StringToActionMap/value"/>
+    </genClasses>
+    <genClasses ecoreClass="../MozillaTD/MozillaTD.ecore#//StringToEventMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../MozillaTD/MozillaTD.ecore#//StringToEventMap/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//StringToEventMap/key"/>
+    </genClasses>
+    <genClasses ecoreClass="../MozillaTD/MozillaTD.ecore#//StringToPropertyMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../MozillaTD/MozillaTD.ecore#//StringToPropertyMap/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//StringToPropertyMap/key"/>
+    </genClasses>
+    <genClasses ecoreClass="../MozillaTD/MozillaTD.ecore#//StringToAttributeMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../MozillaTD/MozillaTD.ecore#//StringToAttributeMap/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../MozillaTD/MozillaTD.ecore#//StringToAttributeMap/value"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

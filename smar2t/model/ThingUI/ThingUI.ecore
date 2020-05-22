@@ -37,12 +37,6 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
         defaultValueLiteral="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="InputType">
-    <eLiterals name="text"/>
-    <eLiterals name="number" value="1"/>
-    <eLiterals name="bool" value="2"/>
-    <eLiterals name="object" value="3"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextInput" eSuperTypes="#//Input">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputType" lowerBound="1"
         eType="#//TextInputType"/>
